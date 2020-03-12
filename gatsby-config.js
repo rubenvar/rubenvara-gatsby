@@ -21,7 +21,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-reading-time`],
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-google-fonts`,
     //   options: {

@@ -1,20 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
+import kebabCase from 'lodash.kebabcase';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 const StyledPost = styled.div`
-  /* max-width: 960px;
-  margin: 0 auto; */
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .meta__cats {
+      justify-self: end;
+    }
+  }
 `;
 
 function PostTemplate({
   data: { markdownRemark }, // this prop will be injected by the GraphQL query below. data.markdownRemark holds your post data
 }) {
-  const { frontmatter, html } = markdownRemark;
+  const { frontmatter, fields, html } = markdownRemark;
+  const minutes = Math.ceil(fields.readingTime.minutes);
+
   return (
     <Layout isPost>
       <SEO
@@ -22,11 +30,25 @@ function PostTemplate({
         description={frontmatter.description}
       />
       <StyledPost>
-        <div id="post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <div id="post-content" dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="breadcrumb">bread > crumb > irá aquí</div>
+        <h1>{frontmatter.title}</h1>
+        <div className="meta">
+          <div className="meta__data">
+            <p>✏️ {frontmatter.date}</p>
+            <p>
+              📖 {fields.readingTime.words} palabras = {minutes} minuto
+              {minutes > 1 && 's'}
+            </p>
+          </div>
+          <div className="meta__cats">
+            {frontmatter.categories.map((cat, i) => (
+              <p key={i}>
+                <Link to={`/categoria/${kebabCase(cat)}`}>{cat}</Link>
+              </p>
+            ))}
+          </div>
         </div>
+        <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
       </StyledPost>
     </Layout>
   );
@@ -46,6 +68,13 @@ export const pageQuery = graphql`
         title
         seoTitle
         description
+        categories
+      }
+      fields {
+        readingTime {
+          minutes
+          words
+        }
       }
     }
   }

@@ -5,15 +5,16 @@ import styled from 'styled-components';
 import Inner from './styles/Inner';
 
 const StyledHeader = styled.header`
-  background: rebeccapurple;
+  background: ${props => props.theme.whiteBg};
   margin-bottom: 1.45rem;
-  padding: 32px 0;
+  padding: 12px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   h1 {
     margin: 0;
     line-height: 1;
     font-family: 'Mansalva', cursive;
     a {
-      color: white;
+      color: ${props => props.theme.primary500};
       text-decoration: none;
     }
   }

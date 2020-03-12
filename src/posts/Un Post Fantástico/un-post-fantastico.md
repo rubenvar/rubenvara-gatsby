@@ -4,9 +4,14 @@ title: "Un post fantastico"
 date: "2020-03-04"
 seoTitle: "El mejor post que vas a poder leer hoy!"
 description: "Eearum in ratione quis dicta Lorem ipsum dolor sit"
+categories: ["Diseño", "Herramientas"]
 ---
 
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quos aut soluta vero quas quo ex quae deleniti, earum in ratione quis dicta maiores eligendi suLorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quos aut soluta vero quas quo ex quae deleniti, earum in ratione quis dicta maiores eligendi sunt accusamus, eius enim consequatur.nt accusamus, eius enim consequatur.
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quos aut soluta vero quas quo ex quae deleniti, earum in ratione quis dicta maiores eligendi suLorem ipsum dolor sit.
+
+Amet consectetur adipisicing elit. Alias quos aut soluta vero quas quo ex quae deleniti, earum in ratione quis dicta maiores eligendi sunt accusamus, eius enim consequatur.nt accusamus, eius enim consequatur accusamus, eius enim consequatur.
+
+## Ex quae deleniti
 
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quos aut sLorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quosLorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quos aut soluta vero quas quo ex quae deleniti, earum in ratione quis dicta maiores eligendi sunt accusamus, eius enim consequatur. aut soluta vero quas quo ex quae deleniti.
 

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Rubén Vara`,
+    author: `@rubenvara01`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
     siteUrl: `https://rubenvara.io`,
   },
   plugins: [
@@ -22,6 +22,13 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [`Audiowide`, `Turret Road`, `Knewave`, `Rubik:400,400i,700`],
+    //     display: 'swap',
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

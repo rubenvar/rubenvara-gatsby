@@ -2,12 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Nav from './Nav';
-import Inner from './Inner';
+import Inner from './styles/Inner';
 
 const StyledFooter = styled.footer`
-  background: rebeccapurple;
-  padding: 1.45rem 1.0875rem;
-  margin-top: 1.45rem;
+  background: ${props => props.theme.primary500};
+  padding: 20px;
+  margin-top: 32px;
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Footer = () => (

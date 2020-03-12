@@ -3,9 +3,21 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const StyledNav = styled.nav`
-  background: rebeccapurple;
-  padding: 1.45rem 1.0875rem;
-  margin-top: 1.45rem;
+  padding: 0;
+  margin: 30px 0 60px;
+  width: 540px;
+  max-width: 80%;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
 `;
 
 const Nav = () => (

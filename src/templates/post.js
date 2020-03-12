@@ -16,7 +16,7 @@ function PostTemplate({
 }) {
   const { frontmatter, html } = markdownRemark;
   return (
-    <Layout>
+    <Layout isPost>
       <SEO
         title={frontmatter.seoTitle || frontmatter.title}
         description={frontmatter.description}

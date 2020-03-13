@@ -4,6 +4,7 @@ title: "Un post fantastico"
 date: "2020-03-04"
 seoTitle: "El mejor post que vas a poder leer hoy!"
 description: "Eearum in ratione quis dicta Lorem ipsum dolor sit"
+iamge: "https://source.unsplash.com/zb2vBaHYB2I/1600x900"
 categories: ["Diseño", "Herramientas"]
 ---
 

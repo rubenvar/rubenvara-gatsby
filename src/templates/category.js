@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import ListedPost from '../components/ListedPost';
 
 const Category = ({ pageContext, data }) => {
   const { category } = pageContext;
@@ -16,19 +17,9 @@ const Category = ({ pageContext, data }) => {
     <Layout>
       <SEO title={`Todos los posts en la categoría ${category}`} />
       <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const {
-            id,
-            frontmatter: { slug, title },
-          } = node;
-          return (
-            <li key={id}>
-              <Link to={`/${slug}`}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      {edges.map(({ node }) => (
+        <ListedPost key={node.id} post={node} />
+      ))}
       <Link to="/categorias">All tags</Link>
     </Layout>
   );
@@ -48,8 +39,16 @@ export const pageQuery = graphql`
         node {
           id
           frontmatter {
+            date(formatString: "DD-MMM-YYYY", locale: "es-ES")
             slug
             title
+            description
+            categories
+          }
+          fields {
+            readingTime {
+              minutes
+            }
           }
         }
       }
@@ -69,8 +68,16 @@ Category.propTypes = {
           node: PropTypes.shape({
             id: PropTypes.string.isRequired,
             frontmatter: PropTypes.shape({
+              date: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
               slug: PropTypes.string.isRequired,
+              description: PropTypes.string,
+              categories: PropTypes.array.isRequired,
+            }),
+            fields: PropTypes.shape({
+              readingTime: PropTypes.shape({
+                minutes: PropTypes.number,
+              }),
             }),
           }),
         }).isRequired

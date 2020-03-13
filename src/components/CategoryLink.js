@@ -8,6 +8,6 @@ export default function CategoryLink({ cat, children }) {
 }
 
 CategoryLink.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   cat: PropTypes.string.isRequired,
-  children: PropTypes.string,
 };

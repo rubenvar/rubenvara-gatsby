@@ -53,7 +53,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const categories = data.categoriesGroup.group;
   categories.forEach(category => {
-    console.log(category.fieldValue);
     createPage({
       path: `/categoria/${kebabCase(category.fieldValue)}`,
       component: categoryTemplate,

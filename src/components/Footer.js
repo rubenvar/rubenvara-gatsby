@@ -1,34 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 import Nav from './Nav';
 import Inner from './styles/Inner';
 import useCurrentWidth from '../utils/useCurrentWidth';
 
+// idea for bg from https://codepen.io/enbee81/full/yLyrmyg
 const StyledFooter = styled.footer`
-  /* background: ${props => props.theme.bgDarker}; */
-  padding: ${props => props.width * props.magicNumber}px 0;
-  margin-top: 32px;
+  --padding: ${props => props.width * props.magicNumber}px;
   position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: ${props => props.theme.red};
-    transform: skewy(${props => props.angle}deg);
-    transform-origin: 50% 0;
-    outline: 1px solid transparent;
-    backface-visibility: hidden;
-  }
+
+  margin-top: calc((var(--padding) * -1) - 2px);
+  padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0 4em;
+  clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
+
+  background: ${props => props.theme.bgDarker};
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.05) 50%,
+      0,
+      transparent 100%
+    ),
+    linear-gradient(
+      -135deg,
+      ${props => props.theme.redLighter},
+      ${props => props.theme.red}
+    );
+  background-size: 0.5em 0.5em, 100% 100%;
   > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    border: 2px dashed grey;
   }
 `;
 
@@ -38,13 +42,12 @@ const Footer = () => {
   const width = useCurrentWidth();
 
   return (
-    <StyledFooter angle={angle} magicNumber={magicNumber} width={width}>
+    <StyledFooter magicNumber={magicNumber} width={width}>
       <Inner>
         <Nav />
         <p>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()} rubenvara.io ·{' '}
+          <Link to="/contacto">Contacto</Link>
         </p>
       </Inner>
     </StyledFooter>

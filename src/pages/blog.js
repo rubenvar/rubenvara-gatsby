@@ -11,7 +11,15 @@ const BlogPage = ({
   },
 }) => {
   const Posts = edges
-    // .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    // filter out draft posts
+    .filter(edge => !edge.node.frontmatter.draft)
+    // add categoria 'Otros' if no categories
+    .map(edge => {
+      if (!edge.node.frontmatter.categories) {
+        edge.node.frontmatter.categories = [];
+      }
+      return edge;
+    })
     .map(edge => <ListedPost key={edge.node.id} post={edge.node} />);
 
   return (
@@ -43,6 +51,7 @@ export const pageQuery = graphql`
             title
             description
             categories
+            draft
           }
           fields {
             readingTime {

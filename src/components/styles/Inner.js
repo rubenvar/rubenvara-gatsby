@@ -4,6 +4,7 @@ const Inner = styled.div`
   width: ${props => props.theme.maxWidth};
   max-width: 100%;
   margin: 0 auto;
+  position: relative;
 `;
 
 export default Inner;

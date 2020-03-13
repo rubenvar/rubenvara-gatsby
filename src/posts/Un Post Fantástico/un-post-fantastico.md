@@ -1,11 +1,14 @@
 ---
-slug: "un-post-fantastico"
-title: "Un post fantastico"
-date: "2020-03-04"
-seoTitle: "El mejor post que vas a poder leer hoy!"
-description: "Eearum in ratione quis dicta Lorem ipsum dolor sit"
-iamge: "https://source.unsplash.com/zb2vBaHYB2I/1600x900"
-categories: ["Diseño", "Herramientas"]
+slug: un-post-fantastico
+title: Un post fantastico
+seoTitle: El mejor post que vas a poder leer hoy!
+date: 2020-03-04
+description: Eearum in ratione quis dicta Lorem ipsum dolor sit
+image: cover.jpg
+draft: false
+categories:
+  - Diseño
+  - Herramientas
 ---
 
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quos aut soluta vero quas quo ex quae deleniti, earum in ratione quis dicta maiores eligendi suLorem ipsum dolor sit.

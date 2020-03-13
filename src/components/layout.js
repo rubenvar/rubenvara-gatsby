@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
+import 'normalize.css';
 
 import Header from './Header';
 import Footer from './Footer';

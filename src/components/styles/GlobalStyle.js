@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+
 import theme from './Theme';
 import fontAlte from '../../assets/fonts/AlteHaasGroteskRegular.ttf';
 import fontAlteBold from '../../assets/fonts/AlteHaasGroteskBold.ttf';
@@ -46,8 +47,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    margin: 0;
-    padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${theme.white};
@@ -59,45 +58,16 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
     font-feature-settings: "kern", "liga", "clig", "calt";
   }
-  article,
-  aside,
-  details,
-  figcaption,
-  figure,
-  footer,
-  header,
-  main,
-  menu,
-  nav,
-  section,
-  summary {
-    display: block;
-  }
   audio,
   canvas,
   progress,
   video {
     display: inline-block;
   }
-  [hidden],
-  template {
-    display: none;
-  }
-  abbr[title] {
-    border-bottom: none;
-    text-decoration: underline;
-    text-decoration: underline dotted;
-  }
   img {
     max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin: 0;
+    padding: 0;
   }
   a {
     transition: all 0.25s;
@@ -153,11 +123,6 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       color: ${theme.black};
     }
-  }
-  input, button, textarea, select {
-    font-size: inherit;
-    font-family: inherit;
-    color: inherit;
   }
   button {
     cursor: pointer;

@@ -10,12 +10,12 @@ import Inner from './styles/Inner';
 import TopBar from './styles/TopBar';
 import GlobalStyle from './styles/GlobalStyle';
 
-const Layout = ({ isPost, children }) => (
+const Layout = ({ isPost, isBlog, children }) => (
   <Fragment>
     <GlobalStyle />
     <ThemeProvider theme={theme}>
       <TopBar />
-      {!isPost && <Header />}
+      {!isPost && <Header isBlog={isBlog} />}
       <Inner>
         <main>{children}</main>
       </Inner>
@@ -27,6 +27,7 @@ const Layout = ({ isPost, children }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isPost: PropTypes.bool,
+  isBlog: PropTypes.bool,
 };
 
 export default Layout;

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import theme from './Theme';
 import fontAlte from '../../assets/fonts/AlteHaasGroteskRegular.ttf';
 import fontAlteBold from '../../assets/fonts/AlteHaasGroteskBold.ttf';
 import fontMansalva from '../../assets/fonts/Mansalva-Regular.ttf';
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: ${theme.white};
     word-wrap: break-word;
     font-size: 1rem;
     font-kerning: normal;
@@ -99,13 +99,60 @@ const GlobalStyle = createGlobalStyle`
     padding-top: 0;
     margin-bottom: 1.45rem;
   }
+  a {
+    transition: all 0.25s;
+  }
   p {
-    margin: 0 0 20px 0;
+    margin: 0;
     line-height: 1.625rem;
   }
+  .content {
+    p {
+      margin: 0 0 20px 0;
+      a {
+        color: ${theme.red};
+        position: relative;
+        text-decoration: none;
+        padding: 0 1px;
+        &::after {
+          position: absolute;
+          background: linear-gradient(to right, ${theme.red}, ${theme.redDarker});
+          content: "";
+          width: 100%;
+          height: 2px;
+          bottom: -2px;
+          left: 0;
+          z-index: -1;
+          transition: all 0.25s;
+        }
+        &:hover {
+          color: ${theme.bg};
+          border-color: transparent;
+  
+          &::after {
+            height: 100%;
+          }
+        }
+        &:focus {
+          outline: none;
+          border: 2px solid ${theme.text};
+          border-radius: 3px;
+          transition: none;
+        }
+      }
+    }
+  }
   h1, h2, h3, h4 {
+    margin: 0;
     text-rendering: optimizeLegibility;
     font-family: 'Alte Haas Grotesk', cursive;
+  }
+  h2 a {
+    text-decoration: none;
+    color: ${theme.red};
+    &:hover {
+      color: ${theme.black};
+    }
   }
   input, button, textarea, select {
     font-size: inherit;
@@ -114,6 +161,14 @@ const GlobalStyle = createGlobalStyle`
   }
   button {
     cursor: pointer;
+  }
+  button,
+  a {
+    &:focus {
+      outline: none;
+      border: 2px solid orange;
+      transition: none;
+    }
   }
   @media only screen and (max-width: 480px) {
     html {

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import kebabCase from 'lodash.kebabcase';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import CategoryLink from '../components/CategoryLink';
 
 const StyledPost = styled.div`
   .meta {
@@ -36,14 +36,14 @@ function PostTemplate({
           <div className="meta__data">
             <p>✏️ {frontmatter.date}</p>
             <p>
-              📖 {fields.readingTime.words} palabras = {minutes} minuto
+              📖 {fields.readingTime.words} palabras = menos de {minutes} minuto
               {minutes > 1 && 's'}
             </p>
           </div>
           <div className="meta__cats">
             {frontmatter.categories.map((cat, i) => (
               <p key={i}>
-                <Link to={`/categoria/${kebabCase(cat)}`}>{cat}</Link>
+                <CategoryLink cat={cat}>{cat}</CategoryLink>
               </p>
             ))}
           </div>

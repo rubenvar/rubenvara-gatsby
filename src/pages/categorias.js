@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import CategoryLink from '../components/CategoryLink';
 
 const CategoriesPage = ({
   data: {
@@ -21,9 +22,9 @@ const CategoriesPage = ({
       <ul>
         {group.map(category => (
           <li key={category.fieldValue}>
-            <Link to={`/categoria/${kebabCase(category.fieldValue)}/`}>
+            <CategoryLink cat={category.fieldValue}>
               {category.fieldValue} ({category.totalCount})
-            </Link>
+            </CategoryLink>
           </li>
         ))}
       </ul>

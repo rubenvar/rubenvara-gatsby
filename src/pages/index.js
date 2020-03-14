@@ -2,22 +2,41 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/Layout';
-import Image from '../components/Image';
 import SEO from '../components/SEO';
+import Nav from '../components/Nav';
 
 const IndexPage = () => (
-  <Layout>
+  <Layout isIndex>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
+    <h1>
+      <span className="💩">R</span>
+      <span className="💩">u</span>
+      <span className="💩">b</span>
+      <span className="💩">é</span>
+      <span className="💩">n</span>
+      <span className="🚀">&nbsp;</span>
+      <span className="💩">V</span>
+      <span className="💩">a</span>
+      <span className="💩">r</span>
+      <span className="💩">a</span>
+    </h1>
+    <h2>Full Stack Web Developer</h2>
+    <p>Durante esta última década...</p>
     <p>
-      <Link to="/blog">Blog</Link>
+      Estudié una carrera. Trabajé varios años como ingeniero industrial. Decidí
+      cambiar mi vida y abandonarlo todo.
     </p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <p>
+      Me marché de viaje sin fechas ni planes. Pasé tres años viviendo en varios
+      países, creando mi negocio online, escalando, y estudiando SEO y
+      desarrollo web.
+    </p>
+    <p>
+      Volví a casa para vivir en el monte, alejado todo lo posible de la vida
+      real. Y para dedicar mi tiempo a leer, estudiar, y entrenar como nadador
+      de aguas abiertas.
+    </p>
+    <Nav />
   </Layout>
 );
 

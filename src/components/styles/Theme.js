@@ -19,12 +19,16 @@ const theme = {
   grey: `#dadada`,
   greyDark: `#999`,
   greyDarker: `#566565`,
+  greyDarkest: `#323232`,
   copyrightGrey: `#797979`,
 
   redLighter,
   red,
   redDarker,
   redDarkest: `hsl(358, 57%, 16%)`,
+
+  blue: `hsl(180, 64%, 45%)`,
+  blueDarker: `hsl(180, 64%, 25%)`,
 
   redGradient: `linear-gradient(to right, var(${redLighter}), var(${red}), var(${red}), var(${redDarker}))`,
 

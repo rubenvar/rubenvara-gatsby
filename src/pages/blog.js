@@ -26,10 +26,8 @@ const BlogPage = ({
     <Layout isBlog>
       <h2>El Blog</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        aliquid, ullam incidunt autem blanditiis ut ea officia laboriosam
-        voluptates voluptatum accusamus quia! Voluptas expedita a possimus
-        aperiam nobis, aspernatur eaque!
+        Dicen que no sabes lo que sabes hasta que intentas enseñarlo. Pues en
+        eso estamos:
       </p>
       <div>{Posts}</div>
     </Layout>

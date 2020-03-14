@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -11,13 +12,13 @@ const StyledFooter = styled.footer`
   --padding: ${props => props.width * props.magicNumber}px;
   position: relative;
 
-  margin-top: calc((var(--padding) * -1) - 2px);
+  /* margin-top: calc((var(--padding) * -1) - 2px); */
   margin-top: 0;
   padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0 4em;
   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
 
   background: ${props => props.theme.bgDarker};
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.05) 50%,
       0,
@@ -28,7 +29,7 @@ const StyledFooter = styled.footer`
       ${props => props.theme.redLighter},
       ${props => props.theme.red}
     );
-  background-size: 0.5em 0.5em, 100% 100%;
+  background-size: 0.5em 0.5em, 100% 100%; */
   > div {
     display: flex;
     flex-direction: column;
@@ -37,15 +38,15 @@ const StyledFooter = styled.footer`
   }
 `;
 
-const Footer = () => {
+const Footer = ({ isIndex }) => {
   const angle = -5;
   const magicNumber = Math.abs(Math.tan((angle * Math.PI) / 180) / 2);
   const { width } = useWindowSize();
 
   return (
     <StyledFooter magicNumber={magicNumber} width={width}>
+      {!isIndex && <Nav />}
       <Inner>
-        <Nav />
         <p>
           © {new Date().getFullYear()} rubenvara.io ·{' '}
           <Link to="/contacto">Contacto</Link>
@@ -53,6 +54,10 @@ const Footer = () => {
       </Inner>
     </StyledFooter>
   );
+};
+
+Footer.propTypes = {
+  isIndex: PropTypes.bool,
 };
 
 export default Footer;

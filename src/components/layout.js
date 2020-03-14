@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import 'normalize.css';
 
+import IndexPage from './IndexPage';
 import Header from './Header';
 import Footer from './Footer';
 import theme from './styles/Theme';
@@ -11,17 +12,23 @@ import TopBar from './TopBar';
 import GlobalStyle from './styles/GlobalStyle';
 import BodySVGs from './BodySVG';
 
-const Layout = ({ isPost, isBlog, children }) => (
+const Layout = ({ isIndex, isPost, isBlog, children }) => (
   <Fragment>
     <GlobalStyle />
     <ThemeProvider theme={theme}>
-      <BodySVGs />
-      <TopBar />
-      {!isPost && <Header isBlog={isBlog} />}
-      <Inner>
-        <main>{children}</main>
-      </Inner>
-      <Footer />
+      {isIndex ? (
+        <IndexPage />
+      ) : (
+        <Fragment>
+          <BodySVGs />
+          <TopBar />
+          {!isPost && <Header isBlog={isBlog} />}
+          <Inner>
+            <main>{children}</main>
+          </Inner>
+          <Footer />
+        </Fragment>
+      )}
     </ThemeProvider>
   </Fragment>
 );
@@ -30,6 +37,7 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isPost: PropTypes.bool,
   isBlog: PropTypes.bool,
+  isIndex: PropTypes.bool,
 };
 
 export default Layout;

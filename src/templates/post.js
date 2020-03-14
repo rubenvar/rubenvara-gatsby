@@ -1,22 +1,28 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import CategoryLink from '../components/CategoryLink';
 
-const StyledBg = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-`;
+// const StyledBg = styled.div`
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+// `;
 
 const StyledPost = styled.div`
+  .breadcrumb {
+    &__link {
+    }
+    &__sep {
+    }
+  }
   .meta {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -25,6 +31,7 @@ const StyledPost = styled.div`
     }
   }
 `;
+
 const StyledContent = styled.div`
   font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   h2 {
@@ -118,7 +125,19 @@ function PostTemplate({
           description={frontmatter.description}
         />
         <StyledPost>
-          <div className="breadcrumb">bread > crumb > irá aquí</div>
+          <div className="breadcrumb" aria-label="Breadcrumb">
+            <Link className="breadcrumb__link" to="/">
+              Inicio
+            </Link>
+            <span className="breadcrumb__sep">></span>
+            <Link className="breadcrumb__link" to="/blog">
+              Blog
+            </Link>
+            <span className="breadcrumb__sep">></span>
+            <span className="breadcrumb__link__active">
+              {frontmatter.title}
+            </span>
+          </div>
           <h1>{frontmatter.title}</h1>
           <div className="meta">
             <div className="meta__data">

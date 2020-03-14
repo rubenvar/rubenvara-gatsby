@@ -9,11 +9,13 @@ import theme from './styles/Theme';
 import Inner from './Inner';
 import TopBar from './TopBar';
 import GlobalStyle from './styles/GlobalStyle';
+import BodySVGs from './BodySVG';
 
 const Layout = ({ isPost, isBlog, children }) => (
   <Fragment>
     <GlobalStyle />
     <ThemeProvider theme={theme}>
+      <BodySVGs />
       <TopBar />
       {!isPost && <Header isBlog={isBlog} />}
       <Inner>

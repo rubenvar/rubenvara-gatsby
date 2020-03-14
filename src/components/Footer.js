@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 import Nav from './Nav';
 import Inner from './Inner';
-import useCurrentWidth from '../utils/useCurrentWidth';
+import useWindowSize from '../utils/useWindowSize';
 
 // idea for bg from https://codepen.io/enbee81/full/yLyrmyg
 const StyledFooter = styled.footer`
@@ -40,7 +40,7 @@ const StyledFooter = styled.footer`
 const Footer = () => {
   const angle = -5;
   const magicNumber = Math.abs(Math.tan((angle * Math.PI) / 180) / 2);
-  const width = useCurrentWidth();
+  const { width } = useWindowSize();
 
   return (
     <StyledFooter magicNumber={magicNumber} width={width}>

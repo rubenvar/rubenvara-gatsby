@@ -48,7 +48,7 @@ const Header = ({ isBlog }) => {
 };
 
 Header.propTypes = {
-  isBlog: PropTypes.bool.isRequired,
+  isBlog: PropTypes.bool,
 };
 
 export default Header;

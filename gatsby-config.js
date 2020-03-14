@@ -27,13 +27,6 @@ module.exports = {
         plugins: [`gatsby-remark-reading-time`, `gatsby-remark-prismjs`],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [`Audiowide`, `Turret Road`, `Knewave`, `Rubik:400,400i,700`],
-    //     display: 'swap',
-    //   },
-    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import 'victormono';
 
 import theme from './Theme';
 import fontAlte from '../../assets/fonts/AlteHaasGroteskRegular.ttf';
@@ -6,6 +7,8 @@ import fontAlteBold from '../../assets/fonts/AlteHaasGroteskBold.ttf';
 import fontMansalva from '../../assets/fonts/Mansalva-Regular.ttf';
 import fontRubik from '../../assets/fonts/Rubik-Regular.ttf';
 import fontRubikBold from '../../assets/fonts/Rubik-Bold.ttf';
+import fontMartel from '../../assets/fonts/Martel-Regular.ttf';
+import fontMartelBold from '../../assets/fonts/Martel-Bold.ttf';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -34,6 +37,17 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Rubik";
     src: url(${fontRubikBold});
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "Martel";
+    src: url(${fontMartel});
+    font-weight: normal;
+    font-size: normal;
+  }
+  @font-face {
+    font-family: "Martel";
+    src: url(${fontMartelBold});
     font-weight: bold;
   }
   html {
@@ -69,6 +83,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  ::selection {
+    background: ${theme.red};
+    color: ${theme.bg};
+  }
+  ::-moz-selection {
+    background: ${theme.red};
+    color: ${theme.bg};
+  }
   a {
     transition: all 0.25s;
   }
@@ -76,52 +98,18 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     line-height: 1.625rem;
   }
-  .content {
-    p {
-      margin: 0 0 20px 0;
-      a {
-        color: ${theme.red};
-        position: relative;
-        text-decoration: none;
-        padding: 0 1px;
-        &::after {
-          position: absolute;
-          background: linear-gradient(to right, ${theme.red}, ${theme.redDarker});
-          content: "";
-          width: 100%;
-          height: 2px;
-          bottom: -2px;
-          left: 0;
-          z-index: -1;
-          transition: all 0.25s;
-        }
-        &:hover {
-          color: ${theme.bg};
-          border-color: transparent;
-  
-          &::after {
-            height: 100%;
-          }
-        }
-        &:focus {
-          outline: none;
-          border: 2px solid ${theme.text};
-          border-radius: 3px;
-          transition: none;
-        }
-      }
-    }
-  }
   h1, h2, h3, h4 {
     margin: 0;
     text-rendering: optimizeLegibility;
     font-family: 'Alte Haas Grotesk', cursive;
   }
-  h2 a {
-    text-decoration: none;
-    color: ${theme.red};
-    &:hover {
-      color: ${theme.black};
+  h2 {
+    a {
+      text-decoration: none;
+      color: ${theme.red};
+      &:hover {
+        color: ${theme.black};
+      }
     }
   }
   button {
@@ -134,6 +122,10 @@ const GlobalStyle = createGlobalStyle`
       border: 2px solid orange;
       transition: none;
     }
+  }
+  code[class*="language-"], pre[class*="language-"] {
+    font-family: 'Victor Mono', monospace;
+    font-size: 0.8rem;
   }
   @media only screen and (max-width: 480px) {
     html {

@@ -25,6 +25,79 @@ const StyledPost = styled.div`
     }
   }
 `;
+const StyledContent = styled.div`
+  font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  h2 {
+    margin: 42px 0 20px;
+    font-size: 36px;
+  }
+  h3 {
+    margin: 32px 0 16px;
+    font-size: 27px;
+  }
+  p {
+    margin: 0 0 20px 0;
+    line-height: 1.8rem;
+    a {
+      color: ${props => props.theme.red};
+      position: relative;
+      text-decoration: none;
+      padding: 0 1px;
+      &::after {
+        position: absolute;
+        background: linear-gradient(
+          to right,
+          ${props => props.theme.red},
+          ${props => props.theme.redDarker}
+        );
+        content: '';
+        width: 100%;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.25s;
+      }
+      &:hover {
+        color: ${props => props.theme.bg};
+        border-color: transparent;
+
+        &::after {
+          height: 100%;
+        }
+      }
+      &:focus {
+        outline: none;
+        border: 2px solid ${props => props.theme.text};
+        border-radius: 3px;
+        transition: none;
+      }
+    }
+  }
+  ul {
+    /* list-style: none; */
+    line-height: 1.4rem;
+    margin: 0 0 20px;
+    li {
+      margin: 0 0 12px;
+      &::marker {
+        color: ${props => props.theme.red};
+      }
+    }
+  }
+  blockquote {
+    margin: 30px 0;
+    padding: 20px 0 20px 30px;
+    border-left: 3px solid ${props => props.theme.greyDarker};
+    font-weight: 700;
+    background-color: ${props => props.theme.grey};
+    color: ${props => props.theme.greyDarker};
+    p {
+      font-size: 25px;
+      margin: 0;
+    }
+  }
+`;
 
 function PostTemplate({
   data: { markdownRemark }, // this prop will be injected by the GraphQL query below. data.markdownRemark holds your post data
@@ -64,7 +137,7 @@ function PostTemplate({
               ))}
             </div>
           </div>
-          <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
+          <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
         </StyledPost>
       </Layout>
     </Fragment>

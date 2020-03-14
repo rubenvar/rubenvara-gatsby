@@ -1,8 +1,9 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Inner from './styles/Inner';
+import Inner from './Inner';
 
 const StyledHeader = styled.header`
   background: ${props => props.theme.white};
@@ -27,19 +28,8 @@ const StyledHeader = styled.header`
 `;
 
 const Header = ({ isBlog }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `);
-  // const title = data.site.siteMetadata.title;
   // hardcoded instead of getting the site-title in gatsby-config
   const title = `rubenvara.io`;
-  const current = `el blog`;
 
   return (
     <StyledHeader>
@@ -55,6 +45,10 @@ const Header = ({ isBlog }) => {
       </Inner>
     </StyledHeader>
   );
+};
+
+Header.propTypes = {
+  isBlog: PropTypes.bool.isRequired,
 };
 
 export default Header;

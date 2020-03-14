@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import Nav from './Nav';
-import Inner from './styles/Inner';
+import Inner from './Inner';
 import useCurrentWidth from '../utils/useCurrentWidth';
 
 // idea for bg from https://codepen.io/enbee81/full/yLyrmyg

@@ -107,11 +107,11 @@ function PostTemplate({
 
   return (
     <Fragment>
-      {frontmatter.image && (
+      {/* {frontmatter.image && (
         <StyledBg>
           <Img fluid={frontmatter.image.childImageSharp.fluid} />
         </StyledBg>
-      )}
+      )} */}
       <Layout isPost>
         <SEO
           title={frontmatter.seoTitle || frontmatter.title}

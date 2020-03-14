@@ -20,7 +20,7 @@ const Category = ({ pageContext, data }) => {
       {edges.map(({ node }) => (
         <ListedPost key={node.id} post={node} />
       ))}
-      <Link to="/categorias">All tags</Link>
+      <Link to="/categorias">Todas las categorías</Link>
     </Layout>
   );
 };

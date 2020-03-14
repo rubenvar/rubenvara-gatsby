@@ -5,10 +5,9 @@ import 'normalize.css';
 
 import Header from './Header';
 import Footer from './Footer';
-// import './styles/Layout.css';
 import theme from './styles/Theme';
-import Inner from './styles/Inner';
-import TopBar from './styles/TopBar';
+import Inner from './Inner';
+import TopBar from './TopBar';
 import GlobalStyle from './styles/GlobalStyle';
 
 const Layout = ({ isPost, isBlog, children }) => (

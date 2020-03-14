@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import CategoryLink from './CategoryLink';
-import ButtonLink from './styles/ButtonLink';
+import ButtonLink from './ButtonLink';
 
 const StyledListedPost = styled.div`
   border-left: 1px solid ${props => props.theme.listedPostBorder};

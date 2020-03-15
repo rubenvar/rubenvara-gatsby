@@ -14,7 +14,7 @@ const StyledFooter = styled.footer`
 
   /* margin-top: calc((var(--padding) * -1) - 2px); */
   margin-top: 0;
-  padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0 4em;
+  padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0 20px;
   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
 
   background: ${props => props.theme.bgDarker};
@@ -35,6 +35,10 @@ const StyledFooter = styled.footer`
     flex-direction: column;
     align-items: center;
     position: relative;
+    p {
+      font-size: 0.8rem;
+      color: ${props => props.theme.greyDarkest}
+    }
   }
 `;
 
@@ -50,6 +54,11 @@ const Footer = ({ isIndex }) => {
         <p>
           © {new Date().getFullYear()} rubenvara.io ·{' '}
           <Link to="/contacto">Contacto</Link>
+        </p>
+        <p>
+          Web creada con <a href="https://www.gatsbyjs.com">Gatsby</a> y alojada
+          en <a href="https://www.netlify.com/">Netlify</a>. El código está en{' '}
+          <a href="https://github.com/rubenvar">Github</a>.
         </p>
       </Inner>
     </StyledFooter>

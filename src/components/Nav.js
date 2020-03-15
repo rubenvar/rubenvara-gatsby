@@ -22,6 +22,9 @@ const StyledNav = styled.nav`
     li {
       margin: 0;
       padding: 0;
+      a {
+        font-size: ${props => (props.isIndex ? `3rem` : `2.6rem`)};
+      }
     }
   }
 `;
@@ -57,7 +60,6 @@ const StyledNavItem = styled.li`
     font-family: 'Alte Haas Grotesk';
     color: ${props => props.theme.red};
     text-decoration: none;
-    font-size: 2.6rem;
     transition: all 0.25s;
     &:hover {
       /* color: ${props => props.theme.greyDarkest}; */
@@ -102,9 +104,9 @@ const Nav = ({ isIndex }) => (
       {!isIndex && <Sep />}
       <LiLink
         to="/viajes"
-        top="He hecho varios"
+        top="Te cuento mis"
         text="viajes"
-        bottom="Poco a poco."
+        bottom="Pero poco a poco."
       />
     </ul>
   </StyledNav>

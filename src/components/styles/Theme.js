@@ -1,6 +1,7 @@
 const text = `hsl(0, 20%, 5%)`;
 const redLighter = `hsl(0, 64%, 70%)`;
-const red = `hsl(0, 64%, 45%)`;
+const red = `hsl(0, 84%, 50%)`;
+// const red = `hsl(0, 64%, 45%)`;
 const redDarker = `hsl(0, 64%, 25%)`;
 
 const theme = {

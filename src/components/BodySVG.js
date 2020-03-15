@@ -30,33 +30,60 @@ const BodySVGs = () => {
       .attr('height', height - 30);
     const g = svg.append('g');
 
-    // number of shapes
-    const randShapes = randomNumber(26, 41);
-    // create shapes!
+    // // number of shapes
+    // const randShapes = randomNumber(26, 32);
+    // number of shapes related to height of document
+    const randShapes = height / 80;
+    // create shapes! 🚀
     for (let i = 0; i < randShapes; i++) {
       const currentShape = [];
-      // random choice between 6, 8 or 10 for corners of shape
-      const randCorners = randomNumber(3, 6);
-      // // random choice between 3 and 5 for corners of shape
-      // const randCorners = randomNumber(3, 5);
-      // random numbers (below 120) to create points -> create a random polygon with 3 - 6 corners
+      // random choice between 3 and 4 for corners of shape
+      const randCorners = randomNumber(3, 4);
+      const maxSize = 220;
+      // try to avoid lines crossing in 4 corner polygons...
       for (let j = 0; j < randCorners * 2; j++) {
-        currentShape.push(randomNumber(0, 120));
+        if (j === 6) {
+          // limit x here
+          if (
+            randCorners[2] < randCorners[0] &&
+            randCorners[2] < randCorners[4]
+          ) {
+            currentShape.push(
+              randomNumber(Math.min(randCorners[0], randCorners[4]), maxSize)
+            );
+          } else if (
+            randCorners[2] > randCorners[0] &&
+            randCorners[2] > randCorners[4]
+          ) {
+            currentShape.push(
+              randomNumber(0, Math.min(randCorners[0], randCorners[4]))
+            );
+          } else {
+            currentShape.push(randomNumber(0, maxSize));
+          }
+        } else if (j === 7) {
+          // limit y here
+          if (
+            randCorners[3] < randCorners[1] &&
+            randCorners[3] < randCorners[5]
+          ) {
+            currentShape.push(
+              randomNumber(Math.min(randCorners[1], randCorners[5]), maxSize)
+            );
+          } else if (
+            randCorners[3] > randCorners[1] &&
+            randCorners[3] > randCorners[5]
+          ) {
+            currentShape.push(
+              randomNumber(0, Math.min(randCorners[1], randCorners[5]))
+            );
+          } else {
+            currentShape.push(randomNumber(0, maxSize));
+          }
+        } else {
+          currentShape.push(randomNumber(0, maxSize));
+        }
       }
-      // // for test, try to create more 'regular' polygons...
-      // for (let j = 0; j < randCorners * 2; j++) {
-      //   if (j === 2) {
-      //     currentShape.push(randomNumber(currentShape[0], 120));
-      //   } else if (j === 5) {
-      //     currentShape.push(randomNumber(0, currentShape[3]));
-      //   } else if (j === 6) {
-      //     currentShape.push(randomNumber(0, currentShape[4]));
-      //   } else if (j === 7) {
-      //     currentShape.push(randomNumber(0, currentShape[1]));
-      //   } else {
-      //     currentShape.push(randomNumber(0, 120));
-      //   }
-      // }
 
       // place them randomly in the whole available space:
       // adding random numbers (relative to page size) to the coordinates
@@ -69,7 +96,7 @@ const BodySVGs = () => {
 
       // fill with random color
       // rotate random number of degs, use first point as center for rotating
-      const randHue = randomNumber(-60, 60);
+      const randHue = randomNumber(-30, 30);
       const alpha = 0.55;
 
       g.append('polygon')

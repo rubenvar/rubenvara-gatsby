@@ -30,15 +30,15 @@ const StyledNav = styled.nav`
 `;
 
 const StyledSep = styled.li`
-  /* color: ${props => props.theme.greyDarkest}; */
-  color: ${props => props.theme.blueDarker};
+  /* color: ${props => props.theme.grey800}; */
+  color: ${props => props.theme.secondary700}};
 `;
 
 const StyledNavItem = styled.li`
   display: flex;
   flex-direction: column;
   span {
-    color: ${props => props.theme.greyDarkest};
+    color: ${props => props.theme.grey800};
     font-size: 0.55rem;
     &.top {
       transform: translateY(10px) translateX(-3px) rotate(-6deg);
@@ -58,12 +58,12 @@ const StyledNavItem = styled.li`
   a {
     font-weight: 700;
     font-family: 'Alte Haas Grotesk';
-    color: ${props => props.theme.red};
+    color: ${props => props.theme.primary500};
     text-decoration: none;
     transition: all 0.25s;
     &:hover {
-      /* color: ${props => props.theme.greyDarkest}; */
-      color: ${props => props.theme.blueDarker};
+      /* color: ${props => props.theme.grey800}; */
+      color: ${props => props.theme.secondary700}};
     }
   }
 `;

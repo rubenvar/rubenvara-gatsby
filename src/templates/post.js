@@ -46,7 +46,7 @@ const StyledContent = styled.div`
     margin: 0 0 20px 0;
     line-height: 1.8rem;
     a {
-      color: ${props => props.theme.red};
+      color: ${props => props.theme.primary500};
       position: relative;
       text-decoration: none;
       padding: 0 1px;
@@ -54,8 +54,8 @@ const StyledContent = styled.div`
         position: absolute;
         background: linear-gradient(
           to right,
-          ${props => props.theme.red},
-          ${props => props.theme.redDarker}
+          ${props => props.theme.primary500},
+          ${props => props.theme.primary700}
         );
         content: '';
         width: 100%;
@@ -66,7 +66,7 @@ const StyledContent = styled.div`
         transition: all 0.25s;
       }
       &:hover {
-        color: ${props => props.theme.bg};
+        color: ${props => props.theme.white};
         border-color: transparent;
 
         &::after {
@@ -75,7 +75,7 @@ const StyledContent = styled.div`
       }
       &:focus {
         outline: none;
-        border: 2px solid ${props => props.theme.text};
+        border: 2px solid ${props => props.theme.grey900};
         border-radius: 3px;
         transition: none;
       }
@@ -88,17 +88,17 @@ const StyledContent = styled.div`
     li {
       margin: 0 0 12px;
       &::marker {
-        color: ${props => props.theme.red};
+        color: ${props => props.theme.primary500};
       }
     }
   }
   blockquote {
     margin: 30px 0;
     padding: 20px 0 20px 30px;
-    border-left: 3px solid ${props => props.theme.greyDarker};
+    border-left: 3px solid ${props => props.theme.grey600};
     font-weight: 700;
-    background-color: ${props => props.theme.grey};
-    color: ${props => props.theme.greyDarker};
+    background-color: ${props => props.theme.grey200};
+    color: ${props => props.theme.grey600};
     p {
       font-size: 25px;
       margin: 0;

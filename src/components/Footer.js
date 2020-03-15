@@ -17,7 +17,7 @@ const StyledFooter = styled.footer`
   padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0 20px;
   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
 
-  background: ${props => props.theme.bgDarker};
+  background: ${props => props.theme.grey200};
   /* background-image: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.05) 50%,
@@ -26,8 +26,8 @@ const StyledFooter = styled.footer`
     ),
     linear-gradient(
       -135deg,
-      ${props => props.theme.redLighter},
-      ${props => props.theme.red}
+      ${props => props.theme.primary300},
+      ${props => props.theme.primary500}
     );
   background-size: 0.5em 0.5em, 100% 100%; */
   > div {
@@ -37,13 +37,13 @@ const StyledFooter = styled.footer`
     position: relative;
     p {
       font-size: 0.8rem;
-      color: ${props => props.theme.greyDarkest}
+      color: ${props => props.theme.grey800}
     }
   }
 `;
 
 const Footer = ({ isIndex }) => {
-  const angle = -5;
+  const angle = -3;
   const magicNumber = Math.abs(Math.tan((angle * Math.PI) / 180) / 2);
   const { width } = useWindowSize();
 

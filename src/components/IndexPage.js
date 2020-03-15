@@ -12,7 +12,7 @@ const StyledHero = styled.div`
     h1 {
       font-size: 5.5rem;
       font-family: 'Mansalva', cursive;
-      color: ${props => props.theme.red};
+      color: ${props => props.theme.primary500};
       .💩 {
         display: inline-block;
         transition: all 0.25s;
@@ -29,7 +29,7 @@ const StyledHero = styled.div`
     }
     h2 {
       font-weight: 400;
-      color: ${props => props.theme.greyDarker};
+      color: ${props => props.theme.grey600};
       margin-top: -10px;
       font-size: 1.6rem;
     }

@@ -17,15 +17,15 @@ const StyledListedPost = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     > span {
-      color: ${props => props.theme.greyDarker};
+      color: ${props => props.theme.grey600};
       &.meta__cats {
         span {
           margin-right: 4px;
           a {
             text-decoration: none;
-            color: ${props => props.theme.greyDarker};
+            color: ${props => props.theme.grey600};
             &:hover {
-              color: ${props => props.theme.black};
+              color: ${props => props.theme.grey900};
             }
             &::before {
               content: '#';
@@ -36,7 +36,7 @@ const StyledListedPost = styled.div`
     }
   }
   .description {
-    color: ${props => props.theme.greyDarker};
+    color: ${props => props.theme.grey600};
     font-size: 0.85rem;
   }
   > a {

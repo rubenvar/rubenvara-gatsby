@@ -84,12 +84,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   ::selection {
-    background: ${theme.red};
-    color: ${theme.bg};
+    background: ${theme.primary500};
+    color: ${theme.white};
   }
   ::-moz-selection {
-    background: ${theme.red};
-    color: ${theme.bg};
+    background: ${theme.primary500};
+    color: ${theme.white};
   }
   a {
     transition: all 0.25s;
@@ -106,9 +106,9 @@ const GlobalStyle = createGlobalStyle`
   h2 {
     a {
       text-decoration: none;
-      color: ${theme.red};
+      color: ${theme.primary500};
       &:hover {
-        color: ${theme.black};
+        color: ${theme.primary900};
       }
     }
   }

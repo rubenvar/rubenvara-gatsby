@@ -20,7 +20,7 @@ const StyledHeader = styled.header`
       line-height: 1;
       font-family: 'Mansalva', cursive;
       a {
-        color: ${props => props.theme.red};
+        color: ${props => props.theme.primary500};
         text-decoration: none;
       }
     }

@@ -23,9 +23,13 @@ const Layout = ({ isIndex, isPost, isBlog, children }) => (
           <BodySVGs />
           <TopBar />
           {!isPost && <Header isBlog={isBlog} />}
-          <Inner>
-            <main>{children}</main>
-          </Inner>
+          {isPost ? (
+            <Fragment>{children}</Fragment>
+          ) : (
+            <Inner>
+              <main>{children}</main>
+            </Inner>
+          )}
           <Footer />
         </Fragment>
       )}

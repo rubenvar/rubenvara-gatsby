@@ -1,9 +1,10 @@
 ---
 slug: un-post-fantastico
-title: Un post fantastico
+title: ¿Todavía usas hex# para tus colores? Estás haciéndolo MAL
 seoTitle: El mejor post que vas a poder leer hoy!
 date: 2020-03-04
-description: Eearum in ratione quis dicta Lorem ipsum dolor sit
+updated: 2020-03-14
+description: Eearum in ratione quis dicta Lorem ipsum dolor sit deleniti, earum in ratione quis dicta accusamus, eius enim consequatur accusamus, eius enim consequatur.
 image: cover.jpg
 draft: false
 categories:

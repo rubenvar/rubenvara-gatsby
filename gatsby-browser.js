@@ -5,4 +5,9 @@
  */
 
 // You can delete this file if you're not using it
-require('./src/assets/css/dracula-prism.css');
+import 'typeface-aleo';
+import 'typeface-mansalva';
+import 'typeface-martel';
+import 'typeface-rubik';
+import 'victormono';
+import './src/assets/css/dracula-prism.css';

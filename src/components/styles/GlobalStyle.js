@@ -1,55 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
-import 'victormono';
+// import 'victormono';
 
 import theme from './Theme';
-import fontAlte from '../../assets/fonts/AlteHaasGroteskRegular.ttf';
-import fontAlteBold from '../../assets/fonts/AlteHaasGroteskBold.ttf';
-import fontMansalva from '../../assets/fonts/Mansalva-Regular.ttf';
-import fontRubik from '../../assets/fonts/Rubik-Regular.ttf';
-import fontRubikBold from '../../assets/fonts/Rubik-Bold.ttf';
-import fontMartel from '../../assets/fonts/Martel-Regular.ttf';
-import fontMartelBold from '../../assets/fonts/Martel-Bold.ttf';
+// import fontAlte from '../../assets/fonts/AlteHaasGroteskRegular.ttf';
+// import fontAlteBold from '../../assets/fonts/AlteHaasGroteskBold.ttf';
+// import fontMansalva from '../../assets/fonts/Mansalva-Regular.ttf';
+// import fontRubik from '../../assets/fonts/Rubik-Regular.ttf';
+// import fontRubikBold from '../../assets/fonts/Rubik-Bold.ttf';
+// import fontMartel from '../../assets/fonts/Martel-Regular.ttf';
+// import fontMartelBold from '../../assets/fonts/Martel-Bold.ttf';
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: "Alte Haas Grotesk";
-    src: url(${fontAlte});
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Alte Haas Grotesk";
-    src: url(${fontAlteBold});
-    font-weight: bold;
-  }
-  @font-face {
-    font-family: "Mansalva";
-    src: url(${fontMansalva});
-    font-weight: normal;
-    font-size: normal;
-  }
-  @font-face {
-    font-family: "Rubik";
-    src: url(${fontRubik});
-    font-weight: normal;
-    font-size: normal;
-  }
-  @font-face {
-    font-family: "Rubik";
-    src: url(${fontRubikBold});
-    font-weight: bold;
-  }
-  @font-face {
-    font-family: "Martel";
-    src: url(${fontMartel});
-    font-weight: normal;
-    font-size: normal;
-  }
-  @font-face {
-    font-family: "Martel";
-    src: url(${fontMartelBold});
-    font-weight: bold;
-  }
   html {
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -101,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4 {
     margin: 0;
     text-rendering: optimizeLegibility;
-    font-family: 'Alte Haas Grotesk', cursive;
+    font-family: 'Martel', cursive;
   }
   h2 {
     a {

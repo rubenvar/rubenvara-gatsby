@@ -57,7 +57,6 @@ const StyledNavItem = styled.li`
   }
   a {
     font-weight: 700;
-    font-family: 'Alte Haas Grotesk';
     color: ${props => props.theme.primary500};
     text-decoration: none;
     transition: all 0.25s;

@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import CategoryLink from '../components/CategoryLink';
 import PostNav from '../components/PostNav';
+import PostLiker from '../components/PostLiker';
 import {
   StyledPost,
   StyledContent,
@@ -14,7 +15,7 @@ import {
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
-    childMarkdownRemark: { frontmatter, html },
+    childMarkdownRemark: { frontmatter, html, id },
   } = data.file; // this prop will be injected by the GraphQL query below. data.markdownRemark holds your post data
   const { prev, next } = pageContext;
 
@@ -37,6 +38,7 @@ const PostTemplate = ({ data, pageContext }) => {
           <span className="breadcrumb__link__active">{frontmatter.title}</span>
         </div>
         <h1>{frontmatter.title}</h1>
+        <PostLiker id={id} />
 
         <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
 
@@ -84,6 +86,7 @@ export const pageQuery = graphql`
       childMarkdownRemark: { frontmatter: { slug: { eq: $slug } } }
     ) {
       childMarkdownRemark {
+        id
         html
         frontmatter {
           date(formatString: "D [de] MMMM, YYYY", locale: "es-ES")

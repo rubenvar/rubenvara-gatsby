@@ -14,8 +14,8 @@ import {
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
-    markdownRemark: { frontmatter, html },
-  } = data; // this prop will be injected by the GraphQL query below. data.markdownRemark holds your post data
+    childMarkdownRemark: { frontmatter, html },
+  } = data.file; // this prop will be injected by the GraphQL query below. data.markdownRemark holds your post data
   const { prev, next } = pageContext;
 
   return (
@@ -79,16 +79,21 @@ PostTemplate.propTypes = {
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        date(formatString: "D [de] MMMM, YYYY", locale: "es-ES")
-        updated(formatString: "D [de] MMMM, YYYY", locale: "es-ES")
-        slug
-        title
-        seoTitle
-        description
-        categories
+    file(
+      sourceInstanceName: { eq: "post" }
+      childMarkdownRemark: { frontmatter: { slug: { eq: $slug } } }
+    ) {
+      childMarkdownRemark {
+        html
+        frontmatter {
+          date(formatString: "D [de] MMMM, YYYY", locale: "es-ES")
+          updated(formatString: "D [de] MMMM, YYYY", locale: "es-ES")
+          slug
+          title
+          seoTitle
+          description
+          categories
+        }
       }
     }
   }

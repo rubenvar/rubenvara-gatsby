@@ -7,24 +7,29 @@ import ListedPost from '../components/ListedPost';
 
 const BlogPage = ({
   data: {
-    allMarkdownRemark: { edges },
+    allPosts: { edges, totalCount },
   },
 }) => {
   const Posts = edges
     // filter out draft posts
-    .filter(edge => !edge.node.frontmatter.draft)
+    .filter(edge => !edge.node.childMarkdownRemark.frontmatter.draft)
     // add categoria 'Otros' if no categories
     .map(edge => {
-      if (!edge.node.frontmatter.categories) {
-        edge.node.frontmatter.categories = [];
+      if (!edge.node.childMarkdownRemark.frontmatter.categories) {
+        edge.node.childMarkdownRemark.frontmatter.categories = [];
       }
       return edge;
     })
-    .map(edge => <ListedPost key={edge.node.id} post={edge.node} />);
+    .map(edge => (
+      <ListedPost
+        key={edge.node.childMarkdownRemark.id}
+        post={edge.node.childMarkdownRemark}
+      />
+    ));
 
   return (
     <Layout isBlog>
-      <h1>El Blog</h1>
+      <h1>El Blog ({totalCount})</h1>
       <p>
         Dicen que no sabes lo que sabes hasta que intentas enseñarlo. Pues en
         eso estamos:
@@ -36,25 +41,29 @@ const BlogPage = ({
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    allPosts: allFile(
       limit: 2000
-      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { sourceInstanceName: { eq: "post" } }
+      sort: { order: DESC, fields: [childMarkdownRemark___frontmatter___date] }
     ) {
+      totalCount
       edges {
         node {
-          id
-          excerpt(pruneLength: 100)
-          frontmatter {
-            date(formatString: "DD-MMM-YYYY", locale: "es-ES")
-            slug
-            title
-            description
-            categories
-            draft
-          }
-          fields {
-            readingTime {
-              minutes
+          childMarkdownRemark {
+            id
+            excerpt(pruneLength: 100)
+            frontmatter {
+              date(formatString: "DD-MMM-YYYY", locale: "es-ES")
+              slug
+              title
+              description
+              categories
+              draft
+            }
+            fields {
+              readingTime {
+                minutes
+              }
             }
           }
         }

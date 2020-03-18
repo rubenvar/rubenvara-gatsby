@@ -13,28 +13,50 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const pageTemplate = path.resolve(`src/templates/page.js`);
   const categoryTemplate = path.resolve(`src/templates/category.js`);
 
+  // use allFile on the queries instead of the default gatsby docs query to separate between pages and posts
   const { errors, data } = await graphql(`
     {
-      postsRemark: allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
+      allPostsRemark: allFile(
         limit: 1000
+        filter: { sourceInstanceName: { eq: "post" } }
+        sort: {
+          order: DESC
+          fields: [childMarkdownRemark___frontmatter___date]
+        }
       ) {
         edges {
           previous {
-            frontmatter {
-              slug
-              title
+            childMarkdownRemark {
+              frontmatter {
+                slug
+                title
+              }
             }
           }
           node {
-            frontmatter {
-              slug
+            childMarkdownRemark {
+              frontmatter {
+                slug
+              }
             }
           }
           next {
-            frontmatter {
-              slug
-              title
+            childMarkdownRemark {
+              frontmatter {
+                slug
+                title
+              }
+            }
+          }
+        }
+      }
+      allPagesRemark: allFile(filter: { sourceInstanceName: { eq: "page" } }) {
+        edges {
+          node {
+            childMarkdownRemark {
+              frontmatter {
+                slug
+              }
             }
           }
         }
@@ -53,19 +75,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const posts = data.postsRemark.edges;
-  posts.forEach(({ previous, node, next }) => {
+  const posts = data.allPostsRemark.edges;
+  posts.forEach(post => {
+    // next and prev inverted to keep more logical order
+    const next = post.previous ? post.previous.childMarkdownRemark : null;
+    const prev = post.next ? post.next.childMarkdownRemark : null;
+
     createPage({
-      path: node.frontmatter.slug,
+      path: post.node.childMarkdownRemark.frontmatter.slug,
       component: blogPostTemplate,
       context: {
-        slug: node.frontmatter.slug,
-        next: previous,
-        prev: next,
-        // next and prev inverted to keep more logical order
+        slug: post.node.childMarkdownRemark.frontmatter.slug,
+        next,
+        prev,
       },
     });
   });
+
+  const pages = data.allPagesRemark.edges;
+  pages.forEach(({ node }) =>
+    createPage({
+      path: node.childMarkdownRemark.frontmatter.slug,
+      component: pageTemplate,
+      context: {
+        slug: node.childMarkdownRemark.frontmatter.slug,
+      },
+    })
+  );
 
   const categories = data.categoriesGroup.group;
   categories.forEach(category => {

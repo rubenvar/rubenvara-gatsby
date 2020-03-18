@@ -32,17 +32,17 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-reading-time`,
-          `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
-              exclude: 'Table of Contents',
+              exclude: 'Índice del artículo',
               tight: false,
               fromHeading: 1,
               toHeading: 6,
             },
           },
+          `gatsby-remark-reading-time`,
+          `gatsby-remark-prismjs`,
         ],
       },
     },
@@ -57,7 +57,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-styled-components`,

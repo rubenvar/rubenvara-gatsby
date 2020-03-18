@@ -46,7 +46,6 @@ const StyledHero = styled.div`
       display: table;
       &::before {
         pointer-events: none;
-        /* transition: all 1s; */
         content: '';
         width: 70px;
         position: absolute;
@@ -62,7 +61,7 @@ const StyledHero = styled.div`
       }
       &.enter-active {
         &::before {
-          animation: ${shineAnim} 0.55s linear;
+          animation: ${shineAnim} 0.51s linear;
         }
       }
     }

@@ -10,13 +10,25 @@ categories:
   - Gulp
 ---
 
-Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+Lorem ipsum dolor Lorem ipsum dolor sit am
 
-## Eos tempora expedita voluptatibus
+et consectetur, adipisicing elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
 
-Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
+## Índice del artículo
+
+```toc
+# this code block replaced
+```
+
+Eos tempora expedita Eos tempora expedita.sit amet consectetur, adipisicing elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
+
+Eos tempora expedita Eos tempora expedita.Lorem ipsum dolor sit amet consectetur, adipisicing elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
+
+Eos tempora expedita Eos tempora expedita.Lorem ipsum dolor sit amet consectetur, adipisicing elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
 
 Eos tempora expedita Eos tempora expedita.
+
+## Eos tempora expedita voluptatibus
 
 Voluptatibus, optio iusto [nesciunt ratione ullam commodi](https://rubenvara.io) placeat ipsum et saepe repudiandae veniam, dolor, quibusdam error assumenda repellendus corrupti! voluptatibus, optio iusto nesciunt ratione Eos tempora expedita **voluptatibus**, optio iusto nesciunt ratione ullam
 

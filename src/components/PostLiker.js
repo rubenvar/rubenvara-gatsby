@@ -7,6 +7,7 @@ import 'firebase/database';
 import '../utils/firebase';
 
 const PostLiker = ({ id }) => {
+  const [loading, setLoading] = useState(true);
   const [likes, setLikes] = useState(null);
   const [thanks, setThanks] = useState(false);
   // get localStorage to set thanks if already liked
@@ -16,7 +17,10 @@ const PostLiker = ({ id }) => {
 
   // on load and on data change, get likes
   useEffect(() => {
-    likesRef.on('value', snapshot => setLikes(snapshot.val()));
+    likesRef.on('value', snapshot => {
+      setLikes(snapshot.val());
+    });
+    setLoading(false);
     // check if already liked
     if (liked?.split(',').includes(id)) setThanks(true);
   }, [likesRef, liked, id]);
@@ -35,13 +39,16 @@ const PostLiker = ({ id }) => {
         likedArr.push(id);
         window.localStorage.setItem('liked', likedArr);
       })
-      .then(() => setThanks(true));
+      .then(() => {
+        setThanks(true);
+        setLoading(false);
+      });
   };
 
   const handleClick = async () => {
     // return if liked before
     if (thanks) return console.log('already liked!');
-    // if like is valid, try to authenticate user
+    // if like is valid, then try to authenticate user
     // first authenticate user
     await firebase
       .auth()
@@ -60,8 +67,7 @@ const PostLiker = ({ id }) => {
     });
   };
 
-  // TODO fix this, components doesn't render if ID not on firebase!! :(
-  if (likes === null) return null;
+  if (loading) return 'loading.....';
   // TODO before data arrives, show empty space to avoid jump on button render
 
   return (
@@ -70,13 +76,15 @@ const PostLiker = ({ id }) => {
         <p>💛 {likes} likes, mil gracias por el tuyo!</p>
       ) : (
         <button
+          disabled={loading}
           type="button"
           onClick={e => {
+            setLoading(true);
             e.preventDefault();
             handleClick();
           }}
         >
-          💛 Like this post! Tiene {likes} likes!
+          💛 Like this post! Tiene {likes || 0} likes!
         </button>
       )}
     </div>

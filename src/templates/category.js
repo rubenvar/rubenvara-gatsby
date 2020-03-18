@@ -9,14 +9,15 @@ import ListedPost from '../components/ListedPost';
 const Category = ({ pageContext, data }) => {
   const { category } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
-  const tagHeader = `${totalCount} post${
+
+  const title = `${totalCount} artículo${
     totalCount === 1 ? '' : 's'
-  } tagged with "${category}"`;
+  } en "${category}"`;
 
   return (
     <Layout>
       <SEO title={`Todos los posts en la categoría ${category}`} />
-      <h1>{tagHeader}</h1>
+      <h1>{title}</h1>
       {edges.map(({ node }) => (
         <ListedPost key={node.id} post={node} />
       ))}

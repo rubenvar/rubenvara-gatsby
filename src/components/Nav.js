@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
 const StyledNav = styled.nav`
   padding: 0;
   margin: ${props => (props.isIndex ? `0 0` : '30px auto ')} 60px;
-  /* width: 940px; */
-  max-width: 85%;
+  ${props =>
+    !props.isIndex &&
+    css`
+      max-width: 70%;
+    `}
   justify-self: end;
   align-self: end;
   ul {
@@ -19,99 +22,75 @@ const StyledNav = styled.nav`
     align-items: ${props => (props.isIndex ? `end` : `center`)};
     margin: 0;
     padding: 0;
-    li {
+    .nav__item {
+      display: flex;
+      flex-direction: column;
       margin: 0;
       padding: 0;
+      margin-bottom: ${props => (props.isIndex ? '20px' : 0)};
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &--now {
+        .top {
+          transform: translateY(20px) translateX(60px);
+        }
+      }
+      &--blog {
+        .bottom {
+          transform: translateY(-10px) translateX(15px);
+        }
+      }
+      &--proyectos {
+        .top {
+          transform: translateY(20px) translateX(115px);
+        }
+      }
+      span {
+        color: ${props => props.theme.grey800};
+        font-size: 0.6rem;
+        line-height: 1;
+      }
       a {
         font-size: ${props => (props.isIndex ? `3rem` : `2.6rem`)};
+        font-weight: 700;
+        color: ${props => props.theme.primary500};
+        text-decoration: none;
+        transition: all 0.25s;
+        &:hover {
+          color: ${props => props.theme.secondary700};
+        }
       }
     }
-  }
-`;
-
-const StyledSep = styled.li`
-  /* color: ${props => props.theme.grey800}; */
-  color: ${props => props.theme.secondary700}};
-`;
-
-const StyledNavItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  span {
-    color: ${props => props.theme.grey800};
-    font-size: 0.55rem;
-    &.top {
-      transform: translateY(10px) translateX(-3px) rotate(-6deg);
-    }
-    &.bottom {
-      transition: all 0.25s;
-      opacity: 0;
-      align-self: end;
-      transform: translateY(-6px) translateX(3px) rotate(-6deg);
-    }
-  }
-  &:hover {
-    span.bottom {
-      opacity: 1;
-    }
-  }
-  a {
-    font-weight: 700;
-    color: ${props => props.theme.primary500};
-    text-decoration: none;
-    transition: all 0.25s;
-    &:hover {
-      /* color: ${props => props.theme.grey800}; */
-      color: ${props => props.theme.secondary700}};
+    .nav__sep {
+      color: ${props => props.theme.secondary700};
     }
   }
 `;
 
-const Sep = () => <StyledSep>◇</StyledSep>;
+const NavSep = () => <div className="nav__sep">◇</div>;
 
-const LiLink = ({ to, text, top, bottom }) => (
-  <StyledNavItem>
+const NavItem = ({ to, text, top, bottom }) => (
+  <div className={`nav__item nav__item--${to.replace('/', '')}`}>
     <span className="top">{top}</span>
     <Link to={to}>{text}</Link>
     <span className="bottom">{bottom}</span>
-  </StyledNavItem>
+  </div>
 );
 
 const Nav = ({ isIndex }) => (
   <StyledNav isIndex={isIndex}>
     <ul>
-      <LiLink
-        to="/now"
-        top="Mira qué hago"
-        text="ahora"
-        bottom="Siempre algo nuevo."
-      />
-      {!isIndex && <Sep />}
-      <LiLink
-        to="/blog"
-        top="Pásate por mi"
-        text="blog"
-        bottom="Aprenderás algo."
-      />
-      {!isIndex && <Sep />}
-      <LiLink
-        to="/proyectos"
-        top="Trabajo en estos"
-        text="proyectos"
-        bottom="Y alguno más."
-      />
-      {!isIndex && <Sep />}
-      <LiLink
-        to="/viajes"
-        top="Te cuento mis"
-        text="viajes"
-        bottom="Pero poco a poco."
-      />
+      <NavItem to="/now" top="Mira qué hago" text="ahora" />
+      {!isIndex && <NavSep />}
+      <NavItem to="/blog" bottom="sobre webdev." text="blog" />
+      {!isIndex && <NavSep />}
+      <NavItem to="/proyectos" top="Trabajo en estos" text="proyectos" />
     </ul>
   </StyledNav>
 );
 
-LiLink.propTypes = {
+NavItem.propTypes = {
   text: PropTypes.string,
   to: PropTypes.string,
   top: PropTypes.string,

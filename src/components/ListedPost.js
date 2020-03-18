@@ -4,13 +4,26 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import CategoryLink from './CategoryLink';
-import ButtonLink from './ButtonLink';
 
 const StyledListedPost = styled.div`
-  border-left: 1px solid ${props => props.theme.listedPostBorder};
   background: ${props => props.theme.listedPostBg};
+  box-shadow: ${props => props.theme.shadow100};
   padding: 12px;
-  margin: 46px auto;
+  margin: 68px auto;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: ${props => props.theme.shadow200};
+  }
+  h2 {
+    a {
+      text-decoration: none;
+      color: ${props => props.theme.primary600};
+      &:hover {
+        color: ${props => props.theme.primary900};
+      }
+    }
+  }
   .meta {
     font-size: 0.75rem;
     margin: 14px 0 20px;
@@ -65,7 +78,6 @@ const ListedPost = ({ post }) => {
         </span>
       </div>
       <p className="description">{post.frontmatter.description}</p>
-      <ButtonLink to={`/${post.frontmatter.slug}`}>Sigue leyendo</ButtonLink>
     </StyledListedPost>
   );
 };

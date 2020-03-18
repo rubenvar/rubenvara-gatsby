@@ -24,7 +24,7 @@ const BlogPage = ({
 
   return (
     <Layout isBlog>
-      <h2>El Blog</h2>
+      <h1>El Blog</h1>
       <p>
         Dicen que no sabes lo que sabes hasta que intentas enseñarlo. Pues en
         eso estamos:
@@ -43,6 +43,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          excerpt(pruneLength: 100)
           frontmatter {
             date(formatString: "DD-MMM-YYYY", locale: "es-ES")
             slug

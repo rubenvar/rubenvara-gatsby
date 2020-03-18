@@ -10,6 +10,7 @@ const kebabCase = require('lodash.kebabcase');
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(`src/templates/post.js`);
+  const pageTemplate = path.resolve(`src/templates/page.js`);
   const categoryTemplate = path.resolve(`src/templates/category.js`);
 
   const { errors, data } = await graphql(`
@@ -19,9 +20,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         limit: 1000
       ) {
         edges {
+          previous {
+            frontmatter {
+              slug
+              title
+            }
+          }
           node {
             frontmatter {
               slug
+            }
+          }
+          next {
+            frontmatter {
+              slug
+              title
             }
           }
         }
@@ -41,12 +54,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const posts = data.postsRemark.edges;
-  posts.forEach(({ node }) => {
+  posts.forEach(({ previous, node, next }) => {
     createPage({
       path: node.frontmatter.slug,
       component: blogPostTemplate,
       context: {
         slug: node.frontmatter.slug,
+        next: previous,
+        prev: next,
+        // next and prev inverted to keep more logical order
       },
     });
   });

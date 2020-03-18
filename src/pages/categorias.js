@@ -18,7 +18,7 @@ const CategoriesPage = ({
   <Layout>
     <SEO title={title} />
     <div>
-      <h1>Categorías</h1>
+      <h1>Todas las Categorías</h1>
       <ul>
         {group.map(category => (
           <li key={category.fieldValue}>

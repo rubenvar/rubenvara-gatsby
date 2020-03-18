@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   background: ${props => props.theme.white};
   margin-bottom: 1.45rem;
   padding: 12px 0;
-  border-bottom: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
   > div {
     display: flex;
     justify-content: space-between;

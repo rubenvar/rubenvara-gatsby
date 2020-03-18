@@ -1,14 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-// import 'victormono';
 
 import theme from './Theme';
-// import fontAlte from '../../assets/fonts/AlteHaasGroteskRegular.ttf';
-// import fontAlteBold from '../../assets/fonts/AlteHaasGroteskBold.ttf';
-// import fontMansalva from '../../assets/fonts/Mansalva-Regular.ttf';
-// import fontRubik from '../../assets/fonts/Rubik-Regular.ttf';
-// import fontRubikBold from '../../assets/fonts/Rubik-Bold.ttf';
-// import fontMartel from '../../assets/fonts/Martel-Regular.ttf';
-// import fontMartelBold from '../../assets/fonts/Martel-Bold.ttf';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -25,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${theme.white};
+    color: ${theme.grey900};
     word-wrap: break-word;
     font-size: 1rem;
     font-kerning: normal;
@@ -45,12 +38,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   ::selection {
-    background: ${theme.primary500};
-    color: ${theme.white};
+    background: ${theme.primary300};
+    color: ${theme.primary100};
   }
   ::-moz-selection {
-    background: ${theme.primary500};
-    color: ${theme.white};
+    background: ${theme.primary300};
+    color: ${theme.primary100};
   }
   a {
     transition: all 0.25s;
@@ -62,16 +55,10 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4 {
     margin: 0;
     text-rendering: optimizeLegibility;
-    font-family: 'Martel', cursive;
+    font-family: 'Rubik', cursive;
   }
-  h2 {
-    a {
-      text-decoration: none;
-      color: ${theme.primary500};
-      &:hover {
-        color: ${theme.primary900};
-      }
-    }
+  h1 {
+    font-family: 'Victor Mono', monospace;
   }
   button {
     cursor: pointer;

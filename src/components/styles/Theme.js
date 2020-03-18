@@ -1,22 +1,22 @@
 const theme = {
-  maxWidth: `770px`,
+  maxWidth: `720px`,
 
   black: `hsl(0, 20%, 5%)`,
   white: `hsl(0, 20%, 97%)`,
 
   primary100: `hsl(25, 100%, 96%)`,
-  primary200: `hsl(20, 95%, 88%)`,
-  primary300: `hsl(15, 90%, 78%)`,
-  primary400: `hsl(7, 90%, 63%)`,
-  primary500: `hsl(0, 80%, 50%)`,
-  primary600: `hsl(0, 70%, 40%)`,
-  primary700: `hsl(0, 80%, 30%)`,
+  primary200: `hsl(20, 100%, 88%)`,
+  primary300: `hsl(5, 100%, 80%)`,
+  primary400: `hsl(0, 87%, 65%)`,
+  primary500: `hsl(0, 72%, 50%)`,
+  primary600: `hsl(0, 73%, 40%)`,
+  primary700: `hsl(0, 85%, 28%)`,
   primary850: `hsl(350, 90%, 18%)`,
   primary900: `hsl(340, 100%, 8%)`,
 
-  grey100: `hsl(200, 20%, 95%)`,
-  grey200: `hsl(205, 12%, 84%)`,
-  grey300: `hsl(210, 10%, 74%)`,
+  grey100: `hsl(200, 30%, 94%)`,
+  grey200: `hsl(205, 20%, 88%)`,
+  grey300: `hsl(210, 12%, 74%)`,
   grey400: `hsl(210, 8%, 62%)`,
   grey500: `hsl(210, 6%, 50%)`,
   grey600: `hsl(210, 8%, 38%)`,
@@ -39,7 +39,8 @@ const theme = {
   // twitterLink: `hsl(203, 99%, 23%)`,
   // twitterTitle: `hsl(203, 69%, 33%)`,
 
-  listedPostBg: `linear-gradient(to right, hsla(0, 20%, 92%, 0.55), hsla(0, 20%, 94%, 0.35))`,
+  // listedPostBg: `linear-gradient(to right, hsla(0, 20%, 92%, 0.55), hsla(0, 20%, 94%, 0.35))`,
+  listedPostBg: `hsla(0, 20%, 97%, 0.85)`,
   listedPostBorder: `#ccc`,
 
   buttonRadius: `3px`,

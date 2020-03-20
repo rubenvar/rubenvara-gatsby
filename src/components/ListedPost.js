@@ -9,13 +9,14 @@ const StyledListedPost = styled.div`
   background: ${props => props.theme.listedPostBg};
   box-shadow: ${props => props.theme.shadow100};
   padding: 12px;
-  margin: 68px auto;
+  margin: 0 0 68px;
   transition: all 0.3s;
   &:hover {
     transform: scale(1.01);
     box-shadow: ${props => props.theme.shadow200};
   }
   h2 {
+    font-family: 'Victor Mono', monospace;
     a {
       text-decoration: none;
       color: ${props => props.theme.primary600};
@@ -65,7 +66,9 @@ const ListedPost = ({ post }) => {
         <Link to={`/${post.frontmatter.slug}`}>{post.frontmatter.title}</Link>
       </h2>
       <div className="meta">
-        <span>{post.frontmatter.date}</span>
+        <p>
+          <time dateTime={post.frontmatter.date}>{post.frontmatter.date}</time>
+        </p>
         <span>
           {minutes} minuto{minutes > 1 && 's'}
         </span>

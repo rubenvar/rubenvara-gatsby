@@ -57,6 +57,33 @@ const StyledPost = styled.div`
       }
     }
   }
+  .twitter {
+    background: ${props => props.theme.twitterGradient};
+    padding: 0 5px;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    svg {
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      top: 0;
+      right: 0;
+    }
+    p {
+      position: relative;
+      font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman',
+        serif;
+      line-height: 1.8rem;
+      a {
+        color: ${props => props.theme.twitter900};
+        text-decoration: none;
+        &:hover {
+          color: ${props => props.theme.twitter500};
+        }
+      }
+    }
+  }
 `;
 
 const StyledContent = styled.div`
@@ -115,15 +142,24 @@ const StyledContent = styled.div`
 `;
 
 const StyledPostMeta = styled.div`
+  border-bottom: 1px solid ${props => props.theme.grey300};
+  width: 75%;
   color: ${props => props.theme.grey500};
   font-size: 0.85rem;
-  &__read {
+  margin: 40px 0 40px;
+  .meta__date {
+    .updated {
+      font-size: 0.75rem;
+    }
   }
   .meta__cats {
     p {
-      margin: 0;
-      a {
-        color: ${props => props.theme.grey500};
+      margin: 10px 0 0;
+      span {
+        margin-left: 8px;
+        a {
+          color: ${props => props.theme.grey500};
+        }
       }
     }
   }

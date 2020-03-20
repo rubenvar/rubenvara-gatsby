@@ -3,7 +3,7 @@ title: Ahora
 slug: now
 seoTitle: Esto es lo que estoy haciendo ahora!
 description: maravillosooooo!
-updated: 2020-01-03
+date: 2020-01-03
 ---
 
 Esto es una página now ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:

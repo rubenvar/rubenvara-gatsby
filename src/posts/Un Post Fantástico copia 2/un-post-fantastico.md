@@ -2,8 +2,8 @@
 slug: un-popopopoppoopst-fantastico
 title: ¿Esto usas papapapapapara tus colores? Estás MAL
 seoTitle: El mejor post que vas a poder leer hoy!
-date: 2019-01-24
-updated: 2020-01-09
+previousDate: 2019-01-24
+date: 2020-01-09
 description: Eearum in ratione quis dicta Lorem mira este texto que es mejor que coger un cacho del body y ponerle
 draft: false
 categories:

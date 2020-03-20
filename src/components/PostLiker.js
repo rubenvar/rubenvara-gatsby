@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import { window } from 'browser-monads';
 
 import '../utils/firebase';
 

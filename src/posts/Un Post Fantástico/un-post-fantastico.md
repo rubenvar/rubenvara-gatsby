@@ -2,13 +2,14 @@
 slug: un-post-fantastico
 title: ¿Todavía usas hex# para tus colores? Estás haciéndolo MAL
 seoTitle: El mejor post que vas a poder leer hoy!
-date: 2020-03-04
-updated: 2020-03-14
+previousDate: 2020-03-04
+date: 2020-03-14
 description: Eearum in ratione quis dicta Lorem mira este texto que es mejor que coger un cacho del body y ponerle
 draft: false
 categories:
   - Diseño
   - Herramientas
+twitter: https://www.twitter.com/q45y6wu7ekuydtyjs
 ---
 
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quos aut soluta vero quas quo ex quae deleniti, earum in ratione quis dicta maiores eligendi suLorem ipsum dolor sit.

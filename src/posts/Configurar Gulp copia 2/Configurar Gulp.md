@@ -2,7 +2,7 @@
 slug: como-cococococonfigurar-gugugguulp
 title: Cómo Cococococococoonfigurar GUguguGulp
 seoTitle: Cómo Configurar Gulp como un PROP
-date: 2019-07-15
+date: 2019-12-02
 description: "Esta es la descripción del post pedita voluptatibus, optio iusto nesciunt ratione."
 draft: false
 categories:

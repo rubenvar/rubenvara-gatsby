@@ -38,9 +38,11 @@ const theme = {
 
   // redGradient: `linear-gradient(to right, ${redLighter}, ${red}, ${red}, ${redDarker})`,
 
-  // twitterGradient: `linear-gradient(to left, white, hsl(203, 89%, 83%))`,
-  // twitterLink: `hsl(203, 99%, 23%)`,
-  // twitterTitle: `hsl(203, 69%, 33%)`,
+  twitter100: `hsl(203, 89%, 91%)`,
+  twitter500: `hsl(203, 89%, 53%)`,
+  // twitter700: `hsl(203, 69%, 33%)`,
+  twitter900: `hsl(203, 99%, 23%)`,
+  twitterGradient: `linear-gradient(to right, transparent, hsl(203, 89%, 83%))`,
 
   buttonRadius: `3px`,
 

@@ -20,10 +20,8 @@ const PageTemplate = ({ data }) => {
       />
       <StyledArchiveHeader>
         <h1>{frontmatter.title}</h1>
-        {frontmatter.updated && (
-          <p className="updated">
-            Última actualización el {frontmatter.updated}
-          </p>
+        {frontmatter.date && (
+          <p className="updated">Última actualización el {frontmatter.date}</p>
         )}
       </StyledArchiveHeader>
       <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
@@ -36,7 +34,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        updated(formatString: "D [de] MMMM [de] YYYY", locale: "es-ES")
+        date(formatString: "D [de] MMMM [de] YYYY", locale: "es-ES")
         slug
         title
         seoTitle

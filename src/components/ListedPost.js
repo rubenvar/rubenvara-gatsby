@@ -6,10 +6,10 @@ import styled from 'styled-components';
 import CategoryLink from './CategoryLink';
 
 const StyledListedPost = styled.div`
-  background: ${props => props.theme.listedPostBg};
+  background: ${props => props.theme.whiteTr};
   box-shadow: ${props => props.theme.shadow100};
   padding: 12px;
-  margin: 0 0 68px;
+  margin: 0 0 46px;
   transition: all 0.3s;
   &:hover {
     transform: scale(1.01);
@@ -80,7 +80,11 @@ const ListedPost = ({ post }) => {
           ))}
         </span>
       </div>
-      <p className="description">{post.frontmatter.description}</p>
+      {post.frontmatter.description || post.excerpt ? (
+        <p className="description">
+          {post.frontmatter.description || post.excerpt}
+        </p>
+      ) : null}
     </StyledListedPost>
   );
 };

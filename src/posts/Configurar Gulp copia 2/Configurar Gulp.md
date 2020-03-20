@@ -1,38 +1,22 @@
 ---
-slug: como-configurar-gulp
-title: Cómo Configurar Gulp
+slug: como-cococococonfigurar-gugugguulp
+title: Cómo Cococococococoonfigurar GUguguGulp
 seoTitle: Cómo Configurar Gulp como un PROP
 date: 2019-07-15
 description: "Esta es la descripción del post pedita voluptatibus, optio iusto nesciunt ratione."
 draft: false
 categories:
-  - Herramientas
+  - Javascript
   - Gulp
 ---
 
-Lorem ipsum dolor Lorem ipsum dolor sit am
-
-et consectetur, adipisicing elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
-
-## Índice del artículo
-
-```toc
-# this code block replaced
-```
-
-Eos tempora expedita Eos tempora expedita.sit amet consectetur, adipisicing elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
-
-Eos tempora expedita Eos tempora expedita.Lorem ipsum dolor sit
-
-### amet consectetur, adipisicing
-
-elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
-
-Eos tempora expedita Eos tempora expedita.Lorem ipsum dolor sit amet consectetur, adipisicing elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
-
-Eos tempora expedita Eos tempora expedita.
+Lorem ipsum dolor sit amet consectetur, adipisicing elit.
 
 ## Eos tempora expedita voluptatibus
+
+Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
+
+Eos tempora expedita Eos tempora expedita.
 
 Voluptatibus, optio iusto [nesciunt ratione ullam commodi](https://rubenvara.io) placeat ipsum et saepe repudiandae veniam, dolor, quibusdam error assumenda repellendus corrupti! voluptatibus, optio iusto nesciunt ratione Eos tempora expedita **voluptatibus**, optio iusto nesciunt ratione ullam
 

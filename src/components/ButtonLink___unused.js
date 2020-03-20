@@ -10,7 +10,7 @@ const ButtonLink = styled(Link)`
   padding: 6px 16px;
   margin: 18px 0;
   box-shadow: ${props => props.theme.shadow200};
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   transition: all 0.25s;
   &:hover {
     background: ${props => props.theme.primary200};

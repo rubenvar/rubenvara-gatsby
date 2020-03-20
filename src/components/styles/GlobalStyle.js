@@ -67,13 +67,13 @@ const GlobalStyle = createGlobalStyle`
   a {
     &:focus {
       outline: none;
-      border: 2px solid orange;
+      border: 2px solid ${theme.focus};
       transition: none;
     }
   }
   code[class*="language-"], pre[class*="language-"] {
     font-family: 'Victor Mono', monospace;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
   @media only screen and (max-width: 480px) {
     html {

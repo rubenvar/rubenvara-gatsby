@@ -3,6 +3,7 @@ const theme = {
 
   black: `hsl(0, 20%, 5%)`,
   white: `hsl(0, 20%, 97%)`,
+  whiteTr: `hsla(0, 20%, 97%, 0.85)`,
 
   primary100: `hsl(25, 100%, 96%)`,
   primary200: `hsl(20, 100%, 88%)`,
@@ -11,8 +12,10 @@ const theme = {
   primary500: `hsl(0, 72%, 50%)`,
   primary600: `hsl(0, 73%, 40%)`,
   primary700: `hsl(0, 85%, 28%)`,
-  primary850: `hsl(350, 90%, 18%)`,
+  primary800: `hsl(350, 90%, 18%)`,
   primary900: `hsl(340, 100%, 8%)`,
+
+  primary500tr: `hsla(0, 72%, 50%, 0.5)`,
 
   grey100: `hsl(200, 30%, 94%)`,
   grey200: `hsl(205, 20%, 88%)`,
@@ -39,11 +42,9 @@ const theme = {
   // twitterLink: `hsl(203, 99%, 23%)`,
   // twitterTitle: `hsl(203, 69%, 33%)`,
 
-  // listedPostBg: `linear-gradient(to right, hsla(0, 20%, 92%, 0.55), hsla(0, 20%, 94%, 0.35))`,
-  listedPostBg: `hsla(0, 20%, 97%, 0.85)`,
-  listedPostBorder: `#ccc`,
-
   buttonRadius: `3px`,
+
+  focus: `orange`,
 
   jsColor: `#f7df1e`,
   htmlColor: `#f16529`,

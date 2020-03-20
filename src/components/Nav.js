@@ -9,7 +9,7 @@ const StyledNav = styled.nav`
   ${props =>
     !props.isIndex &&
     css`
-      max-width: 70%;
+      max-width: ${props.theme.maxWidth};
     `}
   justify-self: end;
   align-self: end;
@@ -33,17 +33,26 @@ const StyledNav = styled.nav`
       }
       &--now {
         .top {
-          transform: translateY(20px) translateX(60px);
+          transform: ${props =>
+            !props.isIndex
+              ? 'translateY(15px) translateX(47px)'
+              : 'translateY(20px) translateX(55px)'};
         }
       }
       &--blog {
         .bottom {
-          transform: translateY(-10px) translateX(15px);
+          transform: ${props =>
+            !props.isIndex
+              ? 'translateY(-10px) translateX(0px)'
+              : 'translateY(-10px) translateX(0px)'};
         }
       }
       &--proyectos {
         .top {
-          transform: translateY(20px) translateX(115px);
+          transform: ${props =>
+            !props.isIndex
+              ? 'translateY(15px) translateX(0px)'
+              : 'translateY(20px) translateX(0px)'};
         }
       }
       span {
@@ -52,7 +61,7 @@ const StyledNav = styled.nav`
         line-height: 1;
       }
       a {
-        font-size: ${props => (props.isIndex ? `3rem` : `2.6rem`)};
+        font-size: ${props => (props.isIndex ? `3rem` : `2.55rem`)};
         font-weight: 700;
         color: ${props => props.theme.primary500};
         text-decoration: none;

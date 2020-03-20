@@ -3,44 +3,30 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+import { StyledNav } from './styles/StyledPost';
+
 const StyledPostNav = styled.nav`
+  ${StyledNav};
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;
   margin: 70px 0;
   div {
-    background: ${props => props.theme.listedPostBg};
     a {
-      text-decoration: none;
-      div {
+      padding: 12px;
+      display: grid;
+      grid-template-rows: 1.25fr 1fr;
+      align-items: center;
+      span {
         display: block;
-        width: 100%;
-        height: 100%;
-        border: 3px solid ${props => props.theme.grey200};
-        background: none;
-        box-shadow: none;
-        transition: all 0.3s;
-        padding: 12px;
-        display: grid;
-        grid-template-rows: 1.25fr 1fr;
-        align-items: center;
-        &.next {
-          text-align: right;
+        &.dir {
+          color: ${props => props.theme.primary400};
+          font-family: 'Victor Mono', monospace;
+          font-weight: 700;
         }
-        span {
-          display: block;
-          &.dir {
-            color: ${props => props.theme.primary400};
-            font-size: 1.2rem;
-          }
-          &.title {
-            color: ${props => props.theme.grey400};
-            font-size: 0.6rem;
-          }
-        }
-        &:hover {
-          background: ${props => props.theme.grey200};
-          border-color: ${props => props.theme.grey300};
+        &.title {
+          color: ${props => props.theme.grey400};
+          font-size: 0.6rem;
         }
       }
     }
@@ -51,21 +37,17 @@ const PostNav = ({ prev, next }) => (
   <StyledPostNav>
     <div>
       {prev && (
-        <Link to={`/${prev.frontmatter.slug}`}>
-          <div className="prev">
-            <span className="dir">👈 Anterior</span>
-            <span className="title">{prev.frontmatter.title}</span>
-          </div>
+        <Link className="prev" to={`/${prev.frontmatter.slug}`}>
+          <span className="dir">👈 Anterior</span>
+          <span className="title">{prev.frontmatter.title}</span>
         </Link>
       )}
     </div>
     <div>
       {next && (
-        <Link to={`/${next.frontmatter.slug}`}>
-          <div className="next">
-            <span className="dir">Siguiente 👉</span>
-            <span className="title">{next.frontmatter.title}</span>
-          </div>
+        <Link className="next" to={`/${next.frontmatter.slug}`}>
+          <span className="dir">Siguiente 👉</span>
+          <span className="title">{next.frontmatter.title}</span>
         </Link>
       )}
     </div>

@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { StyledContent } from '../components/styles/StyledPost';
+import StyledArchiveHeader from '../components/styles/StyledArchiveHeader';
 
 const PageTemplate = ({ data }) => {
   const {
@@ -17,10 +18,14 @@ const PageTemplate = ({ data }) => {
         title={frontmatter.seoTitle || frontmatter.title}
         description={frontmatter.description}
       />
-      <h1>{frontmatter.title}</h1>
-      {frontmatter.updated && (
-        <p className="updated">Última actualización el {frontmatter.updated}</p>
-      )}
+      <StyledArchiveHeader>
+        <h1>{frontmatter.title}</h1>
+        {frontmatter.updated && (
+          <p className="updated">
+            Última actualización el {frontmatter.updated}
+          </p>
+        )}
+      </StyledArchiveHeader>
       <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );

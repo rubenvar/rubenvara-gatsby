@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledPost = styled.div`
   .breadcrumb {
     margin-top: 20px;
     color: ${props => props.theme.grey500};
     font-size: 0.75rem;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     a {
       color: ${props => props.theme.grey500};
       text-decoration: none;
@@ -17,14 +17,45 @@ const StyledPost = styled.div`
       font-size: 0.6rem;
     }
   }
-  h1 {
-    /* text-align: center; */
-    font-family: 'Victor Mono', monospace;
-    font-size: 2.4rem;
-    margin: 0 0 30px;
-    font-weight: 400;
-    letter-spacing: -4px;
-    color: ${props => props.theme.primary500};
+  .post__header {
+    margin-bottom: 36px;
+    h1 {
+      font-family: 'Victor Mono', monospace;
+      font-size: 2.2rem;
+      margin: 0 0 17px;
+      font-weight: 400;
+      letter-spacing: -4px;
+      color: ${props => props.theme.primary800};
+    }
+    button,
+    .post__liker {
+      font-size: 0.85rem;
+      border: none;
+      box-shadow: none;
+      background: none;
+      padding: 3px 0;
+      margin: 0;
+      transition: all 0.25s;
+      line-height: 1.1rem;
+      > span {
+        padding: 3px 6px;
+        background: ${props => props.theme.grey200};
+        margin-right: 14px;
+        color: ${props => props.theme.grey800};
+      }
+    }
+    p.post__liker {
+      color: ${props => props.theme.grey600};
+    }
+    button {
+      color: ${props => props.theme.primary600};
+      &:hover {
+        color: ${props => props.theme.primary800};
+        background: ${props => props.theme.grey100};
+        span {
+        }
+      }
+    }
   }
 `;
 
@@ -32,7 +63,7 @@ const StyledContent = styled.div`
   font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   h2 {
     margin: 42px 0 20px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: 'Victor Mono', monospace;
   }
   h3 {
@@ -42,46 +73,25 @@ const StyledContent = styled.div`
   }
   p {
     margin: 0 0 20px 0;
-    line-height: 1.8rem;
+    /* line-height: 1.85rem; */
+    line-height: 2rem;
     a {
-      /* color: ${props => props.theme.primary500};
-      position: relative;
       text-decoration: none;
-      padding: 0 1px;
-      &::after {
-        position: absolute;
-        background: linear-gradient(
-          to right,
-          ${props => props.theme.primary500},
-          ${props => props.theme.primary700}
-        );
-        content: '';
-        width: 100%;
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        z-index: -1;
-        transition: all 0.25s;
-      }
+      color: ${props => props.theme.primary500};
+      background: linear-gradient(
+        to top,
+        transparent 20%,
+        ${props => props.theme.grey300} 20%,
+        ${props => props.theme.grey300} 42%,
+        transparent 42%
+      );
       &:hover {
-        color: ${props => props.theme.white};
-        border-color: transparent;
-
-        &::after {
-          height: 100%;
-        }
+        color: ${props => props.theme.primary800};
       }
-      &:focus {
-        outline: none;
-        border: 2px solid ${props => props.theme.grey900};
-        border-radius: 3px;
-        transition: none;
-      } */
     }
   }
   ul {
-    /* list-style: none; */
-    line-height: 1.4rem;
+    line-height: 1.6rem;
     margin: 0 0 20px;
     li {
       margin: 0 0 12px;
@@ -98,7 +108,7 @@ const StyledContent = styled.div`
     background-color: ${props => props.theme.grey200};
     color: ${props => props.theme.grey600};
     p {
-      font-size: 25px;
+      font-size: 1.1rem;
       margin: 0;
     }
   }
@@ -119,4 +129,32 @@ const StyledPostMeta = styled.div`
   }
 `;
 
-export { StyledPost, StyledContent, StyledPostMeta };
+const StyledNav = css`
+  background: ${props => props.theme.whiteTr};
+  div {
+    a {
+      transition: all 0.3s;
+      color: ${props => props.theme.primary400};
+      text-decoration: none;
+      height: 100%;
+      display: block;
+      border: 3px solid ${props => props.theme.grey200};
+      background: ${props => props.theme.grey100};
+      font-size: 1.35rem;
+      &.next {
+        text-align: right;
+      }
+      &:hover {
+        border-color: ${props => props.theme.grey300};
+        background: ${props => props.theme.grey200};
+      }
+      &:focus {
+        outline: none;
+        border-color: ${props => props.theme.focus};
+        transition: none;
+      }
+    }
+  }
+`;
+
+export { StyledPost, StyledContent, StyledPostMeta, StyledNav };

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import kebabCase from 'lodash.kebabcase';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import CategoryLink from '../components/CategoryLink';
+import StyledArchiveHeader from '../components/styles/StyledArchiveHeader';
 
 const CategoriesPage = ({
   data: {
@@ -18,7 +18,9 @@ const CategoriesPage = ({
   <Layout>
     <SEO title={title} />
     <div>
-      <h1>Todas las Categorías</h1>
+      <StyledArchiveHeader>
+        <h1>Todas las Categorías</h1>
+      </StyledArchiveHeader>
       <ul>
         {group.map(category => (
           <li key={category.fieldValue}>
@@ -31,6 +33,25 @@ const CategoriesPage = ({
     </div>
   </Layout>
 );
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(
+      limit: 2000
+      filter: { frontmatter: { draft: { eq: false } } }
+    ) {
+      group(field: frontmatter___categories) {
+        fieldValue
+        totalCount
+      }
+    }
+  }
+`;
 
 CategoriesPage.propTypes = {
   data: PropTypes.shape({
@@ -51,19 +72,3 @@ CategoriesPage.propTypes = {
 };
 
 export default CategoriesPage;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(limit: 2000) {
-      group(field: frontmatter___categories) {
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`;

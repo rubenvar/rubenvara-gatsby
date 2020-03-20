@@ -20,7 +20,7 @@ const PostTemplate = ({ data, pageContext }) => {
   const { prev, next } = pageContext;
 
   return (
-    <Layout isPost>
+    <Layout type="post">
       <SEO
         title={frontmatter.seoTitle || frontmatter.title}
         description={frontmatter.description}
@@ -37,9 +37,10 @@ const PostTemplate = ({ data, pageContext }) => {
           <span className="breadcrumb__sep">></span>
           <span className="breadcrumb__link__active">{frontmatter.title}</span>
         </div>
-        <h1>{frontmatter.title}</h1>
-        <PostLiker id={id} />
-
+        <div className="post__header">
+          <h1>{frontmatter.title}</h1>
+          <PostLiker id={id} />
+        </div>
         <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
 
         <p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
 import Nav from './Nav';
@@ -11,33 +11,35 @@ import useWindowSize from '../utils/useWindowSize';
 const StyledFooter = styled.footer`
   --padding: ${props => props.width * props.magicNumber}px;
   position: relative;
-
   /* margin-top: calc((var(--padding) * -1) - 2px); */
   margin-top: 0;
   padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0 20px;
   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
 
-  background: ${props => props.theme.grey200};
-  /* background-image: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.05) 50%,
-      0,
-      transparent 100%
-    ),
-    linear-gradient(
-      -135deg,
-      ${props => props.theme.primary300},
-      ${props => props.theme.primary500}
-    );
-  background-size: 0.5em 0.5em, 100% 100%; */
+  background: linear-gradient(transparent, ${props => props.theme.grey500});
+  ${props =>
+    props.isIndex &&
+    css`
+      background: none;
+    `}
   > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     p {
-      font-size: 0.8rem;
-      color: ${props => props.theme.grey800}
+      font-size: 0.75rem;
+      color: ${props =>
+        !props.isIndex ? props.theme.grey200 : props.theme.grey400};
+      a {
+        text-decoration: none;
+        transition: all 0.25s;
+        color: ${props =>
+          !props.isIndex ? props.theme.grey300 : props.theme.grey500};
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 `;
@@ -48,7 +50,7 @@ const Footer = ({ isIndex }) => {
   const { width } = useWindowSize();
 
   return (
-    <StyledFooter magicNumber={magicNumber} width={width}>
+    <StyledFooter magicNumber={magicNumber} width={width} isIndex={isIndex}>
       {!isIndex && <Nav />}
       <Inner>
         <p>

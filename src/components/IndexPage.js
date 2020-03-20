@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-
 import { CSSTransition } from 'react-transition-group';
+
 import Footer from './Footer';
 import Nav from './Nav';
 
@@ -117,14 +117,13 @@ const IndexPage = () => {
               industrial. Decidí cambiar mi vida y abandonarlo todo.
             </p>
             <p>
-              Me marché de viaje sin fechas ni planes. Pasé tres años viviendo
+              Me marché de viaje, sin fechas ni planes. Pasé tres años viviendo
               en varios países, creando mi negocio online, escalando, y
-              estudiando SEO y desarrollo web.
+              estudiando.
             </p>
             <p>
-              Volví a casa para vivir en el monte, alejado todo lo posible de la
-              vida real. Y para dedicar mi tiempo a leer, estudiar, y entrenar
-              como nadador de aguas abiertas.
+              Volví a casa, para vivir en el monte alejado del mundo real. Para
+              dedicar mi tiempo a leer, estudiar, y entrenar.
             </p>
           </div>
           <Nav isIndex />

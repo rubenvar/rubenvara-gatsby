@@ -69,13 +69,17 @@ const PostLiker = ({ id }) => {
 
   if (loading) return 'loading.....';
   // TODO before data arrives, show empty space to avoid jump on button render
+  // TODO improve button disable (it doesn't work now because of useEffect)
 
   return (
-    <div style={{ marginBottom: 20 }}>
+    <div>
       {thanks ? (
-        <p>💛 {likes} likes, mil gracias por el tuyo!</p>
+        <p className="post__liker">
+          <span>{likes} 👍</span>Muchas gracias!
+        </p>
       ) : (
         <button
+          className="post__liker"
           disabled={loading}
           type="button"
           onClick={e => {
@@ -84,7 +88,11 @@ const PostLiker = ({ id }) => {
             handleClick();
           }}
         >
-          💛 Like this post! Tiene {likes || 0} likes!
+          <span>
+            {typeof likes === 'number' ? likes : ''}{' '}
+            <span className="emoji">👍</span>
+          </span>
+          Dale un Like a este post!
         </button>
       )}
     </div>

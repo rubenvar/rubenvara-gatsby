@@ -10,6 +10,7 @@ import theme from './styles/Theme';
 import Inner from './Inner';
 import GlobalStyle from './styles/GlobalStyle';
 import BodySVGs from './BodySVG';
+import SkipLink from './SkipLink';
 
 const TopBar = styled.div`
   width: 100%;
@@ -20,32 +21,37 @@ const TopBar = styled.div`
   z-index: 999;
 `;
 
-const Layout = ({ isIndex, isPost, isBlog, children }) => (
-  <Fragment>
-    <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      {isIndex ? (
-        <IndexPage />
-      ) : (
-        <Fragment>
-          <BodySVGs />
-          <TopBar />
-          {!isPost && <Header isBlog={isBlog} />}
-          <Inner>
-            <main>{children}</main>
-          </Inner>
-          <Footer />
-        </Fragment>
-      )}
-    </ThemeProvider>
-  </Fragment>
-);
+const Layout = ({ type, children }) => {
+  const isPost = type === 'post';
+  const isIndex = type === 'index';
+  const isBlog = type === 'blog';
+
+  return (
+    <Fragment>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        {isIndex ? (
+          <IndexPage />
+        ) : (
+          <Fragment>
+            <BodySVGs />
+            <SkipLink />
+            <TopBar />
+            {!isPost && <Header isBlog={isBlog} />}
+            <Inner isPost={isPost}>
+              <main>{children}</main>
+            </Inner>
+            <Footer />
+          </Fragment>
+        )}
+      </ThemeProvider>
+    </Fragment>
+  );
+};
 
 Layout.propTypes = {
+  type: PropTypes.string,
   children: PropTypes.node.isRequired,
-  isPost: PropTypes.bool,
-  isBlog: PropTypes.bool,
-  isIndex: PropTypes.bool,
 };
 
 export default Layout;

@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Nav from '../components/Nav';
 
 const IndexPage = () => (
-  <Layout isIndex>
+  <Layout type="index">
     <SEO title="Home" />
     <h1>
       <span className="💩">R</span>

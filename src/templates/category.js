@@ -5,19 +5,27 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import ListedPost from '../components/ListedPost';
+import StyledArchiveHeader from '../components/styles/StyledArchiveHeader';
 
 const Category = ({ pageContext, data }) => {
   const { category } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
 
   const title = `${totalCount} artículo${
-    totalCount === 1 ? '' : 's'
-  } en "${category}"`;
+    totalCount !== 1 ? 's' : ''
+  } en ${category}`;
 
   return (
     <Layout>
       <SEO title={`Todos los posts en la categoría ${category}`} />
-      <h1>{title}</h1>
+      <StyledArchiveHeader className="header">
+        <h1>{title}</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+          corporis nobis accusamus veritatis quia iusto nemo excepturi
+          recusandae sequi.
+        </p>
+      </StyledArchiveHeader>
       {edges.map(({ node }) => (
         <ListedPost key={node.id} post={node} />
       ))}
@@ -33,12 +41,15 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { categories: { in: [$category] } } }
+      filter: {
+        frontmatter: { categories: { in: [$category] }, draft: { eq: false } }
+      }
     ) {
       totalCount
       edges {
         node {
           id
+          excerpt(pruneLength: 100)
           frontmatter {
             date(formatString: "DD-MMM-YYYY", locale: "es-ES")
             slug

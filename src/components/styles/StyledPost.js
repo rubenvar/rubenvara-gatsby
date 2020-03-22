@@ -77,7 +77,7 @@ const StyledPost = styled.div`
       line-height: 1.8rem;
       a {
         color: ${props => props.theme.twitter900};
-        text-decoration: none;
+        /* text-decoration: none; */
         &:hover {
           color: ${props => props.theme.twitter500};
         }

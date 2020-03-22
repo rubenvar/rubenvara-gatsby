@@ -1,7 +1,25 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'gatsby';
+
+const onHover = keyframes`
+  20% {
+    background-color: hsl(180, 64%, 25%);
+  }
+  40% {
+    background-color: hsl(180, 64%, 45%);
+  }
+  60% {
+    background-color: hsl(0, 87%, 65%);
+  }
+  80% {
+    background-color: hsl(180, 64%, 25%);
+  }
+  100% {
+    background-color: hsl(180, 64%, 45%);
+  }
+`;
 
 const StyledNav = styled.nav`
   padding: 0;
@@ -65,9 +83,13 @@ const StyledNav = styled.nav`
         font-weight: 700;
         color: ${props => props.theme.primary500};
         text-decoration: none;
-        transition: all 0.25s;
+        transition: none;
         &:hover {
           color: ${props => props.theme.secondary700};
+          animation: ${onHover} 0.35s steps(1, start) alternate infinite;
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
         }
       }
     }

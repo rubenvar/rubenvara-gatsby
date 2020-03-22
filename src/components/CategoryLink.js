@@ -4,7 +4,11 @@ import { Link } from 'gatsby';
 import kebabCase from 'lodash.kebabcase';
 
 export default function CategoryLink({ cat, children }) {
-  return <Link to={`/categoria/${kebabCase(cat)}`}>{children}</Link>;
+  return (
+    <Link to={`/categoria/${kebabCase(cat)}`} title={`Categoría ${cat}`}>
+      {children}
+    </Link>
+  );
 }
 
 CategoryLink.propTypes = {

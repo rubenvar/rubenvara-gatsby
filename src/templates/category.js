@@ -6,25 +6,25 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import ListedPost from '../components/ListedPost';
 import StyledArchiveHeader from '../components/styles/StyledArchiveHeader';
+import descriptions from '../utils/categoryData';
 
 const Category = ({ pageContext, data }) => {
   const { category } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
 
-  const title = `${totalCount} artículo${
-    totalCount !== 1 ? 's' : ''
-  } en ${category}`;
+  const description =
+    descriptions.find(obj => obj.category === category)?.description ||
+    `Mira todos los posts en la categoría ${category}, hasta ahora he publicado ${totalCount}:`;
 
   return (
     <Layout>
       <SEO title={`Todos los posts en la categoría ${category}`} />
       <StyledArchiveHeader className="header">
-        <h1>{title}</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-          corporis nobis accusamus veritatis quia iusto nemo excepturi
-          recusandae sequi.
-        </p>
+        <h1>
+          {totalCount} artículo{totalCount !== 1 ? 's' : ''} en{' '}
+          <span>{category}</span>
+        </h1>
+        <p>{description}</p>
       </StyledArchiveHeader>
       {edges.map(({ node }) => (
         <ListedPost key={node.id} post={node} />
@@ -51,7 +51,7 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 100)
           frontmatter {
-            date(formatString: "DD-MMM-YYYY", locale: "es-ES")
+            date(formatString: "D MMMM, YYYY", locale: "es-ES")
             slug
             title
             description

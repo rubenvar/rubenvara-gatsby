@@ -20,14 +20,7 @@ const StyledHeader = styled.header`
       line-height: 1;
       font-family: 'Mansalva', cursive;
       a {
-        background: linear-gradient(
-          to right,
-          ${props => props.theme.primary600},
-          ${props => props.theme.primary700},
-          ${props => props.theme.primary500},
-          ${props => props.theme.primary500},
-          ${props => props.theme.primary700}
-        );
+        background: ${props => props.theme.logoGradient};
         background-clip: text;
         -webkit-background-clip: text;
         color: ${props => props.theme.primary500};

@@ -42,7 +42,7 @@ const Pagination = ({
           className="prev"
           to={currentPage > 2 ? `/blog/${currentPage - 1}` : `/blog`}
         >
-          👈 Anterior
+          👈 Anteriores
         </Link>
       )}
     </div>
@@ -54,7 +54,7 @@ const Pagination = ({
     <div>
       {currentPage < numPages && (
         <Link className="next" to={`/blog/${currentPage + 1}`}>
-          👉 Siguiente
+          Ver más 👉
         </Link>
       )}
     </div>

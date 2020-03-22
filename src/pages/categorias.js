@@ -1,46 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import CategoryLink from '../components/CategoryLink';
 import StyledArchiveHeader from '../components/styles/StyledArchiveHeader';
 
-const CategoriesPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-}) => (
-  <Layout>
-    <SEO title={title} />
-    <div>
-      <StyledArchiveHeader>
-        <h1>Todas las Categorías</h1>
-      </StyledArchiveHeader>
-      <ul>
-        {group.map(category => (
-          <li key={category.fieldValue}>
-            <CategoryLink cat={category.fieldValue}>
-              {category.fieldValue} ({category.totalCount})
-            </CategoryLink>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </Layout>
-);
+const StyledCategoryList = styled.ul`
+  margin: 0;
+  padding: 0 0 0 30px;
+  li {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+    a {
+      color: ${props => props.theme.primary600};
+      text-decoration: none;
+      &:hover {
+        color: ${props => props.theme.grey800};
+      }
+    }
+  }
+`;
+
+const CategoriesPage = ({ data }) => {
+  const { group } = data?.allMarkdownRemark;
+
+  return (
+    <Layout>
+      <SEO title="Todas las categorías del blog" />
+      <div>
+        <StyledArchiveHeader>
+          <h1>Todas las categorías del Blog:</h1>
+        </StyledArchiveHeader>
+        <StyledCategoryList>
+          {group.map(category => (
+            <li key={category.fieldValue}>
+              <CategoryLink cat={category.fieldValue}>
+                {category.fieldValue} ({category.totalCount})
+              </CategoryLink>
+            </li>
+          ))}
+        </StyledCategoryList>
+      </div>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       limit: 2000
       filter: { frontmatter: { draft: { eq: false } } }

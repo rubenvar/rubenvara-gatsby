@@ -23,10 +23,14 @@ const Blog = ({ data: { allPosts }, pageContext }) => {
         title={`Página ${pageContext.currentPage} de ${pageContext.numPages} ~ Todos los posts del blog`}
       />
       <StyledArchiveHeader className="header">
-        <h1>El Blog ({totalCount})</h1>
+        <h1>El Blog</h1>
         <p>
           Dicen que no sabes lo que sabes hasta que intentas enseñarlo. Pues en
-          eso estamos:
+          eso estamos.
+        </p>
+        <p>
+          Escribo sobre desarrollo web. Y sobre Javascript. Sobre todo,
+          Javascript.
         </p>
       </StyledArchiveHeader>
       {edges.map(({ node }) => (
@@ -58,7 +62,7 @@ export const blogQuery = graphql`
             id
             excerpt(pruneLength: 100)
             frontmatter {
-              date(formatString: "DD-MMM-YYYY", locale: "es-ES")
+              date(formatString: "D MMMM, YYYY", locale: "es-ES")
               slug
               title
               description

@@ -41,7 +41,9 @@ const PostTemplate = ({ data, pageContext }) => {
           <h1>{frontmatter.title}</h1>
           <PostLiker id={id} />
         </div>
+
         <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
+
         <div className="twitter">
           <svg
             className="twitter-logo"

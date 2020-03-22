@@ -97,8 +97,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   posts.forEach(post => {
     // next and prev inverted to keep more logical order
-    const next = post.previous ? post.previous.childMarkdownRemark : null;
-    const prev = post.next ? post.next.childMarkdownRemark : null;
+    const next = post.next ? post.next.childMarkdownRemark : null;
+    const prev = post.previous ? post.previous.childMarkdownRemark : null;
 
     createPage({
       path: post.node.childMarkdownRemark.frontmatter.slug,

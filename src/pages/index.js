@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 
 const IndexPage = () => (
   <Layout type="index">
-    <SEO title="Home" />
+    <SEO title="Rubén Vara" />
     <h1>
       <span className="💩">R</span>
       <span className="💩">u</span>

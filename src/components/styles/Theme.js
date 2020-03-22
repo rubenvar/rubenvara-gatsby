@@ -37,6 +37,14 @@ const theme = {
   shadow500: `0 20px 40px rgba(0, 0, 0, 0.2)`,
 
   // redGradient: `linear-gradient(to right, ${redLighter}, ${red}, ${red}, ${redDarker})`,
+  logoGradient: `linear-gradient(
+    to right,
+    hsl(0, 73%, 40%),
+    hsl(0, 85%, 28%),
+    hsl(0, 72%, 50%),
+    hsl(0, 72%, 50%),
+    hsl(0, 85%, 28%)
+  )`,
 
   twitter100: `hsl(203, 89%, 91%)`,
   twitter500: `hsl(203, 89%, 53%)`,

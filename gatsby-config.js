@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Rubén Vara`,
+    title: `La web de Rubén Vara`,
     author: `@rubenvara01`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Mi blog sobre desarrollo web y Jaascript, mi estilo de vida, y mi primer gran viaje. Un poco de todo.`,
     siteUrl: `https://rubenvara.io`,
   },
   plugins: [

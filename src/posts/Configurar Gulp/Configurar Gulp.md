@@ -24,7 +24,13 @@ Eos tempora expedita Eos tempora expedita.sit amet consectetur, adipisicing elit
 
 Eos tempora expedita Eos tempora expedita.Lorem ipsum dolor sit
 
-### amet consectetur, adipisicing
+## Wala Wala sisisisiis wala
+
+iusto nesciunt ratione. Eos tempora expedita Eos tempora expedita.Lorem ipsum Eos tempora expedita Eos tempora expedita.Lorem ipsum dolor sitiusto nesciunt ratione. dolor sitiusto nesciunt ratione.
+
+Eos tempora expedita Eos tempora expedita.Lorem ipsum dolor sit.
+
+## Wala Wala siss wala
 
 elit.Eos tempora expedita voluptatibus, optio iusto nesciunt ratione.
 
@@ -32,11 +38,11 @@ Eos tempora expedita Eos tempora expedita.Lorem ipsum dolor sit amet consectetur
 
 Eos tempora expedita Eos tempora expedita.
 
-## Eos tempora expedita voluptatibus
+### Eos tempora expedita voluptatibus
 
 Voluptatibus, optio iusto [nesciunt ratione ullam commodi](https://rubenvara.io) placeat ipsum et saepe repudiandae veniam, dolor, quibusdam error assumenda repellendus corrupti! voluptatibus, optio iusto nesciunt ratione Eos tempora expedita **voluptatibus**, optio iusto nesciunt ratione ullam
 
-## Ccommodi placeat ipsu
+### Ccommodi placeat ipsu
 
 et saepe repudiandae veniam, dolor, quibusdam.
 
@@ -65,13 +71,13 @@ corrupti! error assumenda repellendus corrupti! ullam commodi placeat ipsum et s
 Veniam, dolor, quibusdam error assumenda repellendus corrupti! ullam commodi placeat ipsum et saepe repudiandae Eos tempora expedita
 
 ```js
-const setTheme = theme => {
+const setTheme = (theme) => {
   // add theme to dataset
   // highlight-next-line
   html.dataset.theme = theme;
   // si se activa modo oscuro, texto del botón será "Modo Claro", y viceversa
   themeSwitcherButton.forEach(
-    button =>
+    (button) =>
       (button.innerHTML = theme === "dark" ? "☀️ Modo Claro" : "🌘 Modo Oscuro")
   );
   // set variable to theme for button checking

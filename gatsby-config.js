@@ -1,3 +1,7 @@
+// require('dotenv').config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// });
+
 module.exports = {
   siteMetadata: {
     title: `La web de Rubén Vara`,
@@ -32,6 +36,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: false,
+            },
+          },
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {

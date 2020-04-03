@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import ListedPost from '../components/ListedPost';
 import StyledArchiveHeader from '../components/styles/StyledArchiveHeader';
 import descriptions from '../utils/categoryData';
+import CategoryList from '../components/CategoryList';
 
 const Category = ({ pageContext, data }) => {
   const { category } = pageContext;
@@ -29,12 +30,11 @@ const Category = ({ pageContext, data }) => {
       {edges.map(({ node }) => (
         <ListedPost key={node.id} post={node} />
       ))}
-      <Link to="/categorias">Todas las categorías</Link>
+      <p>Todas las categorías:</p>
+      <CategoryList />
     </Layout>
   );
 };
-
-export default Category;
 
 export const pageQuery = graphql`
   query($category: String) {
@@ -97,3 +97,5 @@ Category.propTypes = {
     }),
   }),
 };
+
+export default Category;

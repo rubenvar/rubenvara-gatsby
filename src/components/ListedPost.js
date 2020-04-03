@@ -85,7 +85,7 @@ const StyledListedPost = styled.div`
     font-size: 0.75rem;
     line-height: 1.3rem;
     a {
-      color: ${props => props.theme.grey700};
+      color: ${props => props.theme.grey800};
       text-decoration: none;
       &:hover {
         color: ${props => props.theme.primary600};

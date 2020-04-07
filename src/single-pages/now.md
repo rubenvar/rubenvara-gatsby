@@ -6,7 +6,7 @@ description: maravillosooooo!
 date: 2020-01-03
 ---
 
-Esto es una página now ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
+Esto es una página _now_ ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
 
 - Puedes leer en qué estoy trabajando ahora mismo.
 - Aquí están mis planes, y sus respectivos avances.

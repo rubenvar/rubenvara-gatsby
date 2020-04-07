@@ -15,12 +15,13 @@ const StyledFooter = styled.footer`
   margin-top: 0;
   padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0 20px;
   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
-
   background: linear-gradient(transparent, ${props => props.theme.grey500});
+
   ${props =>
     props.isIndex &&
     css`
-      background: none;
+      background: hsl(0, 20%, 97%);
+      clip-path: none;
     `}
   > div {
     display: flex;

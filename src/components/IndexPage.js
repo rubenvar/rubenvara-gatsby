@@ -1,9 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Footer from './Footer';
 import Nav from './Nav';
+import rub from '../images/rub.jpg';
 
 const shineAnim = keyframes`
   0% {
@@ -26,6 +29,15 @@ const shadowAnim = keyframes`
 const StyledHero = styled.div`
   padding: 50px;
   min-height: 100vh;
+  background: linear-gradient(#fff3, hsl(0, 20%, 97%));
+  position: relative;
+  .image {
+    height: calc(100% + 0px);
+    top: -0px;
+    width: calc(100% + 400px);
+    right: -400px;
+    z-index: -1;
+  }
   .title {
     margin-bottom: 60px;
     h1 {
@@ -96,15 +108,35 @@ const StyledHero = styled.div`
         line-height: 1.7;
       }
     }
+    nav {
+      position: fixed;
+      z-index: 90;
+    }
   }
 `;
 
 const IndexPage = () => {
   const [shine, setShine] = useState(false);
+  const data = useStaticQuery(graphql`
+    query {
+      backgroundImage: file(relativePath: { eq: "rub.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1700) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <Fragment>
       <StyledHero>
+        <Img
+          className="image"
+          fluid={data.backgroundImage.childImageSharp.fluid}
+          style={{ position: 'fixed' }}
+        />
         <div className="title">
           <h1>
             <span className="💩">R</span>

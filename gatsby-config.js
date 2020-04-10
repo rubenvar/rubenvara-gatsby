@@ -51,6 +51,12 @@ module.exports = {
               toHeading: 6,
             },
           },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              rel: `noopener noreferrer`,
+            },
+          },
           `gatsby-remark-reading-time`,
           `gatsby-remark-prismjs`,
         ],

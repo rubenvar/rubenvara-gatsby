@@ -82,10 +82,8 @@ code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
   background: rgba(40, 41, 54, 1) !important;
-  /* border-radius: 0.5em; */
-  padding: 1em;
-  /* padding: 0; */
-  margin: 0.5em 0;
+  padding: 15px;
+  margin: 20px 0;
   overflow: auto;
   height: auto;
 }
@@ -100,7 +98,6 @@ pre[class*="language-"] {
   color: rgba(40, 41, 54, 1);
   background: #ccc;
   padding: 2px 5px;
-  /* border-radius: 0.3em; */
   white-space: normal;
 }
 

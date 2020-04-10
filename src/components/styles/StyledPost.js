@@ -24,7 +24,7 @@ const StyledPost = styled.div`
       font-size: 2.2rem;
       margin: 0 0 17px;
       font-weight: 400;
-      letter-spacing: -4px;
+      letter-spacing: -3px;
       color: ${props => props.theme.primary800};
     }
     button,
@@ -98,6 +98,11 @@ const StyledContent = styled.div`
     font-size: 1.35rem;
     font-family: 'Victor Mono', monospace;
   }
+  h4 {
+    margin: 28px 0 16px;
+    font-size: 1.1rem;
+    font-family: 'Victor Mono', monospace;
+  }
   p {
     margin: 0 0 20px 0;
     /* line-height: 1.85rem; */
@@ -109,15 +114,17 @@ const StyledContent = styled.div`
         to top,
         transparent 20%,
         ${props => props.theme.grey300} 20%,
-        ${props => props.theme.grey300} 42%,
-        transparent 42%
+        ${props => props.theme.grey300} 30%,
+        transparent 30%
       );
+      transition: all 0.5s;
       &:hover {
         color: ${props => props.theme.primary800};
       }
     }
   }
-  ul {
+  ul,
+  ol {
     line-height: 1.6rem;
     margin: 0 0 20px;
     li {

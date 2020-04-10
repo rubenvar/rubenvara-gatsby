@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import CategoryLink from '../components/CategoryLink';
@@ -18,6 +20,7 @@ const PostTemplate = ({ data, pageContext }) => {
     childMarkdownRemark: { frontmatter, html, id },
   } = data.file; // this prop will be injected by the GraphQL query below. data.markdownRemark holds your post data
   const { prev, next } = pageContext;
+  const locale = es;
 
   return (
     <Layout type="post">
@@ -88,14 +91,35 @@ const PostTemplate = ({ data, pageContext }) => {
         <StyledPostMeta>
           <div className="meta__date">
             {frontmatter.previousDate ? (
-              <Fragment>
-                <p className="updated">
-                  Publicación original: {frontmatter.previousDate}
+              <>
+                <p>
+                  Actualizado:{' '}
+                  <time dateTime={frontmatter.date}>
+                    {format(new Date(frontmatter.date), `d 'de' MMMM, yyyy`, {
+                      locale,
+                    })}
+                  </time>
                 </p>
-                <p>Actualizado: {frontmatter.date}</p>
-              </Fragment>
+                <p className="updated">
+                  Publicación original:{' '}
+                  <time dateTime={frontmatter.previousDate}>
+                    {format(
+                      new Date(frontmatter.previousDate),
+                      `d 'de' MMMM, yyyy`,
+                      { locale }
+                    )}
+                  </time>
+                </p>
+              </>
             ) : (
-              <p>Publicado: {frontmatter.date}</p>
+              <p>
+                Publicado:{' '}
+                <time dateTime={frontmatter.date}>
+                  {format(new Date(frontmatter.date), `d 'de' MMMM, yyyy`, {
+                    locale,
+                  })}
+                </time>
+              </p>
             )}
           </div>
           <div className="meta__cats">
@@ -131,8 +155,8 @@ export const pageQuery = graphql`
         id
         html
         frontmatter {
-          date(formatString: "D [de] MMMM, YYYY", locale: "es-ES")
-          previousDate(formatString: "D [de] MMMM, YYYY", locale: "es-ES")
+          date(formatString: "YYYY-MM-DD")
+          previousDate(formatString: "YYYY-MM-DD")
           slug
           title
           seoTitle

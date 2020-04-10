@@ -5,6 +5,7 @@
   "dependencies": {
     "browser-monads": "^1.0.0",
     "d3": "^5.15.1",
+    "date-fns": "^2.12.0",
     "dotenv": "^8.2.0",
     "firebase": "^7.13.2",
     "gatsby": "^2.20.12",
@@ -15,6 +16,7 @@
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-plugin-styled-components": "^3.2.1",
     "gatsby-remark-autolink-headers": "^2.2.1",
+    "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "^3.4.1",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-table-of-contents": "0.0.9",
@@ -59,7 +61,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "start": "npm run dev",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

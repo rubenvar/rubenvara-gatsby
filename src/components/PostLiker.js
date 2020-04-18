@@ -6,6 +6,7 @@ import 'firebase/database';
 import { window } from 'browser-monads';
 
 import '../utils/firebase';
+import { StyledPostLiker } from './styles/StyledPost';
 
 const PostLiker = ({ id }) => {
   const [loading, setLoading] = useState(true);
@@ -73,7 +74,7 @@ const PostLiker = ({ id }) => {
   // TODO improve button disable (it doesn't work now because of useEffect)
 
   return (
-    <div>
+    <StyledPostLiker>
       {thanks ? (
         <p className="post__liker">
           <span>{likes} 👍</span>Muchas gracias!
@@ -93,10 +94,10 @@ const PostLiker = ({ id }) => {
             {typeof likes === 'number' ? likes : ''}{' '}
             <span className="emoji">👍</span>
           </span>
-          Dale un Like a este post!
+          Dale un Like!
         </button>
       )}
-    </div>
+    </StyledPostLiker>
   );
 };
 

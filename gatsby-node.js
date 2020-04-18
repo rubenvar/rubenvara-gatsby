@@ -7,6 +7,29 @@
 const path = require(`path`);
 const kebabCase = require('lodash.kebabcase');
 
+const proyectosData = require('./src/utils/proyectosData');
+
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  const proyectos = proyectosData;
+
+  proyectos.forEach(proyecto => {
+    const { name, intro, images, description, tags } = proyecto;
+    const node = {
+      id: createNodeId(`proyecto-${name}`),
+      name,
+      intro,
+      images,
+      description,
+      tags,
+      internal: {
+        type: `proyecto`,
+        contentDigest: createContentDigest(proyecto),
+      },
+    };
+    actions.createNode(node);
+  });
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(`src/templates/post.js`);
@@ -133,29 +156,3 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 };
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions;
-
-//   if (node.internal.type === `Mdx`) {
-//     // if my posts have a slug in the frontmatter, it means I've specified what I want it to be. Otherwise I want to create one automatically
-
-//     // This is where we add our own custom fields to each node
-//     const generatedSlug = createFilePath({ node, getNode });
-
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value: node.frontmatter.slug
-//         ? `/${node.frontmatter.slug}/`
-//         : generatedSlug,
-//     });
-
-//     // Add it to a collection
-//     createNodeField({
-//       name: `collection`,
-//       node,
-//       value: getNode(node.parent).sourceInstanceName,
-//     });
-//   }
-// };

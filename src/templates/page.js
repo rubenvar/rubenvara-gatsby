@@ -24,7 +24,7 @@ const PageTemplate = ({ data }) => {
           <p className="updated">Última actualización el {frontmatter.date}</p>
         )}
       </StyledArchiveHeader>
-      <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
+      <StyledContent isPage dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 };

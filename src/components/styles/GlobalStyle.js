@@ -78,6 +78,26 @@ const GlobalStyle = createGlobalStyle`
   code[class*="language-text"] {
     font-size: 1rem;
   }
+  .custom-block {
+    box-shadow: ${theme.shadow100};
+    margin: 42px 0;
+    &.info {
+      background: ${theme.grey100};
+      padding: 15px 15px 4px;
+      color: ${theme.grey700};
+      a {
+        color: ${theme.grey900};
+        background: none;
+        text-decoration: underline;
+      }
+    }
+    &-body {
+      p {
+        font-size: 1rem;
+        margin-bottom: 17px;
+      }
+    }
+  }
   @media only screen and (max-width: 480px) {
     html {
       font-size: 100%;

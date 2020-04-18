@@ -59,6 +59,23 @@ module.exports = {
           },
           `gatsby-remark-reading-time`,
           `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-custom-blocks`,
+            options: {
+              blocks: {
+                success: {
+                  classes: `success`,
+                },
+                danger: {
+                  classes: `danger`,
+                },
+                info: {
+                  classes: `info`,
+                  title: `optional`,
+                },
+              },
+            },
+          },
         ],
       },
     },

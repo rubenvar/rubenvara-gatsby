@@ -6,11 +6,6 @@ description: maravillosooooo!
 date: 2020-01-03
 ---
 
-Esto es una página _now_ ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
-
-- Puedes leer en qué estoy trabajando ahora mismo.
-- Aquí están mis planes, y sus respectivos avances.
-
 ## ¿Dónde estoy?
 
 🏡 En casa.
@@ -36,3 +31,8 @@ Seguir aprendiendo desarrollo web. Y empezar a enseñarlo, muy pronto.
 Nadar, más. Ahora federado en la sección Máster del CN Menditxo.
 
 Y seguir escalando, todos los días.
+
+[[info]]
+| Esto es una página _now_ ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
+|
+| Aquí puedes leer en qué estoy trabajando ahora mismo, mis planes, y sus respectivos avances.

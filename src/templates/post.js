@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -18,7 +18,7 @@ import {
 const PostTemplate = ({ data, pageContext }) => {
   const {
     childMarkdownRemark: { frontmatter, html, id },
-  } = data.file; // this prop will be injected by the GraphQL query below. data.markdownRemark holds your post data
+  } = data.file;
   const { prev, next } = pageContext;
   const locale = es;
 
@@ -29,9 +29,9 @@ const PostTemplate = ({ data, pageContext }) => {
         description={frontmatter.description}
       />
       <StyledPost>
+        <PostLiker id={id} />
         <div className="post__header">
           <h1>{frontmatter.title}</h1>
-          {/* <PostLiker id={id} /> */}
         </div>
 
         <StyledContent dangerouslySetInnerHTML={{ __html: html }} />

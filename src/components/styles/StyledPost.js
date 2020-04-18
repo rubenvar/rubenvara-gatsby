@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const StyledPost = styled.div`
+  position: relative;
   .post__header {
     margin: 0 0 42px;
     h1 {
@@ -12,39 +13,10 @@ const StyledPost = styled.div`
       color: ${props => props.theme.primary800};
       color: ${props => props.theme.primary600};
     }
-    button,
-    .post__liker {
-      font-size: 0.85rem;
-      border: none;
-      box-shadow: none;
-      background: none;
-      padding: 3px 0;
-      margin: 0;
-      transition: all 0.25s;
-      line-height: 1.15rem;
-      > span {
-        padding: 3px 6px;
-        background: ${props => props.theme.grey200};
-        margin-right: 14px;
-        color: ${props => props.theme.grey800};
-      }
-    }
-    p.post__liker {
-      color: ${props => props.theme.grey600};
-    }
-    button {
-      color: ${props => props.theme.primary600};
-      &:hover {
-        color: ${props => props.theme.primary800};
-        background: ${props => props.theme.grey100};
-        span {
-        }
-      }
-    }
   }
   .twitter {
     background: ${props => props.theme.twitterGradient};
-    padding: 0 4px;
+    padding: 4px;
     margin-top: 55px;
     margin-bottom: 96px;
     position: relative;
@@ -57,6 +29,7 @@ const StyledPost = styled.div`
       right: 0;
     }
     p {
+      width: 85%;
       position: relative;
       font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman',
         serif;
@@ -71,7 +44,35 @@ const StyledPost = styled.div`
   }
 `;
 
+const StyledPostLiker = styled.div`
+  border: 1px solid plum;
+  position: sticky;
+  top: 350px;
+  margin-left: -200px;
+  width: 80px;
+  .post__liker {
+    font-size: 0.85rem;
+    border: none;
+    box-shadow: none;
+    background: none;
+    padding: 3px 0;
+    margin: 0;
+    transition: all 0.25s;
+    line-height: 1.15rem;
+    > span {
+      padding: 3px 6px;
+      background: ${props => props.theme.grey200};
+      margin-right: 14px;
+      color: ${props => props.theme.grey800};
+    }
+  }
+  p.post__liker {
+    color: ${props => props.theme.grey600};
+  }
+`;
+
 const StyledContent = styled.div`
+  margin-bottom: ${props => (props.isPage ? '73px' : 0)};
   font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   h2 {
     margin: 55px 0 20px;
@@ -163,32 +164,4 @@ const StyledPostMeta = styled.div`
   }
 `;
 
-const StyledPaginationDefault = css`
-  background: ${props => props.theme.whiteTr};
-  div {
-    a {
-      transition: all 0.3s;
-      color: ${props => props.theme.primary400};
-      text-decoration: none;
-      height: 100%;
-      display: block;
-      border: 3px solid ${props => props.theme.grey200};
-      background: ${props => props.theme.grey100};
-      font-size: 1.35rem;
-      &.next {
-        text-align: right;
-      }
-      &:hover {
-        border-color: ${props => props.theme.grey300};
-        background: ${props => props.theme.grey200};
-      }
-      &:focus {
-        outline: none;
-        border-color: ${props => props.theme.focus};
-        transition: none;
-      }
-    }
-  }
-`;
-
-export { StyledPost, StyledContent, StyledPostMeta, StyledPaginationDefault };
+export { StyledPost, StyledPostLiker, StyledContent, StyledPostMeta };

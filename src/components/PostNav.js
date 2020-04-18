@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { StyledPaginationDefault } from './styles/StyledPost';
+import StyledPaginationDefault from './styles/StyledPagination';
 
 const StyledPostNav = styled.nav`
   ${StyledPaginationDefault};

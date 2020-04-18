@@ -75,6 +75,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Victor Mono', monospace;
     font-size: 0.75rem;
   }
+  code[class*="language-text"] {
+    font-size: 1rem;
+  }
   @media only screen and (max-width: 480px) {
     html {
       font-size: 100%;

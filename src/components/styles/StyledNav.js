@@ -1,26 +1,27 @@
 import styled, { keyframes, css } from 'styled-components';
+import theme from './Theme';
 
 const onHover = keyframes`
   20% {
-    background-color: ${props => props.theme.secondary700};
+    background-color: ${theme.secondary700};
   }
   40% {
-    background-color: ${props => props.theme.secondary500};
+    background-color: ${theme.secondary500};
   }
   60% {
-    background-color: ${props => props.theme.primary400};
+    background-color: ${theme.primary400};
   }
   80% {
-    background-color: ${props => props.theme.secondary700};
+    background-color: ${theme.secondary700};
   }
   100% {
-    background-color: ${props => props.theme.secondary500};
+    background-color: ${theme.secondary500};
   }
 `;
 
 const StyledNav = styled.nav`
   padding: 0;
-  margin: ${props => (props.isIndex ? `0 0` : '30px auto ')} 60px;
+  margin: ${props => (props.isIndex ? `0 0` : '32px auto ')} 73px;
   ${props =>
     !props.isIndex &&
     css`

@@ -7,7 +7,7 @@ import IndexPage from './IndexPage';
 import Header from './Header';
 import Footer from './Footer';
 import theme from './styles/Theme';
-import Inner from './Inner';
+import Inner from './styles/Inner';
 import GlobalStyle from './styles/GlobalStyle';
 import BodySVGs from './BodySVG';
 import SkipLink from './SkipLink';
@@ -38,7 +38,7 @@ const Layout = ({ type, children }) => {
             <SkipLink />
             <TopBar />
             {!isPost && <Header isBlog={isBlog} />}
-            <Inner isPost={isPost}>
+            <Inner>
               <main>{children}</main>
             </Inner>
             <Footer />

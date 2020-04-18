@@ -6,7 +6,7 @@ const Inner = styled.div`
   margin: 0 auto;
   position: relative;
   main {
-    margin-top: ${props => (!props.isPost ? '36px' : 0)};
+    margin-top: 42px;
   }
 `;
 

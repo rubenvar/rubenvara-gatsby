@@ -1,5 +1,5 @@
 const theme = {
-  maxWidth: `720px`,
+  maxWidth: `780px`,
 
   black: `hsl(0, 20%, 5%)`,
   white: `hsl(0, 20%, 97%)`,

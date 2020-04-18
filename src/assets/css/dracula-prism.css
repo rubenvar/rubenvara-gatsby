@@ -95,8 +95,8 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  color: rgba(40, 41, 54, 1);
-  background: #ccc;
+  background: rgba(40, 41, 54, 0.1);
+  color: rgba(98, 114, 164, 1);
   padding: 2px 5px;
   white-space: normal;
 }

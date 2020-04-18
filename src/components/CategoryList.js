@@ -10,9 +10,9 @@ const StyledCategoryList = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   span {
-    margin: 14px 10px;
+    margin: 17px 12px;
     a {
-      padding: 5px;
+      padding: 8px;
       color: ${props => props.theme.primary600};
       text-decoration: none;
       &:hover {

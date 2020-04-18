@@ -3,9 +3,8 @@ import styled, { css } from 'styled-components';
 const StyledListedPost = styled.div`
   background: ${props => props.theme.whiteTr};
   box-shadow: ${props => props.theme.shadow200};
-  padding: 12px;
-  padding-left: 15px;
-  margin: 0 0 78px;
+  padding: 12px 17px;
+  margin: 0 0 96px;
   transition: all 0.5s;
   position: relative;
   transform: rotate(-1deg);
@@ -46,9 +45,22 @@ const StyledListedPost = styled.div`
       }
     }
   }
+  .description {
+    margin-top: 25px;
+    color: ${props => props.theme.grey500};
+    font-size: 0.75rem;
+    line-height: 1.35rem;
+    a {
+      color: ${props => props.theme.grey800};
+      text-decoration: none;
+      &:hover {
+        color: ${props => props.theme.primary600};
+      }
+    }
+  }
   .meta {
     font-size: 0.75rem;
-    margin: 22px 0 0;
+    margin: 20px 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     > span {
@@ -71,19 +83,6 @@ const StyledListedPost = styled.div`
             }
           }
         }
-      }
-    }
-  }
-  .description {
-    margin-top: 16px;
-    color: ${props => props.theme.grey500};
-    font-size: 0.75rem;
-    line-height: 1.3rem;
-    a {
-      color: ${props => props.theme.grey800};
-      text-decoration: none;
-      &:hover {
-        color: ${props => props.theme.primary600};
       }
     }
   }

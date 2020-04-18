@@ -3,13 +3,12 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Inner from './Inner';
+import Inner from './styles/Inner';
 
 const StyledHeader = styled.header`
   background: ${props => props.theme.white};
   margin: 0;
-  padding: 7px 0;
-  /* border-bottom: 1px solid #eee; */
+  padding: 8px 0;
   > div {
     display: flex;
     justify-content: space-between;
@@ -31,7 +30,6 @@ const StyledHeader = styled.header`
     nav {
       a {
         color: ${props => props.theme.grey800};
-        /* text-decoration: none; */
         &:hover {
           color: ${props => props.theme.primary700};
         }

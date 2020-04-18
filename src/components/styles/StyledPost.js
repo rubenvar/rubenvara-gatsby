@@ -1,31 +1,16 @@
 import styled, { css } from 'styled-components';
 
 const StyledPost = styled.div`
-  .breadcrumb {
-    margin-top: 20px;
-    color: ${props => props.theme.grey500};
-    font-size: 0.75rem;
-    margin-bottom: 36px;
-    a {
-      color: ${props => props.theme.grey500};
-      text-decoration: none;
-    }
-    &__link {
-    }
-    &__sep {
-      margin: 0 6px;
-      font-size: 0.6rem;
-    }
-  }
   .post__header {
-    margin-bottom: 36px;
+    margin: 0 0 42px;
     h1 {
-      font-family: 'Victor Mono', monospace;
-      font-size: 2.2rem;
-      margin: 0 0 17px;
+      font-family: 'Rubik', 'Victor Mono', monospace;
+      font-size: 3rem;
+      margin: 0;
       font-weight: 400;
-      letter-spacing: -3px;
+      letter-spacing: -1px;
       color: ${props => props.theme.primary800};
+      color: ${props => props.theme.primary600};
     }
     button,
     .post__liker {
@@ -36,7 +21,7 @@ const StyledPost = styled.div`
       padding: 3px 0;
       margin: 0;
       transition: all 0.25s;
-      line-height: 1.1rem;
+      line-height: 1.15rem;
       > span {
         padding: 3px 6px;
         background: ${props => props.theme.grey200};
@@ -59,14 +44,15 @@ const StyledPost = styled.div`
   }
   .twitter {
     background: ${props => props.theme.twitterGradient};
-    padding: 0 5px;
-    margin-top: 30px;
+    padding: 0 4px;
+    margin-top: 55px;
+    margin-bottom: 96px;
     position: relative;
     overflow: hidden;
     svg {
       position: absolute;
-      width: 72px;
-      height: 72px;
+      width: 73px;
+      height: 73px;
       top: 0;
       right: 0;
     }
@@ -77,7 +63,6 @@ const StyledPost = styled.div`
       line-height: 1.8rem;
       a {
         color: ${props => props.theme.twitter900};
-        /* text-decoration: none; */
         &:hover {
           color: ${props => props.theme.twitter500};
         }
@@ -89,23 +74,29 @@ const StyledPost = styled.div`
 const StyledContent = styled.div`
   font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   h2 {
-    margin: 42px 0 20px;
-    font-size: 1.6rem;
-    font-family: 'Victor Mono', monospace;
+    margin: 55px 0 20px;
+    font-size: 2.2rem;
+    font-family: 'Rubik', 'Victor Mono', monospace;
+    font-weight: 400;
   }
   h3 {
-    margin: 32px 0 16px;
-    font-size: 1.35rem;
-    font-family: 'Victor Mono', monospace;
+    margin: 42px 0 17px;
+    font-size: 1.85rem;
+    font-family: 'Rubik', 'Victor Mono', monospace;
+    font-weight: 400;
   }
   h4 {
-    margin: 28px 0 16px;
-    font-size: 1.1rem;
-    font-family: 'Victor Mono', monospace;
+    margin: 32px 0 17px;
+    font-size: 1.6rem;
+    font-family: 'Rubik', 'Victor Mono', monospace;
+    font-weight: 400;
+  }
+  p,
+  li {
+    font-size: 1.15rem;
   }
   p {
     margin: 0 0 20px 0;
-    /* line-height: 1.85rem; */
     line-height: 2rem;
     a {
       text-decoration: none;
@@ -125,7 +116,7 @@ const StyledContent = styled.div`
   }
   ul,
   ol {
-    line-height: 1.6rem;
+    line-height: 2rem;
     margin: 0 0 20px;
     li {
       margin: 0 0 12px;
@@ -135,25 +126,25 @@ const StyledContent = styled.div`
     }
   }
   blockquote {
-    margin: 30px 0;
-    padding: 20px 0 20px 30px;
+    margin: 32px 0;
+    padding: 20px 0 20px 32px;
     border-left: 3px solid ${props => props.theme.grey600};
     font-weight: 700;
     background-color: ${props => props.theme.grey200};
     color: ${props => props.theme.grey600};
     p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin: 0;
     }
   }
 `;
 
 const StyledPostMeta = styled.div`
-  border-bottom: 1px solid ${props => props.theme.grey300};
+  /* border-bottom: 1px solid ${props => props.theme.grey300}; */
   width: 75%;
   color: ${props => props.theme.grey500};
   font-size: 0.85rem;
-  margin: 40px 0 40px;
+  margin: 42px 0 96px;
   .meta__date {
     .updated {
       font-size: 0.75rem;
@@ -161,7 +152,7 @@ const StyledPostMeta = styled.div`
   }
   .meta__cats {
     p {
-      margin: 10px 0 0;
+      margin: 12px 0 0;
       span {
         margin-left: 8px;
         a {

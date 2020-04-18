@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
 import Nav from './Nav';
-import Inner from './Inner';
+import Inner from './styles/Inner';
 import useWindowSize from '../utils/useWindowSize';
 
 // idea for bg from https://codepen.io/enbee81/full/yLyrmyg
@@ -55,7 +55,7 @@ const Footer = ({ isIndex }) => {
       {!isIndex && <Nav />}
       <Inner>
         <p>
-          © {new Date().getFullYear()} rubenvara.io ·{' '}
+          ©{new Date().getFullYear()} rubenvara.io ·{' '}
           <Link to="/contacto">Contacto</Link>
         </p>
         <p>

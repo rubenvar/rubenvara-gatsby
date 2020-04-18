@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const StyledArchiveHeader = styled.div`
-  margin: 0 0 36px;
+  margin: 0 0 73px;
   h1 {
-    margin-bottom: 17px;
+    margin-bottom: 32px;
     span {
       background: ${props => props.theme.grey200};
       padding: 0 4px;
@@ -11,6 +11,7 @@ const StyledArchiveHeader = styled.div`
   }
   p {
     color: ${props => props.theme.grey700};
+    margin: 0 0 20px;
     &.updated {
       color: ${props => props.theme.grey400};
       font-size: 0.85rem;

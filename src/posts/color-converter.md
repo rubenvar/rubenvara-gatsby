@@ -89,14 +89,14 @@ resultInput.value = userInput.value
   // separamos el listado por las comas, a un array de cadenas
   .split(`,`)
   // quitamos TODOS los espacios en cada cadena
-  .map(h => h.replace(/ /g, ``))
+  .map((h) => h.replace(/ /g, ``))
   // quitamos TODAS las new-lines
-  .map(h => h.replace(/\n/g, ``))
+  .map((h) => h.replace(/\n/g, ``))
   // quitamos los elementos vacíos en el array
-  .filter(h => h !== ``)
+  .filter((h) => h !== ``)
   // pasamos cada código hex a la función conversora
   // (que devuelve una cadena con el hsl(), ahora lo veremos)
-  .map(h => calculateHSL(h))
+  .map((h) => calculateHSL(h))
   // juntamos todas las cadenas del array en una mega cadena
   // separando cada color con una new-line
   .join(`\n`);
@@ -176,7 +176,9 @@ if (hex.length === 6) {
   r = +`0x${hex[0]}${hex[0]}`;
   g = +`0x${hex[1]}${hex[1]}`;
   b = +`0x${hex[2]}${hex[2]}`;
-} else return console.log(`${inp} not valid (╯°□°）╯︵ ┻━┻`);
+} else {
+  return console.log(`${inp} not valid (╯°□°）╯︵ ┻━┻`);
+}
 ```
 
 Si queda claro sáltate este detalle, sino aquí tienes una explicación:

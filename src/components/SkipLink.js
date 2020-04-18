@@ -9,11 +9,10 @@ const StyledSkipLink = styled.a`
   z-index: 1;
   background: ${props => props.theme.primary500};
   color: ${props => props.theme.grey100};
-  padding: 10px;
+  padding: 8px 12px 12px;
   font-size: 1rem;
   text-align: center;
   transition: top 0.1s linear;
-
   &:focus {
     top: 0;
   }

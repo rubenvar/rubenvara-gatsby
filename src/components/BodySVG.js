@@ -99,7 +99,7 @@ const BodySVGs = () => {
       // rotate random number of degs, use first point as center for rotating
       const randHue = randomNumber(-30, 30);
       // const randHue = randomNumber(175, 215);
-      const alpha = 0.55;
+      const alpha = 0.2;
 
       g.append('polygon')
         .attr('class', 'shape')

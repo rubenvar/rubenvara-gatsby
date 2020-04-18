@@ -29,20 +29,9 @@ const PostTemplate = ({ data, pageContext }) => {
         description={frontmatter.description}
       />
       <StyledPost>
-        <div className="breadcrumb" aria-label="Breadcrumb">
-          <Link className="breadcrumb__link" to="/">
-            Inicio
-          </Link>
-          <span className="breadcrumb__sep">></span>
-          <Link className="breadcrumb__link" to="/blog">
-            Blog
-          </Link>
-          <span className="breadcrumb__sep">></span>
-          <span className="breadcrumb__link__active">{frontmatter.title}</span>
-        </div>
         <div className="post__header">
           <h1>{frontmatter.title}</h1>
-          <PostLiker id={id} />
+          {/* <PostLiker id={id} /> */}
         </div>
 
         <StyledContent dangerouslySetInnerHTML={{ __html: html }} />

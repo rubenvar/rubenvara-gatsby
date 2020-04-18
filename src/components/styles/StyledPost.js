@@ -172,7 +172,7 @@ const StyledPostMeta = styled.div`
   }
 `;
 
-const StyledNav = css`
+const StyledPaginationDefault = css`
   background: ${props => props.theme.whiteTr};
   div {
     a {
@@ -200,4 +200,4 @@ const StyledNav = css`
   }
 `;
 
-export { StyledPost, StyledContent, StyledPostMeta, StyledNav };
+export { StyledPost, StyledContent, StyledPostMeta, StyledPaginationDefault };

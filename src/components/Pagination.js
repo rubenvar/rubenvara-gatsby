@@ -3,10 +3,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { StyledNav } from './styles/StyledPost';
+import { StyledPaginationDefault } from './styles/StyledPost';
 
 const StyledPagination = styled.div`
-  ${StyledNav};
+  ${StyledPaginationDefault};
   margin: 142px 0 80px;
   display: grid;
   grid-template-columns: 1fr 0.6fr 1fr;

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { StyledNav } from './styles/StyledPost';
+import { StyledPaginationDefault } from './styles/StyledPost';
 
 const StyledPostNav = styled.nav`
-  ${StyledNav};
+  ${StyledPaginationDefault};
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;

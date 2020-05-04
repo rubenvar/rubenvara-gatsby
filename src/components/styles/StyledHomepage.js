@@ -15,8 +15,8 @@ const StyledHero = styled.div`
   background: linear-gradient(#fff3, hsl(0, 20%, 97%));
   position: relative;
   .image {
-    height: calc(100% + 0px);
-    top: -0px;
+    height: 100%;
+    top: 0px;
     width: calc(100% + 400px);
     right: -400px;
     z-index: -1;
@@ -62,7 +62,7 @@ const StyledHero = styled.div`
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     margin-top: 32px;
-    min-height: 70vh;
+    min-height: 65vh;
     .text {
       max-width: ${props => props.theme.maxWidth};
       p {
@@ -71,10 +71,14 @@ const StyledHero = styled.div`
         line-height: 1.7;
       }
     }
-    nav {
-      position: fixed;
-      z-index: 90;
-    }
+  }
+  nav {
+    margin: 0;
+    position: fixed;
+    /* position: sticky; */
+    z-index: 90;
+    bottom: 73px;
+    right: 42px;
   }
 `;
 

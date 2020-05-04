@@ -156,3 +156,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 };
+// https://github.com/gatsbyjs/gatsby/issues/564#issuecomment-527891177
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty',
+    },
+  });
+};

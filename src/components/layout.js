@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import 'normalize.css';
 
-import IndexPage from './IndexPage';
+import Homepage from './Homepage';
 import Header from './Header';
 import Footer from './Footer';
 import theme from './styles/Theme';
@@ -21,19 +21,19 @@ const TopBar = styled.div`
   z-index: 999;
 `;
 
-const Layout = ({ type, children }) => {
+function Layout({ type, children }) {
   const isPost = type === 'post';
   const isIndex = type === 'index';
   const isBlog = type === 'blog';
 
   return (
-    <Fragment>
+    <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         {isIndex ? (
-          <IndexPage />
+          <Homepage />
         ) : (
-          <Fragment>
+          <>
             <BodySVGs />
             <SkipLink />
             <TopBar />
@@ -42,12 +42,12 @@ const Layout = ({ type, children }) => {
               <main>{children}</main>
             </Inner>
             <Footer />
-          </Fragment>
+          </>
         )}
       </ThemeProvider>
-    </Fragment>
+    </>
   );
-};
+}
 
 Layout.propTypes = {
   type: PropTypes.string,

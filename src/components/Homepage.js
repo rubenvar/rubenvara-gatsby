@@ -7,7 +7,7 @@ import Footer from './Footer';
 import Nav from './Nav';
 import StyledHero from './styles/StyledIndex';
 
-const IndexPage = () => {
+function Homepage() {
   const data = useStaticQuery(graphql`
     query {
       backgroundImage: file(relativePath: { eq: "rub.jpg" }) {
@@ -66,6 +66,6 @@ const IndexPage = () => {
       <Footer isIndex />
     </>
   );
-};
+}
 
-export default IndexPage;
+export default Homepage;

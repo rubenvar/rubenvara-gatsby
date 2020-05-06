@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     transition: all 0.25s;
-    color: {theme.primary500};
+    color: ${theme.primary500};
   }
   p {
     margin: 0;

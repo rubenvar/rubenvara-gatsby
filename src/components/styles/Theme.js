@@ -14,7 +14,7 @@ const theme = {
   primary700: `hsl(0, 85%, 28%)`,
   primary800: `hsl(350, 90%, 18%)`,
   primary900: `hsl(340, 100%, 8%)`,
-
+  // (#db2424)
   primary500tr: `hsla(0, 72%, 50%, 0.5)`,
 
   grey100: `hsl(200, 30%, 94%)`,

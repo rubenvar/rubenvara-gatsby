@@ -29,12 +29,26 @@ const theme = {
 
   secondary500: `hsl(180, 64%, 45%)`,
   secondary700: `hsl(180, 64%, 25%)`,
+  // (#29bcbc)
 
   shadow100: `0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)`,
   shadow200: `0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12)`,
   shadow300: `0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1)`,
   shadow400: `0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05)`,
   shadow500: `0 20px 40px rgba(0, 0, 0, 0.2)`,
+
+  gap10: `4px`,
+  gap20: `8px`,
+  gap30: `12px`,
+  gap40: `17px`,
+  gap50: `20px`,
+  gap60: `25px`,
+  gap70: `32px`,
+  gap80: `42px`,
+  gap90: `55px`,
+  gap100: `73px`,
+  gap110: `96px`,
+  // ... more in /p
 
   // redGradient: `linear-gradient(to right, ${redLighter}, ${red}, ${red}, ${redDarker})`,
   logoGradient: `linear-gradient(

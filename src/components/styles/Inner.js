@@ -6,7 +6,7 @@ const Inner = styled.div`
   margin: 0 auto;
   position: relative;
   main {
-    margin-top: 42px;
+    margin-top: ${props => props.theme.gap80};
   }
 `;
 

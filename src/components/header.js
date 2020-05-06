@@ -8,7 +8,7 @@ import Inner from './styles/Inner';
 const StyledHeader = styled.header`
   background: ${props => props.theme.white};
   margin: 0;
-  padding: 8px 0;
+  padding: ${props => props.theme.gap20} 0;
   > div {
     display: flex;
     justify-content: space-between;

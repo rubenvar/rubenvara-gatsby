@@ -10,9 +10,9 @@ const shadowAnim = keyframes`
 `;
 
 const StyledHero = styled.div`
-  padding: 55px;
+  padding: ${props => props.theme.gap90};
   min-height: 100vh;
-  background: linear-gradient(#fff3, hsl(0, 20%, 97%));
+  background: linear-gradient(#fff5, hsl(0, 20%, 97%));
   position: relative;
   .image {
     height: 100%;
@@ -22,7 +22,7 @@ const StyledHero = styled.div`
     z-index: -1;
   }
   .title {
-    margin-bottom: 55px;
+    margin-bottom: ${props => props.theme.gap90};
     h1 {
       font-size: 5.5rem;
       font-family: 'Mansalva', cursive;
@@ -31,11 +31,12 @@ const StyledHero = styled.div`
       background-size: 250% 100%;
       background-repeat: no-repeat;
       animation: ${shadowAnim} infinite 3s alternate;
-      display: table;
+      display: block;
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       .💩 {
+        /* display: inline; */
         display: inline-block;
         transition: all 0.25s;
         &:hover {
@@ -61,12 +62,12 @@ const StyledHero = styled.div`
   main {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    margin-top: 32px;
+    margin-top: ${props => props.theme.gap70};
     min-height: 65vh;
     .text {
       max-width: ${props => props.theme.maxWidth};
       p {
-        margin-bottom: 25px;
+        margin-bottom: ${props => props.theme.gap60};
         font-size: 1.15rem;
         line-height: 1.7;
         transition: opacity 150ms;
@@ -101,8 +102,8 @@ const StyledHero = styled.div`
     position: fixed;
     /* position: sticky; */
     z-index: 90;
-    bottom: 73px;
-    right: 42px;
+    bottom: ${props => props.theme.gap100};
+    right: ${props => props.theme.gap80};
   }
 `;
 

@@ -9,11 +9,13 @@ const StyledPostNav = styled.nav`
   ${StyledPaginationDefault};
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin: 73px 0;
+  grid-gap: ${props => props.theme.gap20};
+  gap: ${props => props.theme.gap20};
+  margin: ${props => props.theme.gap100} 0;
   div {
     a {
-      padding: 12px 12px 12px;
+      padding: ${props => props.theme.gap30} ${props => props.theme.gap30}
+        ${props => props.theme.gap30};
       display: grid;
       grid-template-rows: 1.25fr 1fr;
       align-items: center;
@@ -25,7 +27,7 @@ const StyledPostNav = styled.nav`
           font-weight: 700;
         }
         &.title {
-          margin-top: 4px;
+          margin-top: ${props => props.theme.gap10};
           color: ${props => props.theme.grey400};
           font-size: 0.6rem;
           align-self: end;

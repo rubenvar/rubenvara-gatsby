@@ -7,14 +7,15 @@ import StyledPaginationDefault from './styles/StyledPagination';
 
 const StyledPagination = styled.div`
   ${StyledPaginationDefault};
-  margin: 131px 0 96px;
+  margin: 131px 0 ${props => props.theme.gap110};
   display: grid;
   grid-template-columns: 1fr 0.6fr 1fr;
-  gap: 20px;
+  grid-gap: ${props => props.theme.gap50};
+  gap: ${props => props.theme.gap50};
   font-family: 'Victor Mono', monospace;
   div {
     a {
-      padding: 25px 12px;
+      padding: ${props => props.theme.gap60} ${props => props.theme.gap30};
       font-family: 'Victor Mono', monospace;
       font-weight: 700;
     }

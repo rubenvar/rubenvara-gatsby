@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledPost = styled.div`
   position: relative;
   .post__header {
-    margin: 0 0 42px;
+    margin: 0 0 ${props => props.theme.gap80};
     h1 {
       font-family: 'Rubik', 'Victor Mono', monospace;
       font-size: 3rem;
@@ -16,15 +16,15 @@ const StyledPost = styled.div`
   }
   .twitter {
     background: ${props => props.theme.twitterGradient};
-    padding: 4px;
-    margin-top: 55px;
-    margin-bottom: 96px;
+    padding: ${props => props.theme.gap10};
+    margin-top: ${props => props.theme.gap90};
+    margin-bottom: ${props => props.theme.gap110};
     position: relative;
     overflow: hidden;
     svg {
       position: absolute;
-      width: 73px;
-      height: 73px;
+      width: ${props => props.theme.gap100};
+      height: ${props => props.theme.gap100};
       top: 0;
       right: 0;
     }
@@ -75,19 +75,19 @@ const StyledContent = styled.div`
   margin-bottom: ${props => (props.isPage ? '73px' : 0)};
   font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   h2 {
-    margin: 55px 0 20px;
+    margin: ${props => props.theme.gap90} 0 ${props => props.theme.gap50};
     font-size: 2.2rem;
     font-family: 'Rubik', 'Victor Mono', monospace;
     font-weight: 400;
   }
   h3 {
-    margin: 42px 0 17px;
+    margin: ${props => props.theme.gap80} 0 ${props => props.theme.gap40};
     font-size: 1.85rem;
     font-family: 'Rubik', 'Victor Mono', monospace;
     font-weight: 400;
   }
   h4 {
-    margin: 32px 0 17px;
+    margin: ${props => props.theme.gap70} 0 ${props => props.theme.gap40};
     font-size: 1.6rem;
     font-family: 'Rubik', 'Victor Mono', monospace;
     font-weight: 400;
@@ -97,8 +97,9 @@ const StyledContent = styled.div`
     font-size: 1.15rem;
   }
   p {
-    margin: 0 0 20px 0;
+    margin: 0 0 ${props => props.theme.gap50} 0;
     line-height: 2rem;
+    /* links with undershadow only in content */
     a {
       text-decoration: none;
       color: ${props => props.theme.primary500};
@@ -118,17 +119,18 @@ const StyledContent = styled.div`
   ul,
   ol {
     line-height: 2rem;
-    margin: 0 0 20px;
+    margin: 0 0 ${props => props.theme.gap50};
     li {
-      margin: 0 0 12px;
+      margin: 0 0 ${props => props.theme.gap30};
       &::marker {
         color: ${props => props.theme.primary500};
       }
     }
   }
   blockquote {
-    margin: 32px 0;
-    padding: 20px 0 20px 32px;
+    margin: ${props => props.theme.gap70} 0;
+    padding: ${props => props.theme.gap50} 0 ${props => props.theme.gap50}
+      ${props => props.theme.gap70};
     border-left: 3px solid ${props => props.theme.grey600};
     font-weight: 700;
     background-color: ${props => props.theme.grey200};
@@ -145,7 +147,7 @@ const StyledPostMeta = styled.div`
   width: 75%;
   color: ${props => props.theme.grey500};
   font-size: 0.85rem;
-  margin: 42px 0 96px;
+  margin: ${props => props.theme.gap80} 0 ${props => props.theme.gap110};
   .meta__date {
     .updated {
       font-size: 0.75rem;
@@ -153,9 +155,9 @@ const StyledPostMeta = styled.div`
   }
   .meta__cats {
     p {
-      margin: 12px 0 0;
+      margin: ${props => props.theme.gap30} 0 0;
       span {
-        margin-left: 8px;
+        margin-left: ${props => props.theme.gap20};
         a {
           color: ${props => props.theme.grey500};
         }

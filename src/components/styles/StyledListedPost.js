@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 const StyledListedPost = styled.div`
   background: ${props => props.theme.whiteTr};
   box-shadow: ${props => props.theme.shadow200};
-  padding: 12px 17px;
-  margin: 0 0 96px;
+  padding: ${props => props.theme.gap30} ${props => props.theme.gap40};
+  margin: 0 0 ${props => props.theme.gap110};
   transition: all 0.5s;
   position: relative;
   transform: rotate(-1deg);
@@ -46,7 +46,7 @@ const StyledListedPost = styled.div`
     }
   }
   .description {
-    margin-top: 25px;
+    margin-top: ${props => props.theme.gap60};
     color: ${props => props.theme.grey500};
     font-size: 0.75rem;
     line-height: 1.35rem;
@@ -60,7 +60,7 @@ const StyledListedPost = styled.div`
   }
   .meta {
     font-size: 0.75rem;
-    margin: 20px 0 0;
+    margin: ${props => props.theme.gap50} 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     > span {
@@ -71,7 +71,7 @@ const StyledListedPost = styled.div`
       &.meta__cats {
         justify-self: end;
         .meta__cat {
-          margin-right: 4px;
+          margin-right: ${props => props.theme.gap10};
           a {
             text-decoration: none;
             color: ${props => props.theme.grey500};

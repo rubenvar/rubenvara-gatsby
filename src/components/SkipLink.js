@@ -9,7 +9,8 @@ const StyledSkipLink = styled.a`
   z-index: 1;
   background: ${props => props.theme.primary500};
   color: ${props => props.theme.grey100};
-  padding: 8px 12px 12px;
+  padding: ${props => props.theme.gap20} ${props => props.theme.gap30}
+    ${props => props.theme.gap30};
   font-size: 1rem;
   text-align: center;
   transition: top 0.1s linear;

@@ -7,6 +7,58 @@ import Footer from './Footer';
 import Nav from './Nav';
 import StyledHero from './styles/StyledHomepage';
 
+const LongIntro = () => (
+  <>
+    <p>
+      Estudié un grado en alternancia en el IMH, Elgoibar. Trabajé varios años
+      como ingeniero industrial. Aprendí un monton muy grande sobre procesos
+      comerciales y otras cosas.
+    </p>
+    <p>
+      Descubrí que <strong>no era así como quería vivir</strong> el resto de mis
+      días. Decidí cambiar mi vida por completo y abandonarlo todo. O
+      intentarlo.
+    </p>
+    <p>
+      Me marché de viaje, con el vago plan de dar la vuelta al mundo. Me quedé
+      por el camino.
+    </p>
+    <p>
+      Pasé <strong>tres años</strong> recorriendo todo el este de Europa y un
+      poco más. Viví en varios países, creando mi negocio online, escalando
+      donde podía, y conociendo cientos de personas maravillosas.
+    </p>
+    <p>
+      Volví a casa, para vivir en el monte alejado todo lo posible del mundo
+      real. Para dedicar mi tiempo a estudiar, y a escalar y nadar casi a
+      diario.
+    </p>
+    <p>
+      Y a trabajar en mi negocio online, donde diseño y desarrollo{' '}
+      <strong>páginas y aplicaciones web modernas</strong> con tecnologías
+      punteras. Suelo romper el Internet a menudo pero siempre consigo
+      arreglarlo.
+    </p>
+  </>
+);
+
+const ShortIntro = () => (
+  <>
+    <p>
+      Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
+      cambiar mi vida y abandonarlo todo.
+    </p>
+    <p>
+      Me marché de viaje, sin fechas ni planes. Pasé tres años viviendo en
+      varios países, creando mi negocio online, escalando, y estudiando.
+    </p>
+    <p>
+      Volví a casa, para vivir en el monte alejado del mundo real. Para dedicar
+      mi tiempo a estudiar, entrenar, y trabajar en mi negocio.
+    </p>
+  </>
+);
+
 function Homepage() {
   const data = useStaticQuery(graphql`
     query {
@@ -48,73 +100,16 @@ function Homepage() {
         <main>
           <div className="text">
             <p>Durante esta última década...</p>
-            <p>
-              Estudié un grado
-              <span hidden={!isLongIntro}>
-                {' '}
-                en alternancia en el IMH, Elgoibar
-              </span>
-              . Trabajé varios años como ingeniero industrial.{' '}
-              <span hidden={isLongIntro}>
-                Decidí cambiar mi vida y abandonarlo todo.
-              </span>
-              <span hidden={!isLongIntro}>
-                Aprendí un monton muy grande sobre gestión y procesos
-                comerciales.
-              </span>
-            </p>
-            {/* <CSSTransition in={isLongIntro} timeout={50}> */}
-            <p hidden={!isLongIntro}>
-              También descubrí que no era así como quería vivir el resto de mis
-              días. Decidí cambiar mi vida por completo y abandonarlo todo. O
-              intentarlo.
-            </p>
-            {/* </CSSTransition> */}
-            <p>
-              Me marché de viaje,{' '}
-              <span hidden={isLongIntro}>sin fechas ni planes</span>
-              <span hidden={!isLongIntro}>
-                con solo una fecha de inicio y el vago plan de dar la vuelta al
-                mundo. Me quedé por el camino
-              </span>
-              .
-              <span hidden={isLongIntro}>
-                {' '}
-                Pasé tres años viviendo en varios países, creando mi negocio
-                online, escalando, y estudiando.
-              </span>
-            </p>
-            <p hidden={!isLongIntro}>
-              Pasé tres años recorriendo todo el este de Europa y un poco más.
-              Viví en varios lugares, creando mi negocio online, estudiando,
-              escalando donde podía, y conociendo cientos de personas
-              maravillosas.
-            </p>
-            <p>
-              Volví a casa, para vivir en el monte alejado{' '}
-              <span hidden={!isLongIntro}>todo lo posible </span>del mundo real.
-              Para dedicar mi tiempo a estudiar,{' '}
-              <span hidden={isLongIntro}>
-                entrenar, y trabajar en mi negocio
-              </span>
-              <span hidden={!isLongIntro}>
-                y a escalar y nadar casi a diario
-              </span>
-              .
-            </p>
-            <p hidden={!isLongIntro}>
-              Y a trabajar en mi negocio online, donde diseño y desarrollo
-              aplicaciones web modernas con tecnologías punteras. Suelo romper
-              el Internet a menudo pero siempre consigo arreglarlo.
-            </p>
+            {isLongIntro ? <LongIntro /> : <ShortIntro />}
             <p>
               <button
                 type="button"
                 onClick={() => setIsLongIntro(!isLongIntro)}
                 onKeyPress={() => setIsLongIntro(!isLongIntro)}
               >
-                <span hidden={isLongIntro}>Ver la versión larga...</span>
-                <span hidden={!isLongIntro}>Volver a la versión corta ←</span>
+                {isLongIntro
+                  ? `Volver a la versión corta ←`
+                  : `Ver la versión larga...`}
               </button>
             </p>
           </div>

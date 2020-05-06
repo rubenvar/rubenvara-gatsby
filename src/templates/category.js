@@ -30,7 +30,6 @@ const Category = ({ pageContext, data }) => {
       {edges.map(({ node }) => (
         <ListedPost key={node.id} post={node} />
       ))}
-      <p>Todas las categorías:</p>
       <CategoryList />
     </Layout>
   );

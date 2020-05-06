@@ -38,15 +38,16 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   ::selection {
-    background: ${theme.primary300};
-    color: ${theme.primary100};
+    background: ${theme.primary500};
+    color: ${theme.grey100};
   }
   ::-moz-selection {
-    background: ${theme.primary300};
-    color: ${theme.primary100};
+    background: ${theme.primary500};
+    color: ${theme.grey100};
   }
   a {
     transition: all 0.25s;
+    color: {theme.primary500};
   }
   p {
     margin: 0;
@@ -80,10 +81,10 @@ const GlobalStyle = createGlobalStyle`
   }
   .custom-block {
     box-shadow: ${theme.shadow100};
-    margin: 42px 0;
+    margin: ${theme.gap80} 0;
     &.info {
       background: ${theme.grey100};
-      padding: 15px 15px 4px;
+      padding: 15px 15px ${theme.gap10};
       color: ${theme.grey700};
       a {
         color: ${theme.grey900};
@@ -94,7 +95,7 @@ const GlobalStyle = createGlobalStyle`
     &-body {
       p {
         font-size: 1rem;
-        margin-bottom: 17px;
+        margin-bottom: ${theme.gap40};
       }
     }
   }

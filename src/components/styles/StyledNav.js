@@ -21,7 +21,8 @@ const onHover = keyframes`
 
 const StyledNav = styled.nav`
   padding: 0;
-  margin: ${props => (props.isIndex ? `0 0` : '32px auto ')} 73px;
+  margin: ${props => (props.isIndex ? `0 0` : '32px auto ')}
+    ${props => props.theme.gap100};
   ${props =>
     !props.isIndex &&
     css`

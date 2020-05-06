@@ -42,10 +42,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     {
       allPostsRemark: allFile(
         limit: 1000
-        filter: {
-          sourceInstanceName: { eq: "post" }
-          childMarkdownRemark: { frontmatter: { draft: { eq: false } } }
-        }
+        filter: { sourceInstanceName: { eq: "post" } }
         sort: {
           order: DESC
           fields: [childMarkdownRemark___frontmatter___date]

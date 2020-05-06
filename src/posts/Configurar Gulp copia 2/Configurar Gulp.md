@@ -4,7 +4,6 @@ title: Cómo Cococococococoonfigurar GUguguGulp
 seoTitle: Cómo Configurar Gulp como un PROP
 date: 2019-12-02
 description: "Esta es la descripción del post pedita voluptatibus, optio iusto nesciunt ratione."
-draft: false
 categories:
   - Javascript
   - Gulp
@@ -49,15 +48,12 @@ corrupti! error assumenda repellendus corrupti! ullam commodi placeat ipsum et s
 Veniam, dolor, quibusdam error assumenda repellendus corrupti! ullam commodi placeat ipsum et saepe repudiandae Eos tempora expedita
 
 ```js
-const setTheme = theme => {
+const setTheme = (theme) => {
   // add theme to dataset
   // highlight-next-line
   html.dataset.theme = theme;
   // si se activa modo oscuro, texto del botón será "Modo Claro", y viceversa
-  themeSwitcherButton.forEach(
-    button =>
-      (button.innerHTML = theme === "dark" ? "☀️ Modo Claro" : "🌘 Modo Oscuro")
-  );
+  themeSwitcherButton.forEach((button) => (button.innerHTML = theme === "dark" ? "☀️ Modo Claro" : "🌘 Modo Oscuro"));
   // set variable to theme for button checking
   currentTheme = theme;
 };

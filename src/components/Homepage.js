@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+// import { CSSTransition } from 'react-transition-group';
 
 import Footer from './Footer';
 import Nav from './Nav';
@@ -63,11 +63,13 @@ function Homepage() {
                 comerciales.
               </span>
             </p>
+            {/* <CSSTransition in={isLongIntro} timeout={50}> */}
             <p hidden={!isLongIntro}>
               También descubrí que no era así como quería vivir el resto de mis
               días. Decidí cambiar mi vida por completo y abandonarlo todo. O
               intentarlo.
             </p>
+            {/* </CSSTransition> */}
             <p>
               Me marché de viaje,{' '}
               <span hidden={isLongIntro}>sin fechas ni planes</span>
@@ -111,8 +113,8 @@ function Homepage() {
                 onClick={() => setIsLongIntro(!isLongIntro)}
                 onKeyPress={() => setIsLongIntro(!isLongIntro)}
               >
-                <span hidden={isLongIntro}>Ver la versión larga</span>
-                <span hidden={!isLongIntro}>Volver a la versión corta</span>
+                <span hidden={isLongIntro}>Ver la versión larga...</span>
+                <span hidden={!isLongIntro}>Volver a la versión corta ←</span>
               </button>
             </p>
           </div>

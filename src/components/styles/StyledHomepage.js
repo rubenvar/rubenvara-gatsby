@@ -69,6 +69,30 @@ const StyledHero = styled.div`
         margin-bottom: 25px;
         font-size: 1.15rem;
         line-height: 1.7;
+        transition: opacity 150ms;
+        /* &.enter {
+          opacity: 0;
+          &-done {
+            opacity: 1;
+          }
+        }
+        &.exit {
+          opacity: 1;
+          &-done {
+            opacity: 0;
+            display: none;
+          }
+        } */
+      }
+      button {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: none;
+        color: ${props => props.theme.primary500};
+        /* text-decoration: underline; */
+        text-decoration: none;
       }
     }
   }

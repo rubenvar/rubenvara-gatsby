@@ -4,7 +4,6 @@ title: Cómo Configurar Gulp
 seoTitle: Cómo Configurar Gulp como un PROP
 date: 2019-07-15
 description: "Esta es la descripción del post pedita voluptatibus, optio iusto nesciunt ratione."
-draft: false
 categories:
   - Herramientas
   - Gulp
@@ -76,10 +75,7 @@ const setTheme = (theme) => {
   // highlight-next-line
   html.dataset.theme = theme;
   // si se activa modo oscuro, texto del botón será "Modo Claro", y viceversa
-  themeSwitcherButton.forEach(
-    (button) =>
-      (button.innerHTML = theme === "dark" ? "☀️ Modo Claro" : "🌘 Modo Oscuro")
-  );
+  themeSwitcherButton.forEach((button) => (button.innerHTML = theme === "dark" ? "☀️ Modo Claro" : "🌘 Modo Oscuro"));
   // set variable to theme for button checking
   currentTheme = theme;
 };

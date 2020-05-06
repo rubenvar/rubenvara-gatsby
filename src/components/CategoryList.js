@@ -26,10 +26,7 @@ const StyledCategoryList = styled.div`
 const CategoryList = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        limit: 2000
-        filter: { frontmatter: { draft: { eq: false } } }
-      ) {
+      allMarkdownRemark(limit: 2000) {
         group(field: frontmatter___categories) {
           fieldValue
           totalCount

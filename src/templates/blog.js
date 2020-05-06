@@ -47,10 +47,7 @@ const Blog = ({ data: { allPosts }, pageContext }) => {
 export const blogQuery = graphql`
   query blogQuery($skip: Int!, $limit: Int!) {
     allPosts: allFile(
-      filter: {
-        sourceInstanceName: { eq: "post" }
-        childMarkdownRemark: { frontmatter: { draft: { eq: false } } }
-      }
+      filter: { sourceInstanceName: { eq: "post" } }
       sort: { fields: [childMarkdownRemark___frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
@@ -67,7 +64,6 @@ export const blogQuery = graphql`
               title
               description
               categories
-              draft
             }
             fields {
               readingTime {

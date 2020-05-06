@@ -5,7 +5,6 @@ seoTitle: El mejor post que vas a poder leer hoy!
 previousDate: 2019-01-24
 date: 2020-01-09
 description: Eearum in ratione quis dicta Lorem mira este texto que es mejor que coger un cacho del body y ponerle
-draft: false
 categories:
   - Diseño
   - SEO

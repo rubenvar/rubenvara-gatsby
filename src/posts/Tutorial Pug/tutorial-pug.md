@@ -4,7 +4,6 @@ title: Qué es Pug y cómo usarlo - Tutorial Completo
 seoTitle: Qué es Pug y cómo usarlo - Tutorial Completo
 date: 2020-03-31
 description: ""
-draft: false
 categories:
   - html
   - Herramientas

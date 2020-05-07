@@ -59,42 +59,24 @@ const StyledHero = styled.div`
       display: table;
     }
   }
-  main {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
+  .intro {
     margin-top: ${props => props.theme.gap70};
     min-height: 65vh;
-    .text {
-      max-width: ${props => props.theme.maxWidth};
-      p {
-        margin-bottom: ${props => props.theme.gap60};
-        font-size: 1.15rem;
-        line-height: 1.7;
-        transition: opacity 150ms;
-        /* &.enter {
-          opacity: 0;
-          &-done {
-            opacity: 1;
-          }
-        }
-        &.exit {
-          opacity: 1;
-          &-done {
-            opacity: 0;
-            display: none;
-          }
-        } */
-      }
-      button {
-        margin: 0;
-        padding: 0;
-        border: none;
-        box-shadow: none;
-        background: none;
-        color: ${props => props.theme.primary500};
-        /* text-decoration: underline; */
-        text-decoration: none;
-      }
+    width: 60%;
+    max-width: ${props => props.theme.maxWidth};
+    p {
+      margin-bottom: ${props => props.theme.gap60};
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    button {
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      background: none;
+      color: ${props => props.theme.primary500};
+      text-decoration: none;
     }
   }
   nav {

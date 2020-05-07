@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-// import { CSSTransition } from 'react-transition-group';
+import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 
 import Footer from './Footer';
 import Nav from './Nav';
 import StyledHero from './styles/StyledHomepage';
 
+const AnimatedIntro = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    {children}
+  </motion.div>
+);
+
+// hard-coded intro here ftw 😎
+// two different components so framer motion will animate on each mount-unmount 🤞
 const LongIntro = () => (
-  <>
+  <AnimatedIntro>
+    <p>Durante esta última década...</p>
     <p>
       Estudié un grado en alternancia en el IMH, Elgoibar. Trabajé varios años
       como ingeniero industrial. Aprendí un monton muy grande sobre procesos
@@ -39,11 +53,12 @@ const LongIntro = () => (
       punteras. Suelo romper el Internet a menudo pero siempre consigo
       arreglarlo.
     </p>
-  </>
+  </AnimatedIntro>
 );
 
 const ShortIntro = () => (
-  <>
+  <AnimatedIntro>
+    <p>Durante esta última década...</p>
     <p>
       Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
       cambiar mi vida y abandonarlo todo.
@@ -56,7 +71,7 @@ const ShortIntro = () => (
       Volví a casa, para vivir en el monte alejado del mundo real. Para dedicar
       mi tiempo a estudiar, entrenar, y trabajar en mi negocio.
     </p>
-  </>
+  </AnimatedIntro>
 );
 
 function Homepage() {
@@ -73,6 +88,11 @@ function Homepage() {
   `);
 
   const [isLongIntro, setIsLongIntro] = useState(false);
+  const letters = Array.from('Rubén Vara').map((letter, i) => (
+    <span key={i} className={letter === ' ' ? '🚀' : '💩'}>
+      {letter}
+    </span>
+  ));
 
   return (
     <>
@@ -83,42 +103,32 @@ function Homepage() {
           style={{ position: 'fixed' }}
         />
         <div className="title">
-          <h1>
-            <span className="💩">R</span>
-            <span className="💩">u</span>
-            <span className="💩">b</span>
-            <span className="💩">é</span>
-            <span className="💩">n</span>
-            <span className="🚀">&nbsp;</span>
-            <span className="💩">V</span>
-            <span className="💩">a</span>
-            <span className="💩">r</span>
-            <span className="💩">a</span>
-          </h1>
+          <h1>{letters}</h1>
           <h2>Full Stack Web Developer</h2>
         </div>
-        <main>
-          <div className="text">
-            <p>Durante esta última década...</p>
-            {isLongIntro ? <LongIntro /> : <ShortIntro />}
-            <p>
-              <button
-                type="button"
-                onClick={() => setIsLongIntro(!isLongIntro)}
-                onKeyPress={() => setIsLongIntro(!isLongIntro)}
-              >
-                {isLongIntro
-                  ? `Volver a la versión corta ←`
-                  : `Ver la versión larga...`}
-              </button>
-            </p>
-          </div>
-        </main>
+        <div className="intro">
+          {isLongIntro ? <LongIntro /> : <ShortIntro />}
+          <p>
+            <button
+              type="button"
+              onClick={() => setIsLongIntro(!isLongIntro)}
+              onKeyPress={() => setIsLongIntro(!isLongIntro)}
+            >
+              {isLongIntro
+                ? `Volver a la versión corta ←`
+                : `Ver la versión larga...`}
+            </button>
+          </p>
+        </div>
         <Nav isIndex />
       </StyledHero>
       <Footer isIndex />
     </>
   );
 }
+
+AnimatedIntro.propTypes = {
+  children: PropTypes.object,
+};
 
 export default Homepage;

@@ -34,7 +34,7 @@ function Layout({ type, children }) {
           <Homepage />
         ) : (
           <>
-            <BodySVGs />
+            {/* <BodySVGs /> */}
             <SkipLink />
             <TopBar />
             {!isPost && <Header isBlog={isBlog} />}

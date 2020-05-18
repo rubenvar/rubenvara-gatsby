@@ -64,7 +64,6 @@ module.exports = {
               rel: `noopener noreferrer`,
             },
           },
-          `gatsby-remark-reading-time`,
           `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-custom-blocks`,

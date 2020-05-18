@@ -1,9 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const path = require(`path`);
 const kebabCase = require('lodash.kebabcase');
 
@@ -100,7 +94,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const posts = data.allPostsRemark.edges;
-  const perPage = 6;
+  // TODO not hardcoded here!
+  const perPage = 20;
   const numPages = Math.ceil(posts.length / perPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({

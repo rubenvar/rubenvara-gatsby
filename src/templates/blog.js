@@ -29,8 +29,8 @@ const Blog = ({ data: { allPosts }, pageContext }) => {
           eso estamos.
         </p>
         <p>
-          Escribo sobre desarrollo web. Y sobre Javascript. Sobre todo,
-          Javascript.
+          Escribo sobre desarrollo web. Y sobre JavaScript. Sobre todo,
+          JavaScript.
         </p>
       </StyledArchiveHeader>
       {edges.map(({ node }) => (
@@ -57,18 +57,12 @@ export const blogQuery = graphql`
         node {
           childMarkdownRemark {
             id
-            excerpt(pruneLength: 100)
             frontmatter {
               date(formatString: "YYYY-MM-DD")
               slug
               title
               description
               categories
-            }
-            fields {
-              readingTime {
-                minutes
-              }
             }
           }
         }

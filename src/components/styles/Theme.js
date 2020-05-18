@@ -50,6 +50,19 @@ const theme = {
   gap110: `96px`,
   // ... more in /p
 
+  fontSize10: `0.6rem`,
+  fontSize20: `0.75rem`,
+  fontSize30: `0.85rem`,
+  fontSize40: `1rem`,
+  fontSize50: `1.15rem`,
+  fontSize60: `1.35rem`,
+  fontSize70: `1.6rem`,
+  fontSize80: `1.85rem`,
+  fontSize90: `2.2rem`,
+  fontSize100: `2.55rem`,
+  fontSize110: `3rem`,
+  fontSize200: `5.5rem`,
+
   // redGradient: `linear-gradient(to right, ${redLighter}, ${red}, ${red}, ${redDarker})`,
   logoGradient: `linear-gradient(
     to right,

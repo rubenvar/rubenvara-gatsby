@@ -46,18 +46,12 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 100)
           frontmatter {
             date(formatString: "YYYY-MM-DD")
             slug
             title
             description
             categories
-          }
-          fields {
-            readingTime {
-              minutes
-            }
           }
         }
       }
@@ -82,11 +76,6 @@ Category.propTypes = {
               slug: PropTypes.string.isRequired,
               description: PropTypes.string,
               categories: PropTypes.array.isRequired,
-            }),
-            fields: PropTypes.shape({
-              readingTime: PropTypes.shape({
-                minutes: PropTypes.number,
-              }),
             }),
           }),
         }).isRequired

@@ -27,6 +27,12 @@ const StyledPost = styled.div`
       height: ${props => props.theme.gap100};
       top: 0;
       right: 0;
+      .primary {
+        fill: ${props => props.theme.twitter500};
+      }
+      .secondary {
+        fill: none;
+      }
     }
     p {
       width: 85%;
@@ -41,33 +47,6 @@ const StyledPost = styled.div`
         }
       }
     }
-  }
-`;
-
-const StyledPostLiker = styled.div`
-  border: 1px solid plum;
-  position: sticky;
-  top: 350px;
-  margin-left: -200px;
-  width: 80px;
-  .post__liker {
-    font-size: 0.85rem;
-    border: none;
-    box-shadow: none;
-    background: none;
-    padding: 3px 0;
-    margin: 0;
-    transition: all 0.25s;
-    line-height: 1.15rem;
-    > span {
-      padding: 3px 6px;
-      background: ${props => props.theme.grey200};
-      margin-right: 14px;
-      color: ${props => props.theme.grey800};
-    }
-  }
-  p.post__liker {
-    color: ${props => props.theme.grey600};
   }
 `;
 
@@ -166,4 +145,4 @@ const StyledPostMeta = styled.div`
   }
 `;
 
-export { StyledPost, StyledPostLiker, StyledContent, StyledPostMeta };
+export { StyledPost, StyledContent, StyledPostMeta };

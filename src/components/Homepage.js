@@ -38,9 +38,9 @@ const LongIntro = () => (
       por el camino.
     </p>
     <p>
-      Pasé <strong>tres años</strong> recorriendo todo el este de Europa y un
-      poco más. Viví en varios países, creando mi negocio online, escalando
-      donde podía, y conociendo cientos de personas maravillosas.
+      Pasé <strong>tres años</strong> recorriendo el este de Europa y un poco
+      más. Viví en varios países, creando mi negocio online, escalando donde
+      pude, y conociendo cientos de personas maravillosas.
     </p>
     <p>
       Volví a casa, para vivir en el monte alejado todo lo posible del mundo

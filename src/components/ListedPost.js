@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 
 import StyledListedPost from './styles/StyledListedPost';
+import CategoryLink from './CategoryLink';
 
 function ListedPost({ post }) {
   const dateFormat =
@@ -27,10 +28,11 @@ function ListedPost({ post }) {
             })}
           </time>
         </span>
+        <span className="meta__sep">{' ◇ '}</span>
         <span className="meta__cats">
           {post.frontmatter.categories.map(cat => (
             <span className="meta__cat" key={cat}>
-              {cat.toLowerCase()}
+              <CategoryLink cat={cat}>{cat.toLowerCase()}</CategoryLink>
             </span>
           ))}
         </span>

@@ -32,35 +32,40 @@ const StyledPagination = styled.div`
   }
 `;
 
-const Pagination = ({
+function Pagination({
   totalCount,
   pageContext: { limit, skip, numPages, currentPage },
-}) => (
-  <StyledPagination>
-    <div>
-      {currentPage > 1 && (
-        <Link
-          className="prev"
-          to={currentPage > 2 ? `/blog/${currentPage - 1}` : `/blog`}
-        >
-          ← Anteriores
-        </Link>
-      )}
-    </div>
-    <p>
-      Página
-      <br />
-      <span>{currentPage}</span> de <span>{numPages}</span>
-    </p>
-    <div>
-      {currentPage < numPages && (
-        <Link className="next" to={`/blog/${currentPage + 1}`}>
-          Ver más →
-        </Link>
-      )}
-    </div>
-  </StyledPagination>
-);
+}) {
+  // if less posts than one page, don't show pagination component
+  if (totalCount < limit) return null;
+
+  return (
+    <StyledPagination>
+      <div>
+        {currentPage > 1 && (
+          <Link
+            className="prev"
+            to={currentPage > 2 ? `/blog/${currentPage - 1}` : `/blog`}
+          >
+            ← Anteriores
+          </Link>
+        )}
+      </div>
+      <p>
+        Página
+        <br />
+        <span>{currentPage}</span> de <span>{numPages}</span>
+      </p>
+      <div>
+        {currentPage < numPages && (
+          <Link className="next" to={`/blog/${currentPage + 1}`}>
+            Ver más →
+          </Link>
+        )}
+      </div>
+    </StyledPagination>
+  );
+}
 
 Pagination.propTypes = {
   totalCount: PropTypes.number.isRequired,

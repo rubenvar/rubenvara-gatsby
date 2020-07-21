@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
+
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import CategoryLink from '../components/CategoryLink';

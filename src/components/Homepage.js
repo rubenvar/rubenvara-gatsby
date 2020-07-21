@@ -38,8 +38,8 @@ const LongIntro = () => (
     </p>
     <p>
       Pasé <strong>tres años</strong> recorriendo el este de Europa y un poco
-      más. Viví en varios países, creando mi negocio online, escalando donde
-      pude, y conociendo cientos de personas maravillosas.
+      más. Viví en varios países, creando mi negocio online, escalando, y
+      conociendo cientos de personas maravillosas.
     </p>
     <p>
       Volví a casa, para vivir en el monte alejado del ruido del mundo real.

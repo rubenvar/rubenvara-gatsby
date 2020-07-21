@@ -1,23 +1,23 @@
 import styled, { keyframes, css } from 'styled-components';
-import theme from './Theme';
+// import theme from './Theme';
 
-const onHover = keyframes`
-  20% {
-    background-color: ${theme.secondary700};
-  }
-  40% {
-    background-color: ${theme.secondary500};
-  }
-  60% {
-    background-color: ${theme.primary400};
-  }
-  80% {
-    background-color: ${theme.secondary700};
-  }
-  100% {
-    background-color: ${theme.secondary500};
-  }
-`;
+// const onHover = keyframes`
+//   20% {
+//     background-color: ${theme.secondary700};
+//   }
+//   40% {
+//     background-color: ${theme.secondary500};
+//   }
+//   60% {
+//     background-color: ${theme.primary400};
+//   }
+//   80% {
+//     background-color: ${theme.secondary700};
+//   }
+//   100% {
+//     background-color: ${theme.secondary500};
+//   }
+// `;
 
 const StyledNav = styled.nav`
   padding: 0;
@@ -35,7 +35,8 @@ const StyledNav = styled.nav`
     display: flex;
     flex-direction: ${props => (props.isIndex ? `column` : `row`)};
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; uncomment when there are more than one items */
+    justify-content: center;
     align-items: ${props => (props.isIndex ? `end` : `center`)};
     margin: 0;
     padding: 0;
@@ -64,14 +65,6 @@ const StyledNav = styled.nav`
               : 'translateY(-10px) translateX(0px)'};
         }
       }
-      &--proyectos {
-        .top {
-          transform: ${props =>
-            !props.isIndex
-              ? 'translateY(15px) translateX(0px)'
-              : 'translateY(20px) translateX(0px)'};
-        }
-      }
       span {
         color: ${props => props.theme.grey800};
         font-size: 0.6rem;
@@ -82,13 +75,13 @@ const StyledNav = styled.nav`
         font-weight: 700;
         color: ${props => props.theme.primary500};
         text-decoration: none;
-        transition: none;
+        transition: all 0.3s;
         &:hover {
-          color: ${props => props.theme.secondary700};
-          animation: ${onHover} 0.35s steps(1, start) alternate infinite;
-          color: transparent;
-          background-clip: text;
-          -webkit-background-clip: text;
+          color: ${props => props.theme.secondary500};
+          /* animation: ${onHover} 0.35s steps(1, start) alternate infinite; */
+          /* color: transparent; */
+          /* background-clip: text; */
+          /* -webkit-background-clip: text; */
         }
       }
     }

@@ -30,60 +30,17 @@ const BodySVGs = () => {
       .attr('height', height - 30);
     const g = svg.append('g');
 
-    // // number of shapes
-    // const randShapes = randomNumber(26, 32);
     // number of shapes related to height of document
     const randShapes = height / 80;
     // create shapes! 🚀
     for (let i = 0; i < randShapes; i++) {
       const currentShape = [];
-      // random choice between 3 and 4 for corners of shape
+      // 3 corners to always create triangles
       // const randCorners = randomNumber(3, 4);
       const randCorners = 3;
       const maxSize = 220;
-      // try to avoid lines crossing in 4 corner polygons...
       for (let j = 0; j < randCorners * 2; j++) {
-        // if (j === 6) {
-        //   // limit x here
-        //   if (
-        //     randCorners[2] < randCorners[0] &&
-        //     randCorners[2] < randCorners[4]
-        //   ) {
-        //     currentShape.push(
-        //       randomNumber(Math.min(randCorners[0], randCorners[4]), maxSize)
-        //     );
-        //   } else if (
-        //     randCorners[2] > randCorners[0] &&
-        //     randCorners[2] > randCorners[4]
-        //   ) {
-        //     currentShape.push(
-        //       randomNumber(0, Math.min(randCorners[0], randCorners[4]))
-        //     );
-        //   } else {
-        //     currentShape.push(randomNumber(0, maxSize));
-        //   }
-        // } else if (j === 7) {
-        //   // limit y here
-        //   if (
-        //     randCorners[3] < randCorners[1] &&
-        //     randCorners[3] < randCorners[5]
-        //   ) {
-        //     currentShape.push(
-        //       randomNumber(Math.min(randCorners[1], randCorners[5]), maxSize)
-        //     );
-        //   } else if (
-        //     randCorners[3] > randCorners[1] &&
-        //     randCorners[3] > randCorners[5]
-        //   ) {
-        //     currentShape.push(
-        //       randomNumber(0, Math.min(randCorners[1], randCorners[5]))
-        //     );
-        //   } else {
-        //     currentShape.push(randomNumber(0, maxSize));
-        //   }
-        // } else {
         currentShape.push(randomNumber(0, maxSize));
-        // }
       }
 
       // place them randomly in the whole available space:
@@ -96,7 +53,6 @@ const BodySVGs = () => {
       );
 
       // fill with random color
-      // rotate random number of degs, use first point as center for rotating
       const randHue = randomNumber(-30, 30);
       // const randHue = randomNumber(175, 215);
       const alpha = 0.2;
@@ -107,6 +63,7 @@ const BodySVGs = () => {
         .attr('stroke', `hsla(${randHue}, 55%, 35%, ${alpha})`)
         .attr('fill', 'transparent');
       // not much point on rotating them if they are completelly random shapes...
+      // rotate random number of degs, use first point as center for rotating
       // .attr(
       //   'transform',
       //   `rotate(${randHue}, ${currentShape[0] + randX}, ${currentShape[1] +

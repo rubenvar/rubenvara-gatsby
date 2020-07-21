@@ -3,6 +3,7 @@ slug: como-configurar-gulp
 title: Cómo Configurar Gulp
 seoTitle: Cómo Configurar Gulp como un PROP
 date: 2019-07-15
+twitter: https://www.twitter.com/rubenvara01
 description: "Esta es la descripción del post pedita voluptatibus, optio iusto nesciunt ratione."
 categories:
   - Herramientas

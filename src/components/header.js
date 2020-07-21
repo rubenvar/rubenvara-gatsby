@@ -48,11 +48,11 @@ const Header = ({ isBlog }) => {
         <h2>
           <Link to="/">{title}</Link>
         </h2>
-        {!isBlog && (
+        {/* {!isBlog && (
           <nav>
             <Link to="/blog">Ir al Blog</Link>
           </nav>
-        )}
+        )} */}
       </Inner>
     </StyledHeader>
   );

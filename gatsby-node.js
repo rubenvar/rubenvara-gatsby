@@ -1,29 +1,6 @@
 const path = require(`path`);
 const kebabCase = require('lodash.kebabcase');
 
-const proyectosData = require('./src/utils/proyectosData');
-
-exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-  const proyectos = proyectosData;
-
-  proyectos.forEach(proyecto => {
-    const { name, intro, images, description, tags } = proyecto;
-    const node = {
-      id: createNodeId(`proyecto-${name}`),
-      name,
-      intro,
-      images,
-      description,
-      tags,
-      internal: {
-        type: `proyecto`,
-        contentDigest: createContentDigest(proyecto),
-      },
-    };
-    actions.createNode(node);
-  });
-};
-
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(`src/templates/post.js`);

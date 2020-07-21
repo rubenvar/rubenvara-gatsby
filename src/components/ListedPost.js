@@ -11,7 +11,7 @@ function ListedPost({ post }) {
   const dateFormat =
     new Date(post.frontmatter.date).getFullYear() === new Date().getFullYear()
       ? `d MMM`
-      : `d MMM, yyyy`;
+      : `d MMM yyyy`;
   return (
     <StyledListedPost>
       <h2>

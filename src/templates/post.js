@@ -28,7 +28,7 @@ const PostTemplate = ({ data, pageContext }) => {
         title={frontmatter.seoTitle || frontmatter.title}
         description={frontmatter.description}
       />
-      <StyledPost>
+      <StyledPost id={id}>
         <div className="post__header">
           <h1>{frontmatter.title}</h1>
         </div>

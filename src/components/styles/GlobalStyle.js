@@ -99,6 +99,34 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+  .toc {
+    background: ${theme.white};
+    padding: ${theme.gap30};
+    border: 1px solid ${theme.primary500};
+    width: 75%;
+    margin: ${theme.gap50} 0;
+    ul {
+        margin-bottom: ${theme.gap40};
+      li {
+        font-size: 1rem;
+        margin-bottom: ${theme.gap40};
+        line-height: 1;
+        p {
+        font-size: 1rem;
+        margin-bottom: ${theme.gap40};
+        line-height: 1;
+        }
+        a {
+          background: none;
+          text-decoration: none;
+          &:hover {
+
+            color: ${theme.primary800};
+          }
+        }
+      }
+    }
+  }
   @media only screen and (max-width: 480px) {
     html {
       font-size: 100%;

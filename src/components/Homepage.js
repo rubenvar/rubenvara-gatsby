@@ -22,16 +22,15 @@ const AnimatedIntro = ({ children }) => (
 // two different components so framer motion will animate on each mount-unmount 🤞
 const LongIntro = () => (
   <AnimatedIntro>
-    <p>Durante esta última década...</p>
+    <p>Durante la última década...</p>
     <p>
       Estudié un grado en alternancia en el IMH, Elgoibar. Trabajé varios años
       como ingeniero industrial. Aprendí un monton muy grande sobre procesos
       comerciales y otras cosas.
     </p>
     <p>
-      Descubrí que <strong>no era así como quería vivir</strong> el resto de mis
-      días. Decidí cambiar mi vida por completo y abandonarlo todo. O
-      intentarlo.
+      Descubrí que <strong>no era así como quería vivir</strong>. Decidí cambiar
+      mi vida por completo y abandonarlo todo. O intentarlo.
     </p>
     <p>
       Me marché de viaje, con el vago plan de dar la vuelta al mundo. Me quedé
@@ -43,9 +42,8 @@ const LongIntro = () => (
       pude, y conociendo cientos de personas maravillosas.
     </p>
     <p>
-      Volví a casa, para vivir en el monte alejado todo lo posible del mundo
-      real. Para dedicar mi tiempo a estudiar, y a escalar y nadar casi a
-      diario.
+      Volví a casa, para vivir en el monte alejado del ruido del mundo real.
+      Para dedicar mi tiempo a estudiar, y a escalar y nadar casi a diario.
     </p>
     <p>
       Y a trabajar en mi negocio online, donde diseño y desarrollo{' '}
@@ -58,7 +56,7 @@ const LongIntro = () => (
 
 const ShortIntro = () => (
   <AnimatedIntro>
-    <p>Durante esta última década...</p>
+    <p>Durante la última década...</p>
     <p>
       Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
       cambiar mi vida y abandonarlo todo.
@@ -68,8 +66,8 @@ const ShortIntro = () => (
       varios países, creando mi negocio online, escalando, y estudiando.
     </p>
     <p>
-      Volví a casa, para vivir en el monte alejado del mundo real. Para dedicar
-      mi tiempo a estudiar, entrenar, y trabajar en mi negocio.
+      Volví a casa, para vivir en el monte alejado del ruido. Para dedicar mi
+      tiempo a estudiar, entrenar, y trabajar en mi negocio.
     </p>
   </AnimatedIntro>
 );

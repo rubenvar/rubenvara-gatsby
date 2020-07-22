@@ -125,6 +125,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 };
+
+// avoid errors becase 'twitter' field is not mentioned in any file's frontmatter
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      twitter: String
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 // https://github.com/gatsbyjs/gatsby/issues/564#issuecomment-527891177
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

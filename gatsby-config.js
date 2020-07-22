@@ -4,9 +4,9 @@
 
 module.exports = {
   siteMetadata: {
-    title: `La web de Rubén Vara`,
+    title: `Rubén Vara`,
     author: `@rubenvara01`,
-    description: `Mi blog sobre desarrollo web y Jaascript, mi estilo de vida, y mi primer gran viaje. Un poco de todo.`,
+    description: `Mi blog sobre desarrollo web y Javascript, mi estilo de vida, y mi primer gran viaje. Un poco de todo.`,
     siteUrl: `https://rubenvara.io`,
   },
   plugins: [

@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import Footer from './Footer';
 import Nav from './Nav';
 import StyledHero from './styles/StyledHomepage';
+import theme from './styles/Theme';
 
 const AnimatedIntro = ({ children }) => (
   <motion.div
@@ -86,11 +87,15 @@ function Homepage() {
   `);
 
   const [isLongIntro, setIsLongIntro] = useState(false);
+  // separate the letters
   const letters = Array.from('Rubén Vara').map((letter, i) => (
     <span key={i} className={letter === ' ' ? '🚀' : '💩'}>
       {letter}
     </span>
   ));
+
+  const colors = ['primary400', 'primary500', 'primary600', 'primary700'];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
   return (
     <>
@@ -101,7 +106,7 @@ function Homepage() {
           style={{ position: 'fixed' }}
         />
         <div className="title">
-          <h1>{letters}</h1>
+          <h1 style={{ color: theme[randomColor] }}>{letters}</h1>
           <h2>Full Stack Web Developer</h2>
         </div>
         <div className="intro">
@@ -126,7 +131,8 @@ function Homepage() {
 }
 
 AnimatedIntro.propTypes = {
-  children: PropTypes.object,
+  // children: PropTypes.object,
+  children: PropTypes.array,
 };
 
 export default Homepage;

@@ -1,13 +1,14 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const shadowAnim = keyframes`
-  0% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-`;
+// don't use the animation anymore 😢 safari doesn't support background clip with display: inline-block 😢
+// const shadowAnim = keyframes`
+//   0% {
+//     background-position: 0% 100%;
+//   }
+//   100% {
+//     background-position: 100% 100%;
+//   }
+// `;
 
 const StyledHero = styled.div`
   padding: ${props => props.theme.gap90};
@@ -27,14 +28,14 @@ const StyledHero = styled.div`
       font-size: 5.5rem;
       font-family: 'Mansalva', cursive;
       color: ${props => props.theme.primary500};
-      background: ${props => props.theme.logoGradient};
-      background-size: 250% 100%;
-      background-repeat: no-repeat;
-      animation: ${shadowAnim} infinite 3s alternate;
-      display: block;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+      /* background: ${props => props.theme.logoGradient}; */
+      /* background-size: 250% 100%; */
+      /* background-repeat: no-repeat; */
+      /* animation: ${shadowAnim} infinite 3s alternate; */
+      /* display: block; */
+      /* background-clip: text; */
+      /* -webkit-background-clip: text; */
+      /* color: transparent; */
       .💩 {
         /* display: inline; */
         display: inline-block;

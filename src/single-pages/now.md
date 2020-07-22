@@ -14,7 +14,7 @@ Tras pasar casi tres años viajando (2016-2019) por el este de Europa y Asia Cen
 
 A descansar, ver a la gente que echaba de menos, y empezar nuevos proyectos.
 
-No descarto volver a marcharme pronto, visto que la situación actual va para largo. Si me vuelvo a marchar de viaje, seguramente sea con una finalidad más concreta qeu la última vez.
+No descarto volver a marcharme pronto, visto que la situación actual va para largo. Si me vuelvo a marchar de viaje, seguramente sea con una finalidad más concreta que la última vez.
 
 ## ¿Qué estoy haciendo ahora?
 
@@ -26,7 +26,7 @@ Nadar, a diario. Todo lo que puedo. En aguas abiertas, y federado en la sección
 
 Escalar cuando saco ratos libres.
 
-Además, seguir tratando de mejorar, física y mentalmente, poco a poco. Ahora trabajando con Kettlebells.
+Además, seguir tratando de mejorar, física y mentalmente. Ahora trabajando con Kettlebells.
 
 ## ¿Qué planes tengo?
 
@@ -34,7 +34,7 @@ Seguir aprendiendo desarrollo web. Y empezar a enseñarlo, muy pronto. Por escri
 
 Nadar más todavía. Y seguir escalando.
 
-Seguir desarrollando otro hobbies como el fitness/calistenia, el dibujo y el bricolaje. Poco a poco.
+Seguir desarrollando otras aficiones como el fitness/calistenia, el dibujo, y el bricolaje. Poco a poco.
 
 [[info]]
 | Esto es una página _now_ ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:

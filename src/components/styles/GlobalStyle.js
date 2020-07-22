@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${theme.white};
-    color: ${theme.grey900};
+    color: ${theme.black};
     word-wrap: break-word;
     font-size: 1rem;
     font-kerning: normal;
@@ -81,7 +81,7 @@ const GlobalStyle = createGlobalStyle`
   }
   .custom-block {
     box-shadow: ${theme.shadow100};
-    margin: ${theme.gap80} 0;
+    margin: ${theme.gap100} 0;
     &.info {
       background: ${theme.grey100};
       padding: 15px 15px ${theme.gap10};

@@ -18,7 +18,7 @@ const PageTemplate = ({ data }) => {
         title={frontmatter.seoTitle || frontmatter.title}
         description={frontmatter.description}
       />
-      <StyledArchiveHeader>
+      <StyledArchiveHeader isPage>
         <h1>{frontmatter.title}</h1>
         {frontmatter.date && (
           <p className="updated">Última actualización el {frontmatter.date}</p>

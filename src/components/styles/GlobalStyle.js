@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
     font-size: 20px;
+    /* font-size: 18px; */
     box-sizing: border-box;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -74,7 +75,7 @@ const GlobalStyle = createGlobalStyle`
   }
   code[class*="language-"], pre[class*="language-"] {
     font-family: 'Victor Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
   code[class*="language-text"] {
     font-size: 1rem;

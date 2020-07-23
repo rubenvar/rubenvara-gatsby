@@ -6,7 +6,7 @@ const StyledPost = styled.div`
     margin: 0 0 ${props => props.theme.gap80};
     h1 {
       font-family: 'Rubik', 'Victor Mono', monospace;
-      font-size: 3rem;
+      font-size: ${props => props.theme.fontSize110};
       margin: 0;
       font-weight: 400;
       letter-spacing: -1px;
@@ -55,31 +55,29 @@ const StyledContent = styled.div`
   font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   h2 {
     margin: ${props => props.theme.gap90} 0 ${props => props.theme.gap50};
-    font-size: 2.2rem;
-    font-family: 'Rubik', 'Victor Mono', monospace;
+    font-size: ${props => props.theme.fontSize90};
     font-weight: 400;
   }
   h3 {
     margin: ${props => props.theme.gap80} 0 ${props => props.theme.gap40};
-    font-size: 1.85rem;
-    font-family: 'Rubik', 'Victor Mono', monospace;
+    font-size: ${props => props.theme.fontSize80};
     font-weight: 400;
   }
   h4 {
     margin: ${props => props.theme.gap70} 0 ${props => props.theme.gap40};
-    font-size: 1.6rem;
-    font-family: 'Rubik', 'Victor Mono', monospace;
+    font-size: ${props => props.theme.fontSize70};
     font-weight: 400;
   }
   p,
   li {
-    font-size: 1.15rem;
+    /* font-size: 1.15rem; */
+    font-size: 1rem;
   }
   p {
     margin: 0 0 ${props => props.theme.gap50} 0;
-    line-height: 2rem;
-    /* links with undershadow only in content */
+    line-height: 1.8rem;
     a {
+      /* links with undershadow only in content */
       text-decoration: none;
       color: ${props => props.theme.primary500};
       background: linear-gradient(
@@ -97,7 +95,7 @@ const StyledContent = styled.div`
   }
   ul,
   ol {
-    line-height: 2rem;
+    line-height: 1.5rem;
     margin: 0 0 ${props => props.theme.gap50};
     li {
       margin: 0 0 ${props => props.theme.gap30};
@@ -122,7 +120,6 @@ const StyledContent = styled.div`
 `;
 
 const StyledPostMeta = styled.div`
-  /* border-bottom: 1px solid ${props => props.theme.grey300}; */
   width: 75%;
   color: ${props => props.theme.grey500};
   font-size: 0.85rem;

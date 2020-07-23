@@ -1,5 +1,6 @@
 const theme = {
-  maxWidth: `780px`,
+  // maxWidth: `780px`,
+  maxWidth: `700px`,
 
   black: `hsl(0, 20%, 5%)`,
   white: `hsl(0, 20%, 97%)`,
@@ -60,7 +61,8 @@ const theme = {
   fontSize80: `1.85rem`,
   fontSize90: `2.2rem`,
   fontSize100: `2.55rem`,
-  fontSize110: `3rem`,
+  // fontSize110: `3rem`,
+  fontSize110: `2.7rem`,
   fontSize200: `5.5rem`,
 
   // redGradient: `linear-gradient(to right, ${redLighter}, ${red}, ${red}, ${redDarker})`,

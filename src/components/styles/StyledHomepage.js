@@ -25,7 +25,7 @@ const StyledHero = styled.div`
   .title {
     margin-bottom: ${props => props.theme.gap90};
     h1 {
-      font-size: 5.5rem;
+      font-size: ${props => props.theme.fontSize200};
       font-family: 'Mansalva', cursive;
       color: ${props => props.theme.primary500};
       /* background: ${props => props.theme.logoGradient}; */
@@ -55,7 +55,7 @@ const StyledHero = styled.div`
       font-weight: 400;
       color: ${props => props.theme.grey600};
       margin-top: -12px;
-      font-size: 1.6rem;
+      font-size: ${props => props.theme.fontSize70};
       position: relative;
       display: table;
     }
@@ -67,7 +67,7 @@ const StyledHero = styled.div`
     max-width: ${props => props.theme.maxWidth};
     p {
       margin-bottom: ${props => props.theme.gap60};
-      font-size: 1.15rem;
+      font-size: ${props => props.theme.fontSize50};
       line-height: 1.7;
     }
     button {

@@ -14,7 +14,7 @@ Tras pasar casi tres años viajando (2016-2019) por el este de Europa y Asia Cen
 
 A descansar, ver a la gente que echaba de menos, y empezar nuevos proyectos.
 
-No descarto volver a marcharme pronto, visto que la situación actual va para largo. Si me vuelvo a marchar de viaje, seguramente sea con una finalidad más concreta que la última vez.
+No descarto volver a marcharme pronto, visto que la situación actual va para largo. Si me vuelvo a marchar de viaje, seguramente sea con un objetivo más concreto que la última vez.
 
 ## ¿Qué estoy haciendo ahora?
 

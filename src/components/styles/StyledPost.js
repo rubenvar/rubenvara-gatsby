@@ -3,15 +3,21 @@ import styled from 'styled-components';
 const StyledPost = styled.div`
   position: relative;
   .post__header {
-    margin: 0 0 ${props => props.theme.gap80};
+    margin: 0 0 ${props => props.theme.gap60};
+    @media only screen and (min-width: 700px) {
+      margin-bottom: ${props => props.theme.gap80};
+    }
     h1 {
       font-family: 'Rubik', 'Victor Mono', monospace;
-      font-size: ${props => props.theme.fontSize110};
+      font-size: ${props => props.theme.fontSize90};
       margin: 0;
       font-weight: 400;
       letter-spacing: -1px;
       color: ${props => props.theme.primary800};
       color: ${props => props.theme.primary600};
+      @media only screen and (min-width: 700px) {
+        font-size: ${props => props.theme.fontSize110};
+      }
     }
   }
   .twitter {
@@ -54,19 +60,28 @@ const StyledContent = styled.div`
   margin-bottom: ${props => (props.isPage ? '73px' : 0)};
   font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   h2 {
-    margin: ${props => props.theme.gap90} 0 ${props => props.theme.gap50};
+    margin: ${props => props.theme.gap70} 0 ${props => props.theme.gap50};
     font-size: ${props => props.theme.fontSize90};
     font-weight: 400;
+    @media only screen and (min-width: 480px) {
+      margin-top: ${props => props.theme.gap90};
+    }
   }
   h3 {
-    margin: ${props => props.theme.gap80} 0 ${props => props.theme.gap40};
+    margin: ${props => props.theme.gap60} 0 ${props => props.theme.gap40};
     font-size: ${props => props.theme.fontSize80};
     font-weight: 400;
+    @media only screen and (min-width: 480px) {
+      margin-top: ${props => props.theme.gap80};
+    }
   }
   h4 {
-    margin: ${props => props.theme.gap70} 0 ${props => props.theme.gap40};
+    margin: ${props => props.theme.gap60} 0 ${props => props.theme.gap40};
     font-size: ${props => props.theme.fontSize70};
     font-weight: 400;
+    @media only screen and (min-width: 480px) {
+      margin-top: ${props => props.theme.gap70};
+    }
   }
   p,
   li {

@@ -6,10 +6,12 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
     font-size: 20px;
-    /* font-size: 18px; */
     box-sizing: border-box;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    @media only screen and (max-width: 480px) {
+      font-size: 100%;
+    }
   }
   *, *::before, *::after {
     box-sizing: inherit;
@@ -104,10 +106,15 @@ const GlobalStyle = createGlobalStyle`
     background: ${theme.white};
     padding: ${theme.gap30};
     border: 1px solid ${theme.primary500};
-    width: 75%;
     margin: ${theme.gap50} 0;
+    @media only screen and (min-width: 700px) {
+      width: 75%;
+    }
     ul {
-        margin-bottom: ${theme.gap40};
+      margin-bottom: ${theme.gap40};
+      @media only screen and (max-width: 700px) {
+        padding-left: 20px;
+      }
       li {
         font-size: 1rem;
         margin-bottom: ${theme.gap40};
@@ -121,16 +128,10 @@ const GlobalStyle = createGlobalStyle`
           background: none;
           text-decoration: none;
           &:hover {
-
             color: ${theme.primary800};
           }
         }
       }
-    }
-  }
-  @media only screen and (max-width: 480px) {
-    html {
-      font-size: 100%;
     }
   }
 `;

@@ -72,7 +72,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const posts = data.allPostsRemark.edges;
   // TODO not hardcoded here!
-  const perPage = 20;
+  const perPage = 2;
   const numPages = Math.ceil(posts.length / perPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
@@ -87,7 +87,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     // next and prev inverted to keep more logical order
     const next = post.next ? post.next.childMarkdownRemark : null;
     const prev = post.previous ? post.previous.childMarkdownRemark : null;
@@ -115,7 +115,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
 
   const categories = data.categoriesGroup.group;
-  categories.forEach(category => {
+  categories.forEach((category) => {
     createPage({
       path: `/categoria/${kebabCase(category.fieldValue)}`,
       component: categoryTemplate,

@@ -46,21 +46,18 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-table-of-contents`,
-            options: {
-              exclude: 'Índice del artículo',
-              tight: false,
-              fromHeading: 1,
-              toHeading: 6,
-            },
-          },
-          {
             resolve: `gatsby-remark-external-links`,
             options: {
               rel: `noopener noreferrer`,
             },
           },
-          `gatsby-remark-prismjs`,
+          // `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              noInlineHighlight: true,
+            },
+          },
           {
             resolve: `gatsby-remark-custom-blocks`,
             options: {

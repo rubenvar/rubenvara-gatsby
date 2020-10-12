@@ -51,7 +51,6 @@ module.exports = {
               rel: `noopener noreferrer`,
             },
           },
-          // `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {

@@ -49,6 +49,7 @@ const theme = {
   gap90: `55px`,
   gap100: `73px`,
   gap110: `96px`,
+  gap120: `131px`,
   // ... more in /p
 
   fontSize10: `0.6rem`,

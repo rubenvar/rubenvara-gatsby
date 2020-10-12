@@ -7,15 +7,15 @@ import StyledPaginationDefault from './styles/StyledPagination';
 
 const StyledPagination = styled.div`
   ${StyledPaginationDefault};
-  margin: 131px 0 ${props => props.theme.gap110};
+  margin: ${(props) => props.theme.gap120} 0 0;
   display: grid;
   grid-template-columns: 1fr 0.6fr 1fr;
-  grid-gap: ${props => props.theme.gap50};
-  gap: ${props => props.theme.gap50};
+  grid-gap: ${(props) => props.theme.gap50};
+  gap: ${(props) => props.theme.gap50};
   font-family: 'Victor Mono', monospace;
   div {
     a {
-      padding: ${props => props.theme.gap60} ${props => props.theme.gap30};
+      padding: ${(props) => props.theme.gap60} ${(props) => props.theme.gap30};
       font-family: 'Victor Mono', monospace;
       font-weight: 700;
     }
@@ -25,9 +25,9 @@ const StyledPagination = styled.div`
     align-self: center;
     text-align: center;
     line-height: 1.35rem;
-    color: ${props => props.theme.grey300};
+    color: ${(props) => props.theme.grey300};
     span {
-      color: ${props => props.theme.grey500};
+      color: ${(props) => props.theme.grey500};
     }
   }
 `;

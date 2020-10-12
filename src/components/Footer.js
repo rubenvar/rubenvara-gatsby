@@ -13,6 +13,7 @@ const StyledFooter = styled.footer`
   position: relative;
   /* margin-top: calc((var(--padding) * -1) - 2px); */
   margin-top: 0;
+  margin-top: ${(props) => (props.isIndex ? 0 : props.theme.gap120)};
   padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0
     ${(props) => props.theme.gap50};
   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);

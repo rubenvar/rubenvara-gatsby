@@ -10,7 +10,7 @@ import StyledArchiveHeader from '../components/styles/StyledArchiveHeader';
 
 const Blog = ({ data: { allPosts }, pageContext }) => {
   const { totalCount } = allPosts;
-  const edges = allPosts.edges.map(edge => {
+  const edges = allPosts.edges.map((edge) => {
     if (!edge.node.childMarkdownRemark.frontmatter.categories) {
       edge.node.childMarkdownRemark.frontmatter.categories = [];
     }
@@ -25,8 +25,8 @@ const Blog = ({ data: { allPosts }, pageContext }) => {
       <StyledArchiveHeader className="header">
         {/* <h1>El Blog</h1> */}
         <p>
-          Dicen que no sabes lo que sabes hasta que intentas enseñarlo. Pues en
-          eso estamos.
+          Dicen que no sabes lo que sabes hasta que intentas enseñarlo, así que
+          en eso estamos:
         </p>
         <p>
           Escribo sobre desarrollo web. Y sobre JavaScript. Sobre todo,

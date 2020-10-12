@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledArchiveHeader = styled.div`
+const StyledPageHeader = styled.div`
   margin: 0 0 ${(props) => props.theme.gap100};
   @media only screen and (min-width: 480) {
     margin-bottom: ${(props) => props.theme.gap100};
@@ -8,7 +8,7 @@ const StyledArchiveHeader = styled.div`
   h1 {
     margin-bottom: ${(props) => props.theme.gap30};
     @media only screen and (min-width: 480) {
-      margin-bottom: ${(props) => props.theme.gap70};
+      margin-bottom: ${(props) => props.theme.gap50};
     }
     span {
       background: ${(props) => props.theme.grey200};
@@ -18,7 +18,12 @@ const StyledArchiveHeader = styled.div`
   p {
     color: ${(props) => props.theme.grey600};
     margin: 0 0 ${(props) => props.theme.gap50};
+    &.updated {
+      color: ${(props) => props.theme.grey400};
+      font-size: ${(props) => props.theme.fontSize30};
+      font-style: italic;
+    }
   }
 `;
 
-export default StyledArchiveHeader;
+export { StyledPageHeader };

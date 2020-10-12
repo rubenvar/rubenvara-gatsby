@@ -17,8 +17,8 @@ const NavItem = ({ to, text, top, bottom }) => (
 const Nav = ({ isIndex }) => (
   <StyledNav isIndex={isIndex}>
     <ul>
-      {/* {!isIndex && <NavItem to="/" top="Vuelve al" text="inicio" />}
-      {!isIndex && <NavSep />} */}
+      {!isIndex && <NavItem to="/" top="🚀🚀" text="inicio" />}
+      {!isIndex && <NavSep />}
       <NavItem to="/now" top="Mira qué hago" text="ahora" />
       {!isIndex && <NavSep />}
       <NavItem to="/blog" bottom="sobre webdev." text="blog" />

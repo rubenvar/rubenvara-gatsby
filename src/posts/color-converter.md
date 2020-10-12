@@ -40,10 +40,6 @@ Bueno, en realidad todo el conjunto está compilado con [Gulp](https://gulpjs.co
 
 De toda la vida.
 
-```toc
-## Índice
-```
-
 Vamos a por ello:
 
 ## Cómo se hace (las típicas _User Stories_)

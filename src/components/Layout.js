@@ -9,7 +9,6 @@ import Footer from './Footer';
 import theme from './styles/Theme';
 import Inner from './styles/Inner';
 import GlobalStyle from './styles/GlobalStyle';
-import BodySVGs from './BodySVG';
 import SkipLink from './SkipLink';
 
 const TopBar = styled.div`
@@ -34,7 +33,6 @@ function Layout({ type, children }) {
           <Homepage />
         ) : (
           <>
-            <BodySVGs />
             <SkipLink />
             <TopBar />
             {!isPost && <Header isBlog={isBlog} />}

@@ -23,7 +23,7 @@ const Blog = ({ data: { allPosts }, pageContext }) => {
         title={`Página ${pageContext.currentPage} de ${pageContext.numPages} ~ Todos los posts del blog`}
       />
       <StyledArchiveHeader className="header">
-        <h1>El Blog</h1>
+        {/* <h1>El Blog</h1> */}
         <p>
           Dicen que no sabes lo que sabes hasta que intentas enseñarlo. Pues en
           eso estamos.

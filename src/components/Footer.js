@@ -9,16 +9,16 @@ import useWindowSize from '../utils/useWindowSize';
 
 // idea for bg from https://codepen.io/enbee81/full/yLyrmyg
 const StyledFooter = styled.footer`
-  --padding: ${props => props.width * props.magicNumber}px;
+  --padding: ${(props) => props.width * props.magicNumber}px;
   position: relative;
   /* margin-top: calc((var(--padding) * -1) - 2px); */
   margin-top: 0;
   padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0
-    ${props => props.theme.gap50};
+    ${(props) => props.theme.gap50};
   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
-  background: linear-gradient(transparent, ${props => props.theme.grey500});
+  background: linear-gradient(transparent, ${(props) => props.theme.grey500});
 
-  ${props =>
+  ${(props) =>
     props.isIndex &&
     css`
       background: hsl(0, 20%, 97%);
@@ -31,12 +31,12 @@ const StyledFooter = styled.footer`
     position: relative;
     p {
       font-size: 0.75rem;
-      color: ${props =>
+      color: ${(props) =>
         !props.isIndex ? props.theme.grey200 : props.theme.grey400};
       a {
         text-decoration: none;
         transition: all 0.25s;
-        color: ${props =>
+        color: ${(props) =>
           !props.isIndex ? props.theme.grey300 : props.theme.grey500};
         &:hover {
           text-decoration: underline;

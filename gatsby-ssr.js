@@ -1,11 +1,3 @@
-// import fonts here (https://github.com/KyleAMathews/typefaces -> https://github.com/fontsource/fontsource)
-// require('fontsource-mansalva/latin.css');
-// require('fontsource-martel/latin.css');
-// require('fontsource-rubik/latin.css');
-require('victormono');
-
-require('./src/assets/css/dracula-prism.css');
-
 // from https://www.gatsbyjs.com/docs/browser-apis/#wrapPageElement
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/display-name */

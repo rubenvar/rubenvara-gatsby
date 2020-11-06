@@ -1,6 +1,5 @@
 const path = require(`path`);
 const kebabCase = require('lodash.kebabcase');
-const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
@@ -17,25 +16,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ) {
         edges {
           previous {
-            fields {
-              slug
-            }
             frontmatter {
+              slug
               title
             }
           }
           node {
-            fields {
-              slug
-            }
             frontmatter {
+              slug
             }
           }
           next {
-            fields {
-              slug
-            }
             frontmatter {
+              slug
               title
             }
           }
@@ -126,21 +119,4 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       fs: 'empty',
     },
   });
-};
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `Mdx`) {
-    // use slug in the frontmatter, or create one automatically (https://github.com/wesbos/wesbos/blob/master/gatsby-node.js)
-    const generatedSlug = createFilePath({ node, getNode });
-
-    createNodeField({
-      name: `slug`,
-      node,
-      value: node.frontmatter.slug
-        ? `/${node.frontmatter.slug}/`
-        : generatedSlug,
-    });
-  }
 };

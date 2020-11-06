@@ -1,62 +1,47 @@
 const path = require(`path`);
 const kebabCase = require('lodash.kebabcase');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve(`src/templates/post.js`);
-  const pageTemplate = path.resolve(`src/templates/page.js`);
+  const postTemplate = path.resolve(`src/templates/post.js`);
   const categoryTemplate = path.resolve(`src/templates/category.js`);
-  const blogListTemplate = path.resolve(`src/templates/blog.js`);
+  const blogTemplate = path.resolve(`src/templates/blog.js`);
 
-  // use allFile on the queries instead of the default gatsby docs query to separate between pages and posts
+  // Graphql query to get all posts + manage pagination + and create the posts and category pages
   const { errors, data } = await graphql(`
     {
-      allPostsRemark: allFile(
+      allPosts: allMdx(
         limit: 1000
-        filter: { sourceInstanceName: { eq: "post" } }
-        sort: {
-          order: DESC
-          fields: [childMarkdownRemark___frontmatter___date]
-        }
+        sort: { order: DESC, fields: [frontmatter___date] }
       ) {
         edges {
           previous {
-            childMarkdownRemark {
-              frontmatter {
-                slug
-                title
-              }
+            fields {
+              slug
+            }
+            frontmatter {
+              title
             }
           }
           node {
-            childMarkdownRemark {
-              frontmatter {
-                slug
-              }
+            fields {
+              slug
+            }
+            frontmatter {
             }
           }
           next {
-            childMarkdownRemark {
-              frontmatter {
-                slug
-                title
-              }
+            fields {
+              slug
+            }
+            frontmatter {
+              title
             }
           }
         }
       }
-      allPagesRemark: allFile(filter: { sourceInstanceName: { eq: "page" } }) {
-        edges {
-          node {
-            childMarkdownRemark {
-              frontmatter {
-                slug
-              }
-            }
-          }
-        }
-      }
-      categoriesGroup: allMarkdownRemark(limit: 2000) {
+      categoriesGroup: allMdx(limit: 2000) {
         group(field: frontmatter___categories) {
           fieldValue
         }
@@ -67,17 +52,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Handle errors
   if (errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
-    return;
   }
 
-  const posts = data.allPostsRemark.edges;
+  // Pagination:
+  const posts = data.allPosts.edges;
+
+  // create the blog pages
   // TODO not hardcoded here!
   const perPage = 2;
   const numPages = Math.ceil(posts.length / perPage);
+  // array of blog pages
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: blogListTemplate,
+      component: blogTemplate,
       context: {
         limit: perPage,
         skip: i * perPage,
@@ -87,33 +75,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  // create the posts
   posts.forEach((post) => {
     // next and prev inverted to keep more logical order
-    const next = post.next ? post.next.childMarkdownRemark : null;
-    const prev = post.previous ? post.previous.childMarkdownRemark : null;
+    const next = post.next ? post.next : null;
+    const prev = post.previous ? post.previous : null;
 
     createPage({
-      path: post.node.childMarkdownRemark.frontmatter.slug,
-      component: blogPostTemplate,
+      path: post.node.frontmatter.slug,
+      component: postTemplate,
       context: {
-        slug: post.node.childMarkdownRemark.frontmatter.slug,
+        slug: post.node.frontmatter.slug,
         next,
         prev,
       },
     });
   });
 
-  const pages = data.allPagesRemark.edges;
-  pages.forEach(({ node }) =>
-    createPage({
-      path: node.childMarkdownRemark.frontmatter.slug,
-      component: pageTemplate,
-      context: {
-        slug: node.childMarkdownRemark.frontmatter.slug,
-      },
-    })
-  );
-
+  // create the categories
   const categories = data.categoriesGroup.group;
   categories.forEach((category) => {
     createPage({
@@ -126,11 +105,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 };
 
-// avoid errors becase 'twitter' field is not mentioned in any file's frontmatter
+// define graphql data template to avoid errors when 'twitter' field is not mentioned in any file's frontmatter
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
-    type MarkdownRemark implements Node {
+    type Mdx implements Node {
       frontmatter: Frontmatter
     }
     type Frontmatter {
@@ -147,4 +126,21 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       fs: 'empty',
     },
   });
+};
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === `Mdx`) {
+    // use slug in the frontmatter, or create one automatically (https://github.com/wesbos/wesbos/blob/master/gatsby-node.js)
+    const generatedSlug = createFilePath({ node, getNode });
+
+    createNodeField({
+      name: `slug`,
+      node,
+      value: node.frontmatter.slug
+        ? `/${node.frontmatter.slug}/`
+        : generatedSlug,
+    });
+  }
 };

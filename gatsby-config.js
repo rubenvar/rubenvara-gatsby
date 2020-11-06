@@ -17,15 +17,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `page`,
-        path: `${__dirname}/src/single-pages`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        gatsbyRemarkPlugins: [`gatsby-remark-copy-linked-files`],
       },
     },
     {
@@ -55,23 +54,6 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               noInlineHighlight: true,
-            },
-          },
-          {
-            resolve: `gatsby-remark-custom-blocks`,
-            options: {
-              blocks: {
-                success: {
-                  classes: `success`,
-                },
-                danger: {
-                  classes: `danger`,
-                },
-                info: {
-                  classes: `info`,
-                  title: `optional`,
-                },
-              },
             },
           },
         ],

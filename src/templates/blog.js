@@ -3,27 +3,27 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import SEO from '../components/SEO';
-import Layout from '../components/Layout';
 import ListedPost from '../components/ListedPost';
 import Pagination from '../components/Pagination';
-import StyledArchiveHeader from '../components/styles/StyledArchiveHeader';
+import ArchiveHeader from '../components/styles/ArchiveHeader';
 
-const Blog = ({ data: { allPosts }, pageContext }) => {
-  const { totalCount } = allPosts;
-  const edges = allPosts.edges.map((edge) => {
-    if (!edge.node.childMarkdownRemark.frontmatter.categories) {
-      edge.node.childMarkdownRemark.frontmatter.categories = [];
+const Blog = ({ data, pageContext }) => {
+  if (!data) return <p>No hay posts... 🤷‍♂️</p>;
+
+  const { totalCount, edges } = data.allPosts;
+  const posts = edges.map((edge) => {
+    if (!edge.node.frontmatter.categories) {
+      edge.node.frontmatter.categories = [];
     }
     return edge;
   });
 
   return (
-    <Layout type="blog">
+    <>
       <SEO
         title={`Página ${pageContext.currentPage} de ${pageContext.numPages} ~ Todos los posts del blog`}
       />
-      <StyledArchiveHeader className="header">
-        {/* <h1>El Blog</h1> */}
+      <ArchiveHeader className="header">
         <p>
           Dicen que no sabes lo que sabes hasta que intentas enseñarlo, así que
           en eso estamos:
@@ -32,38 +32,31 @@ const Blog = ({ data: { allPosts }, pageContext }) => {
           Escribo sobre desarrollo web. Y sobre JavaScript. Sobre todo,
           JavaScript.
         </p>
-      </StyledArchiveHeader>
-      {edges.map(({ node }) => (
-        <ListedPost
-          key={node.childMarkdownRemark.id}
-          post={node.childMarkdownRemark}
-        />
-      ))}
+      </ArchiveHeader>
+      {posts &&
+        posts.map(({ node: post }) => <ListedPost key={post.id} post={post} />)}
       <Pagination totalCount={totalCount} pageContext={pageContext} />
-    </Layout>
+    </>
   );
 };
 
 export const blogQuery = graphql`
   query blogQuery($skip: Int!, $limit: Int!) {
-    allPosts: allFile(
-      filter: { sourceInstanceName: { eq: "post" } }
-      sort: { fields: [childMarkdownRemark___frontmatter___date], order: DESC }
+    allPosts: allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
     ) {
       totalCount
       edges {
         node {
-          childMarkdownRemark {
-            id
-            frontmatter {
-              date(formatString: "YYYY-MM-DD")
-              slug
-              title
-              description
-              categories
-            }
+          id
+          frontmatter {
+            date(formatString: "YYYY-MM-DD")
+            slug
+            title
+            description
+            categories
           }
         }
       }

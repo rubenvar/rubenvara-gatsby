@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import StyledPaginationDefault from './styles/StyledPagination';
 
 const StyledPagination = styled.div`
-  ${StyledPaginationDefault};
+  /* ${StyledPaginationDefault};
   margin: ${(props) => props.theme.gap120} 0 0;
   display: grid;
   grid-template-columns: 1fr 0.6fr 1fr;
@@ -29,7 +29,7 @@ const StyledPagination = styled.div`
     span {
       color: ${(props) => props.theme.grey500};
     }
-  }
+  } */
 `;
 
 function Pagination({
@@ -47,19 +47,17 @@ function Pagination({
             className="prev"
             to={currentPage > 2 ? `/blog/${currentPage - 1}` : `/blog`}
           >
-            ← Anteriores
+            ←
           </Link>
         )}
       </div>
       <p>
-        Página
-        <br />
         <span>{currentPage}</span> de <span>{numPages}</span>
       </p>
       <div>
         {currentPage < numPages && (
           <Link className="next" to={`/blog/${currentPage + 1}`}>
-            Ver más →
+            →
           </Link>
         )}
       </div>

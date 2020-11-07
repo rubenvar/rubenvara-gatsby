@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash.kebabcase';
 
-export default function CategoryLink({ cat, children }) {
+export default function CategoryLink({ cat, total = 0 }) {
   return (
     <Link to={`/categoria/${kebabCase(cat)}`} title={`Categoría ${cat}`}>
-      {children}
+      #{cat.toLowerCase()}
+      {total > 0 && ` (${total})`}
     </Link>
   );
 }
 
 CategoryLink.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   cat: PropTypes.string.isRequired,
+  total: PropTypes.number,
 };

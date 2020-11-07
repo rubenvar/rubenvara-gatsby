@@ -7,10 +7,9 @@ const StyledSkipLink = styled.a`
   width: 100%;
   left: 0;
   z-index: 1;
-  background: ${props => props.theme.primary500};
-  color: ${props => props.theme.grey100};
-  padding: ${props => props.theme.gap20} ${props => props.theme.gap30}
-    ${props => props.theme.gap30};
+  background: var(--primary500);
+  color: var(--grey100);
+  padding: var(--gap20) var(--gap30) var(--gap30);
   font-size: 1rem;
   text-align: center;
   transition: top 0.1s linear;
@@ -20,8 +19,8 @@ const StyledSkipLink = styled.a`
 `;
 
 const SkipLink = () => (
-  <StyledSkipLink href="#main" id="skip-link">
-    Skip to main content
+  <StyledSkipLink href="#main" id="skip-link" title="Ir al #main">
+    Ir al contenido principal
   </StyledSkipLink>
 );
 

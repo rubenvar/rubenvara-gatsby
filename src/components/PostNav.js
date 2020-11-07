@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import StyledPaginationDefault from './styles/StyledPagination';
 
 const StyledPostNav = styled.nav`
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
   gap: ${(props) => props.theme.gap40};
   a {
@@ -24,14 +24,14 @@ const StyledPostNav = styled.nav`
     span {
       display: block;
       &.dir {
-        font-family: 'Victor Mono', monospace;
+        font-family: 'Victor Mono', monospace; 
         font-size: ${(props) => props.theme.fontSize70};
       }
       &.title {
-        /* text-decoration: underline; */
+        text-decoration: underline;
       }
     }
-  }
+  } */
   /* ${StyledPaginationDefault}; */
   /* display: grid;
   grid-template-columns: 1fr 1fr;
@@ -65,10 +65,6 @@ const StyledPostNav = styled.nav`
 
 const PostNav = ({ prev, next }) => (
   <StyledPostNav>
-    {/* <Link to={`/${prev.frontmatter.slug}`}>←</Link>
-    <Link to={`/${prev.frontmatter.slug}`}>{prev.frontmatter.title}</Link>
-    <Link to={`/${next.frontmatter.slug}`}>{next.frontmatter.title}</Link>
-    <Link to={`/${next.frontmatter.slug}`}>→</Link> */}
     {prev && (
       <Link className="prev" to={`/${prev.frontmatter.slug}`}>
         <span className="dir">←</span>
@@ -81,10 +77,6 @@ const PostNav = ({ prev, next }) => (
         <span className="dir">→</span>
       </Link>
     )}
-    {/* <div>
-    </div>
-    <div>
-    </div> */}
   </StyledPostNav>
 );
 

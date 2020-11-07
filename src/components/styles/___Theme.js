@@ -1,9 +1,10 @@
 const theme = {
-  // maxWidth: `780px`,
-  maxWidth: `700px`,
+  // using 'ch' is much better (https://joshwcomeau.com/css/full-bleed/)
+  maxWidth: `56ch`,
+  codeWidth: `67ch`,
 
   black: `hsl(0, 20%, 5%)`,
-  white: `hsl(0, 20%, 97%)`,
+  white: `hsl(0, 20%, 98%)`,
   whiteTr: `hsla(0, 20%, 97%, 0.85)`,
 
   primary100: `hsl(25, 100%, 96%)`,
@@ -75,12 +76,6 @@ const theme = {
     hsl(0, 72%, 50%),
     hsl(0, 85%, 28%)
   )`,
-
-  twitter100: `hsl(203, 89%, 91%)`,
-  twitter500: `hsl(203, 89%, 53%)`,
-  // twitter700: `hsl(203, 69%, 33%)`,
-  twitter900: `hsl(203, 99%, 23%)`,
-  twitterGradient: `linear-gradient(to right, transparent, hsl(203, 89%, 83%))`,
 
   buttonRadius: `3px`,
 

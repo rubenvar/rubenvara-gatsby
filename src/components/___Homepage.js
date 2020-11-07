@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import Footer from './Footer';
 import Nav from './Nav';
-import StyledHero from './styles/StyledHomepage';
+import StyledHero from './styles/___StyledHomepage';
 import theme from './styles/Theme';
 
 const AnimatedIntro = ({ children }) => (

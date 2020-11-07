@@ -11,7 +11,7 @@ import styled from 'styled-components';
 // `;
 
 const StyledHero = styled.div`
-  padding: ${props => props.theme.gap90};
+  padding: ${(props) => props.theme.gap90};
   min-height: 100vh;
   background: linear-gradient(#fff5, hsl(0, 20%, 97%));
   position: relative;
@@ -23,12 +23,12 @@ const StyledHero = styled.div`
     z-index: -1;
   }
   .title {
-    margin-bottom: ${props => props.theme.gap90};
+    margin-bottom: ${(props) => props.theme.gap90};
     h1 {
-      font-size: ${props => props.theme.fontSize200};
-      font-family: 'Mansalva', cursive;
-      color: ${props => props.theme.primary500};
-      /* background: ${props => props.theme.logoGradient}; */
+      font-size: ${(props) => props.theme.fontSize200};
+      /* font-family: 'Mansalva', cursive; */
+      color: ${(props) => props.theme.primary500};
+      /* background: ${(props) => props.theme.logoGradient}; */
       /* background-size: 250% 100%; */
       /* background-repeat: no-repeat; */
       /* animation: ${shadowAnim} infinite 3s alternate; */
@@ -39,7 +39,7 @@ const StyledHero = styled.div`
       .💩 {
         /* display: inline; */
         display: inline-block;
-        transition: all 0.25s;
+        transition: all 3s;
         &:hover {
           transform: translateY(-20px);
           &:nth-child(4) {
@@ -53,21 +53,21 @@ const StyledHero = styled.div`
     }
     h2 {
       font-weight: 400;
-      color: ${props => props.theme.grey600};
+      color: ${(props) => props.theme.grey600};
       margin-top: -12px;
-      font-size: ${props => props.theme.fontSize70};
+      font-size: ${(props) => props.theme.fontSize70};
       position: relative;
       display: table;
     }
   }
   .intro {
-    margin-top: ${props => props.theme.gap70};
+    margin-top: ${(props) => props.theme.gap70};
     min-height: 65vh;
     width: 60%;
-    max-width: ${props => props.theme.maxWidth};
+    max-width: ${(props) => props.theme.maxWidth};
     p {
-      margin-bottom: ${props => props.theme.gap60};
-      font-size: ${props => props.theme.fontSize50};
+      margin-bottom: ${(props) => props.theme.gap60};
+      font-size: ${(props) => props.theme.fontSize50};
       line-height: 1.7;
     }
     button {
@@ -76,7 +76,7 @@ const StyledHero = styled.div`
       border: none;
       box-shadow: none;
       background: none;
-      color: ${props => props.theme.primary500};
+      color: ${(props) => props.theme.primary500};
       text-decoration: none;
     }
   }
@@ -85,8 +85,8 @@ const StyledHero = styled.div`
     position: fixed;
     /* position: sticky; */
     z-index: 90;
-    bottom: ${props => props.theme.gap100};
-    right: ${props => props.theme.gap80};
+    bottom: ${(props) => props.theme.gap100};
+    right: ${(props) => props.theme.gap80};
   }
 `;
 

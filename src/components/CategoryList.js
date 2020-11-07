@@ -4,34 +4,31 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import CategoryLink from './CategoryLink';
 
-const StyledCategoryList = styled.div`
-  h2 {
-    font-family: 'Victor Mono', monospace;
-  }
-  > div {
-    margin: ${props => props.theme.gap50} 0;
+const StyledCategoryList = styled.aside`
+  div {
+    margin: var(--gap50) 0;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     span {
-      margin: ${props => props.theme.gap40} ${props => props.theme.gap30};
+      margin: var(--gap40) var(--gap30);
       a {
-        padding: ${props => props.theme.gap20};
-        color: ${props => props.theme.primary600};
+        padding: var(--gap20);
+        color: var(--primary600);
         text-decoration: none;
         &:hover {
-          color: ${props => props.theme.grey100};
-          background-color: ${props => props.theme.primary600};
+          color: var(--grey100);
+          background-color: var(--primary600);
         }
       }
     }
   }
 `;
 
-const CategoryList = () => {
+function CategoryList() {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(limit: 2000) {
+      allMdx(limit: 2000) {
         group(field: frontmatter___categories) {
           fieldValue
           totalCount
@@ -39,24 +36,24 @@ const CategoryList = () => {
       }
     }
   `);
-  const { group } = data.allMarkdownRemark;
+
+  const { group: allCategories } = data?.allMdx;
 
   return (
     <StyledCategoryList>
-      <>
-        <h2>Todas las categorías:</h2>
-        <div>
-          {group.map(category => (
-            <span key={category.fieldValue}>
-              <CategoryLink cat={category.fieldValue}>
-                {category.fieldValue} ({category.totalCount})
-              </CategoryLink>
-            </span>
-          ))}
-        </div>
-      </>
+      <h2>Todas las categorías:</h2>
+      <div>
+        {allCategories.map((category) => (
+          <span key={category.fieldValue}>
+            <CategoryLink
+              cat={category.fieldValue}
+              total={category.totalCount}
+            />
+          </span>
+        ))}
+      </div>
     </StyledCategoryList>
   );
-};
+}
 
 export default CategoryList;

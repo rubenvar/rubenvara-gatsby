@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Homepage from '../components/Homepage';
+import Home from '../components/Home';
 
 const Index = () => (
-  <Layout type="index">
+  <>
     <SEO title="Rubén Vara 🚀 Mi blog sobre Javascript y otras teconologías web" />
-    <Homepage />
-  </Layout>
+    <Home />
+  </>
 );
 
 export default Index;

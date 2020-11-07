@@ -24,7 +24,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        gatsbyRemarkPlugins: [`gatsby-remark-copy-linked-files`],
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-copy-linked-files`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              noInlineHighlight: true,
+            },
+          },
+        ],
       },
     },
     {
@@ -48,12 +56,6 @@ module.exports = {
             resolve: `gatsby-remark-external-links`,
             options: {
               rel: `noopener noreferrer`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              noInlineHighlight: true,
             },
           },
         ],

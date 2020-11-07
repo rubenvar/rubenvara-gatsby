@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import debounce from 'lodash.debounce';
 import { window } from 'browser-monads';
 
-function useWindowSize() {
+export function useWindowSize() {
   const getSize = () => ({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -25,5 +25,3 @@ function useWindowSize() {
   // return sizes as object
   return sizes;
 }
-
-export default useWindowSize;

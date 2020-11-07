@@ -2,12 +2,14 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+import IntroText from './IntroText';
+
 function Homepage() {
   const data = useStaticQuery(graphql`
     query {
       backgroundImage: file(relativePath: { eq: "rub.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1400) {
+          fluid(maxWidth: 900) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -15,27 +17,22 @@ function Homepage() {
     }
   `);
 
+  // separate the letters
+  const letters = Array.from('Rubén Vara').map((letter, i) => (
+    <span key={i} className={letter === ' ' ? '💩' : '🚀'}>
+      {letter}
+    </span>
+  ));
+  // const colors = ['primary400', 'primary500', 'primary600', 'primary700'];
+  // const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
   return (
     <>
+      <h1>{letters}</h1>
       <p>Diseño páginas web. Escalo. Nado en aguas abiertas.</p>
-      <h4>Y durante la última década...</h4>
-      <p>
-        Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
-        cambiar mi vida y abandonarlo todo.
-      </p>
-      <p>
-        Me marché de viaje, sin fechas ni planes. Pasé tres años viviendo en
-        varios países, creando mi negocio online, escalando, y estudiando.
-      </p>
-      <p>
-        Volví a casa, para vivir en el monte alejado del ruido. Para dedicar mi
-        tiempo a estudiar, entrenar, y trabajar en mi negocio.
-      </p>
-      <p>Leer la versión larga</p>
-      <Img
-        // className="full-bleed"
-        fluid={data.backgroundImage.childImageSharp.fluid}
-      />
+
+      <IntroText />
+      {/* <Img fluid={data.backgroundImage.childImageSharp.fluid} /> */}
     </>
   );
 }

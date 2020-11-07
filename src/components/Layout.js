@@ -12,13 +12,11 @@ import GlobalStyle from './styles/GlobalStyle';
 const Layout = ({ children, location }) => (
   <>
     <GlobalStyle />
-    {/* <ThemeProvider theme={theme}> */}
     <SkipLink />
     <TopBar />
-    <Header location={location} />
+    {location.pathname !== '/' && <Header location={location} />}
     <Main id="main">{children}</Main>
     <Footer location={location} />
-    {/* </ThemeProvider> */}
   </>
 );
 

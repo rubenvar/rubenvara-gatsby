@@ -1,14 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
 
-import theme from './___Theme';
-
 const GlobalStyle = createGlobalStyle`
   :root {
-    --maxWidth: 56ch;
+    --maxWidth: 50ch;
     --maxCodeWidth: 76ch;
+    
+    --normalFont: "DM Sans", --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --specialFont: "Baloo 2", --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --logoFont: "Mansalva", cursive;
+    --codeFont: "Victor Mono", PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+    --textLineHeight: 1.63793924em;
 
     --black: hsl(0, 20%, 5%);
-    --white: hsl(0, 20%, 98%);
+    --white: hsl(0, 0%, 99%);
 
     --primary100: hsl(25, 100%, 96%);
     --primary200: hsl(20, 100%, 88%);
@@ -68,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
     --focus: orange;
   }
   html {
-    /* font-family: 'Rubik', Arial, Helvetica, sans-serif; */
+    font-family: var(--normalFont);
     font-size: 20px;
     box-sizing: border-box;
     -ms-text-size-adjust: 100%;
@@ -83,8 +88,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${theme.white};
-    color: ${theme.black};
+    background-color: var(--white);
+    color: var(--black);
     word-wrap: break-word;
     font-size: 1rem;
     font-kerning: normal;
@@ -105,33 +110,48 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   ::selection {
-    background: ${theme.primary500};
-    color: ${theme.grey100};
+    background: var(--primary500);
+    color: var(--grey100);
   }
   ::-moz-selection {
-    background: ${theme.primary500};
-    color: ${theme.grey100};
+    background: var(--primary500);
+    color: var(--grey100);
   }
   a {
     transition: all 0.3s;
-    color: ${theme.primary500};
+    color: var(--primary500);
   }
   p {
-    margin: 0 0 var(--gap50);
-    line-height: 1.625rem;
+    margin: 0 0 var(--gap60);
+    line-height: var(--textLineHeight);
   }
   h1, h2, h3, h4 {
     /* margin: 0; */
     margin: 0 0 var(--gap50);
     text-rendering: optimizeLegibility;
-    /* font-family: 'Rubik', cursive; */
+    font-family: var(--specialFont);
+    font-weight: 500;
   }
-  h1 {
-    /* font-family: 'Victor Mono', monospace; */
+  /* h1 {} */
+  h2 {
+    margin: var(--gap70) 0 var(--gap60);
+    font-size: var(--fontSize80);
   }
-  h2 {}
-  h3 {}
-  h4 {}
+  h3 {
+    margin: var(--gap30) 0 var(--gap60);
+    font-size: var(--fontSize70);
+  }
+  h4 {
+    margin: 0 0 var(--gap60);
+    font-size: var(--fontSize60);
+  }
+  ul, ol {
+    margin: 0 0 var(--gap60);
+    li {
+      line-height: var(--textLineHeight);
+      margin-bottom: var(--gap10);
+    }
+  }
   button {
     cursor: pointer;
   }
@@ -139,16 +159,13 @@ const GlobalStyle = createGlobalStyle`
   a {
     &:focus {
       outline: none;
-      border: 2px solid ${theme.focus};
+      border: 2px solid var(--focus);
       transition: none;
     }
   }
-  code[class*="language-"], pre[class*="language-"] {
-    /* font-family: 'Victor Mono', monospace; */
-    font-size: 0.85rem;
-  }
-  code[class*="language-text"] {
-    font-size: 1rem;
+  code, pre[class*="language-"] {
+    font-family: var(--codeFont);
+    font-size: var(--fontSize30);
   }
 `;
 

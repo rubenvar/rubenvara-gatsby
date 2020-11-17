@@ -18,7 +18,7 @@ const StyledHeader = styled.header`
       font-size: 1.85rem;
       margin: 0;
       line-height: 1;
-      /* font-family: 'Mansalva', cursive; */
+      font-family: var(--logoFont);
       a {
         background: var(--logoGradient);
         background-clip: text;

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import StyledPaginationDefault from './styles/StyledPagination';
+// import StyledPaginationDefault from './styles/StyledPagination';
 
 const StyledPagination = styled.div`
   /* ${StyledPaginationDefault};

@@ -44,6 +44,25 @@ const GlobalStyle = createGlobalStyle`
     --grey800: hsl(220, 17%, 16%);
     --grey900: hsl(225, 20%, 8%);
 
+    --info400: hsl(0, 0%, 60%);
+    --info500: hsl(0, 0%, 45%);
+    --info600: hsl(0, 0%, 28%);
+    --announce400: hsl(189, 92%, 60%);
+    --announce500: hsl(189, 79%, 46%);
+    --announce600: hsl(189, 93%, 31%);
+    --success400: hsl(112, 83%, 44%);
+    --success500: hsl(123, 92%, 35%);
+    --success600: hsl(123, 84%, 25%);
+    --note400: hsl(59, 83%, 54%);
+    --note500: hsl(60, 100%, 41%);
+    --note600: hsl(59, 62%, 31%);
+    --warning400: hsl(24, 90%, 65%);
+    --warning500: hsl(24, 98%, 58%);
+    --warning600: hsl(24, 80%, 45%);
+    --danger400: hsl(353, 98%, 62%);
+    --danger500: hsl(11, 93%, 44%);
+    --danger600: hsl(353, 94%, 30%);
+
     --gap10: 4px;
     --gap20: 8px;
     --gap30: 12px;

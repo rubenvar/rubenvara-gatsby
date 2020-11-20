@@ -9,16 +9,18 @@ import Footer from './Footer';
 import { Main } from './styles/LayoutStyles';
 import GlobalStyle from './styles/GlobalStyle';
 
-const Layout = ({ children, location }) => (
-  <>
-    <GlobalStyle />
-    <SkipLink />
-    <TopBar />
-    {location.pathname !== '/' && <Header location={location} />}
-    <Main id="main">{children}</Main>
-    <Footer location={location} />
-  </>
-);
+function Layout({ children, location }) {
+  return (
+    <>
+      <GlobalStyle />
+      <SkipLink />
+      <TopBar />
+      {location.pathname !== '/' && <Header location={location} />}
+      <Main id="main">{children}</Main>
+      <Footer location={location} />
+    </>
+  );
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

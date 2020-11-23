@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {
@@ -9,7 +9,6 @@ import {
   IconTrophy,
   IconUrgent,
 } from '@tabler/icons';
-import { motion } from 'framer-motion';
 
 // 🚧 work in progress 🚧
 
@@ -18,15 +17,26 @@ const StyledBox = styled.div`
   padding: var(--gap60);
   margin: var(--gap30) 0 var(--gap80);
   word-wrap: break-word;
-  background: linear-gradient(
-    to right,
-    ${(props) => `var(--${props.type}400)`} ${(props) => `${props.full}%`},
-    #fefefe ${(props) => `${props.full}%`}
-  );
   border-radius: 13px;
   border: 3px solid;
   position: relative;
   transition: all 0.3s;
+  background: #fefefe;
+  /* background: linear-gradient(
+    to right,
+    ${(props) => `var(--${props.type}400)`} ${(props) => `${props.full}%`},
+    #fefefe ${(props) => `${props.full}%`}
+  ); */
+  /* &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: ${(props) => `var(--${props.type}400)`};
+  } */
+
   p {
     &:last-child {
       margin: 0;
@@ -45,7 +55,7 @@ const StyledBox = styled.div`
   }
 `;
 
-const StyledIcon = styled(motion.span)`
+const StyledIcon = styled.span`
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
   position: absolute;
   width: 48px;
@@ -78,7 +88,7 @@ const StyledIcon = styled(motion.span)`
   }
 `;
 
-function Icon({ type, handleClick, clicked }) {
+function Icon({ type, handleClick }) {
   let SVG = <IconTool size={28} />;
 
   if (type === 'success') SVG = <IconTrophy size={28} />;
@@ -87,18 +97,8 @@ function Icon({ type, handleClick, clicked }) {
   if (type === 'warning') SVG = <IconAlertTriangle size={28} />;
   if (type === 'danger') SVG = <IconUrgent size={28} />;
 
-  const variants = {
-    clicked: { scale: 0.7 },
-    unClicked: { scale: 1 },
-  };
-
   return (
-    <StyledIcon
-      onClick={handleClick}
-      type={type}
-      animate={clicked ? 'clicked' : 'unClicked'}
-      variants={variants}
-    >
+    <StyledIcon onClick={handleClick} type={type}>
       {SVG}
     </StyledIcon>
   );
@@ -106,35 +106,27 @@ function Icon({ type, handleClick, clicked }) {
 
 function AlertBox({ type = 'info', title, children }) {
   const [full, setFull] = useState(0);
-  const [clicked, setClicked] = useState(false);
   const handleClick = () => {
-    // if (full < 100) setFull(full + 10);
-    setClicked(true);
+    if (full < 100) setFull(full + 10);
   };
-  useEffect(() => {
-    setTimeout(() => setClicked(false), 500);
-  });
 
   return (
     <StyledBox type={type} full={full}>
-      <Icon type={type} handleClick={handleClick} clicked={clicked} />
+      <Icon type={type} handleClick={handleClick} />
       {title ? <h4>{title}</h4> : null}
-      {clicked ? 'clicked' : 'notClicked'}
       {children}
     </StyledBox>
   );
 }
 
 AlertBox.propTypes = {
-  children: PropTypes.object,
-  title: PropTypes.string,
   type: PropTypes.string,
+  title: PropTypes.string,
+  children: PropTypes.object,
 };
 
 Icon.propTypes = {
-  full: PropTypes.any,
   handleClick: PropTypes.any,
-  setFull: PropTypes.any,
   type: PropTypes.string,
 };
 

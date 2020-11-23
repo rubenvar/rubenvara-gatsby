@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 
-// display year only if it's different than current year
+// display year only if it's not current year
 export function formatDate(string) {
   const date = new Date(string);
   const dateFormat =

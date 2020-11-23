@@ -52,7 +52,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // create the blog pages
   // TODO not hardcoded here!
-  const perPage = 2;
+  const perPage = 4;
   const numPages = Math.ceil(posts.length / perPage);
   // array of blog pages
   Array.from({ length: numPages }).forEach((_, i) => {

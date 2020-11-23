@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import CategoryLink from './CategoryLink';
 
@@ -21,11 +22,14 @@ const StyledCategoryList = styled.aside`
           background-color: var(--primary600);
         }
       }
+      &.active {
+        font-weight: 700;
+      }
     }
   }
 `;
 
-function CategoryList() {
+function CategoryList({ current }) {
   const data = useStaticQuery(graphql`
     query {
       allMdx(limit: 2000) {
@@ -38,13 +42,21 @@ function CategoryList() {
   `);
 
   const { group: allCategories } = data?.allMdx;
+  console.log(current);
 
   return (
     <StyledCategoryList>
       <h2>Todas las categorías:</h2>
       <div>
         {allCategories.map((category) => (
-          <span key={category.fieldValue}>
+          <span
+            key={category.fieldValue}
+            className={
+              category.fieldValue.toLowerCase() === current.toLowerCase()
+                ? 'active'
+                : null
+            }
+          >
             <CategoryLink
               cat={category.fieldValue}
               total={category.totalCount}
@@ -55,5 +67,9 @@ function CategoryList() {
     </StyledCategoryList>
   );
 }
+
+CategoryList.propTypes = {
+  current: PropTypes.string,
+};
 
 export default CategoryList;

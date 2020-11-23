@@ -1,61 +1,44 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import Nav from './Nav';
 import { Wrapper } from './styles/LayoutStyles';
 import { useWindowSize } from '../utils';
 
-// idea for bg from https://codepen.io/enbee81/full/yLyrmyg
-// const StyledFooter = styled.footer`
-//   --padding: ${(props) => props.width * props.magicNumber}px;
-//   position: relative;
-//   /* margin-top: calc((var(--padding) * -1) - 2px); */
-//   margin-top: 0;
-//   margin-top: ${(props) => (props.isIndex ? 0 : props.theme.gap120)};
-//   padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0
-//     ${(props) => props.theme.gap50};
-//   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
-//   background: linear-gradient(transparent, ${(props) => props.theme.grey500});
-
-//   ${(props) =>
-//     props.isIndex &&
-//     css`
-//       background: hsl(0, 20%, 97%);
-//       clip-path: none;
-//     `}
-//   > div {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     position: relative;
-//     p {
-//       font-size: 0.75rem;
-//       color: ${(props) =>
-//         !props.isIndex ? props.theme.grey200 : props.theme.grey400};
-//       a {
-//         text-decoration: none;
-//         transition: all 0.25s;
-//         color: ${(props) =>
-//           !props.isIndex ? props.theme.grey300 : props.theme.grey500};
-//         &:hover {
-//           text-decoration: underline;
-//         }
-//       }
-//     }
-//   }
-// `;
-
+// idea for footer from https://codepen.io/enbee81/full/yLyrmyg
 const StyledFooter = styled.footer`
+  --padding: ${(props) => props.width * props.magicNumber}px;
+  position: relative;
+  margin-top: var(--gap120);
+  padding: calc((var(--padding) * 2) - (var(--padding) - var(--padding))) 0
+    var(--gap50);
+  clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
+  background: linear-gradient(transparent, var(--grey500));
+
   background: #ccc;
-  padding: var(--gap60) 0 var(--gap90);
-  margin-top: var(--gap60);
+  p {
+    margin: 0;
+    font-size: var(--fontSize20);
+    text-align: center;
+    color: var(--grey500);
+    a {
+      color: var(--grey500);
+      &:hover {
+        color: var(--grey500);
+      }
+    }
+  }
 `;
 
 function Footer({ location }) {
+  const angle = -3;
+  const magicNumber = Math.abs(Math.tan((angle * Math.PI) / 180) / 2);
+  const { width } = useWindowSize();
+
   return (
-    <StyledFooter>
+    <StyledFooter magicNumber={magicNumber} width={width}>
       <Wrapper>
         <Nav isFooter location={location} />
         <p>
@@ -63,9 +46,31 @@ function Footer({ location }) {
           <Link to="/contacto">Contacto</Link>
         </p>
         <p>
-          Web creada con <a href="https://www.gatsbyjs.com">Gatsby</a> y alojada
-          en <a href="https://www.netlify.com/">Netlify</a>. El código está en{' '}
-          <a href="https://github.com/rubenvar">Github</a>.
+          Web creada con{' '}
+          <a
+            href="https://www.gatsbyjs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gatsby
+          </a>{' '}
+          y alojada en{' '}
+          <a
+            href="https://www.netlify.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Netlify
+          </a>
+          . El código está en{' '}
+          <a
+            href="https://github.com/rubenvar/rubenvara.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
+          .
         </p>
       </Wrapper>
     </StyledFooter>
@@ -73,9 +78,7 @@ function Footer({ location }) {
 }
 
 Footer.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string,
-  }),
+  location: PropTypes.object,
 };
 
 export default Footer;

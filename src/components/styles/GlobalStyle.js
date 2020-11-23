@@ -4,6 +4,9 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --maxWidth: 50ch;
     --maxCodeWidth: 76ch;
+
+    --smallBr: 6px;
+    --bigBr: 13px;
     
     --normalFont: "DM Sans", --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
     --specialFont: "Baloo 2", --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -90,6 +93,10 @@ const GlobalStyle = createGlobalStyle`
     --fontSize200: 5.5rem;
 
     --focus: orange;
+
+    --boxShadow100: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --boxShadow200: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+    --boxShadow300: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
   }
   html {
     font-family: var(--normalFont);

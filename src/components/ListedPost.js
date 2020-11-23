@@ -21,7 +21,7 @@ const StyledListedPost = styled.div`
     }
   }
   .description {
-    color: var(--grey500);
+    color: var(--grey700);
     font-size: var(--fontSize30);
     margin: 0;
     margin-bottom: var(--gap30);

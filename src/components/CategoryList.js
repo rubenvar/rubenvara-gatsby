@@ -17,6 +17,7 @@ const StyledCategoryList = styled.aside`
         padding: var(--gap20);
         color: var(--primary600);
         text-decoration: none;
+        border-radius: var(--smallBr);
         &:hover {
           color: var(--grey100);
           background-color: var(--primary600);

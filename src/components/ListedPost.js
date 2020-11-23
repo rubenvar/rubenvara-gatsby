@@ -8,7 +8,7 @@ import PostMeta from './PostMeta';
 const StyledListedPost = styled.div`
   margin-bottom: var(--gap110);
   h2 {
-    font-weight: 400;
+    font-weight: 500;
     font-size: var(--fontSize60);
     margin-top: 0;
     margin-bottom: var(--gap30);

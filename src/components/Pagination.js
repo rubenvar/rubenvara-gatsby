@@ -4,8 +4,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons';
 
-// import StyledPaginationDefault from './styles/StyledPagination';
-
 const StyledPaginationButton = styled.div`
   height: 45px;
   width: 100%;
@@ -57,7 +55,7 @@ function Pagination({
   totalCount,
   pageContext: { limit, skip, numPages, currentPage },
 }) {
-  // if less posts than one page, don't show pagination component
+  // if not full page, don't show pagination component
   if (totalCount < limit) return null;
 
   return (

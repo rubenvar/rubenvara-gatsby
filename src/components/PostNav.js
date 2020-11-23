@@ -2,14 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-
-// import StyledPaginationDefault from './styles/StyledPagination';
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons';
 
 const StyledPostNav = styled.nav`
-  /* display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: ${(props) => props.theme.gap40};
+  align-items: center;
+  /* gap: var(--gap40); */
+  box-shadow: var(--boxShadow100);
+  border-radius: var(--smallBr);
+  .prev {
+  }
   a {
+    border-right: 1px solid var(--grey200);
+    width: 100%;
+    padding: 12px;
+    text-decoration: none;
+    div {
+      display: grid;
+      gap: 12px;
+      align-items: center;
+      &.prev {
+        grid-template-columns: auto 1fr;
+      }
+      &.next {
+        grid-template-columns: 1fr auto;
+      }
+      .title {
+        color: var(-grey600);
+      }
+    }
+  }
+  /* a {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
@@ -65,17 +89,29 @@ const StyledPostNav = styled.nav`
 
 const PostNav = ({ prev, next }) => (
   <StyledPostNav>
-    {prev && (
-      <Link className="prev" to={`/${prev.frontmatter.slug}`}>
-        <span className="dir">←</span>
-        <span className="title">{prev.frontmatter.title}</span>
+    {prev ? (
+      <Link to={`/${prev.frontmatter.slug}`}>
+        <div className="prev">
+          <div className="dir">
+            <IconChevronLeft />
+          </div>
+          <div className="title">{prev.frontmatter.title}</div>
+        </div>
       </Link>
+    ) : (
+      <div className="prev" />
     )}
-    {next && (
-      <Link className="next" to={`/${next.frontmatter.slug}`}>
-        <span className="title">{next.frontmatter.title}</span>
-        <span className="dir">→</span>
+    {next ? (
+      <Link to={`/${next.frontmatter.slug}`}>
+        <div className="next">
+          <span className="title">{next.frontmatter.title}</span>
+          <span className="dir">
+            <IconChevronRight />
+          </span>
+        </div>
       </Link>
+    ) : (
+      <div className="next" />
     )}
   </StyledPostNav>
 );

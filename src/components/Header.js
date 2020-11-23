@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { Wrapper } from './styles/LayoutStyles';
-import Nav from './Nav.js';
 
 const StyledHeader = styled.header`
   background: var(--white);
@@ -28,21 +27,32 @@ const StyledHeader = styled.header`
         text-decoration: none;
       }
     }
+    a {
+      text-decoration: none;
+      color: var(--primary600);
+      line-height: 1;
+      &:hover {
+        color: var(--primary400);
+      }
+    }
   }
 `;
 // hardcoded instead of getting the site-title in gatsby-config
 const title = `rubenvara.io`;
 
-const Header = ({ location }) => (
-  <StyledHeader>
-    <Wrapper>
-      <h2>
-        <Link to="/">{title}</Link>
-      </h2>
-      <Nav isHeader location={location} />
-    </Wrapper>
-  </StyledHeader>
-);
+function Header({ location }) {
+  const isBlog = location.pathname?.includes('/blog');
+  return (
+    <StyledHeader>
+      <Wrapper>
+        <h2>
+          <Link to="/">{title}</Link>
+        </h2>
+        {!isBlog && <Link to="/blog">Ir al blog</Link>}
+      </Wrapper>
+    </StyledHeader>
+  );
+}
 
 Header.propTypes = {
   location: PropTypes.object,

@@ -13,11 +13,11 @@ import {
 // 🚧 work in progress 🚧
 
 const StyledBox = styled.div`
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--boxShadow300);
   padding: var(--gap60);
   margin: var(--gap30) 0 var(--gap80);
   word-wrap: break-word;
-  border-radius: 13px;
+  border-radius: var(--bigBr);
   border: 3px solid;
   position: relative;
   transition: all 0.3s;

@@ -9,6 +9,7 @@ const Now = () => (
 
     <PageHeader>
       <h1>Ahora mismo</h1>
+      <p>Actualizado: 23, nov</p>
     </PageHeader>
 
     <h2>¿Dónde estoy?</h2>
@@ -28,10 +29,12 @@ const Now = () => (
     </p>
     <h2>¿Qué estoy haciendo ahora?</h2>
     <p>Empezar nuevos proyectos y trabajar en ellos:</p>
-    <p>
-      - Tanto en programación (node.js, React, svg, etc.), como en el mundo
-      real.
-    </p>
+    <ul>
+      <li>
+        Tanto en programación (node.js, React, svg, etc.), como en el mundo
+        real.
+      </li>
+    </ul>
     <p>
       Nadar, a diario. Todo lo que puedo. En aguas abiertas, y federado en la
       sección Máster del CN Menditxo.

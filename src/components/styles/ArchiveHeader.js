@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledArchiveHeader = styled.div`
+const StyledArchiveHeader = styled.header`
   margin: 0 0 var(--gap100);
   @media only screen and (min-width: 480) {
     margin-bottom: var(--gap100);

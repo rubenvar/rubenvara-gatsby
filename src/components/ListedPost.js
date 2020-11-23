@@ -10,6 +10,8 @@ const StyledListedPost = styled.div`
   h2 {
     font-weight: 400;
     font-size: var(--fontSize60);
+    margin-top: 0;
+    margin-bottom: var(--gap30);
     a {
       text-decoration: none;
       color: var(--primary600);
@@ -22,6 +24,7 @@ const StyledListedPost = styled.div`
     color: var(--grey500);
     font-size: var(--fontSize30);
     margin: 0;
+    margin-bottom: var(--gap30);
     line-height: 1.35rem;
     a {
       color: var(--grey800);

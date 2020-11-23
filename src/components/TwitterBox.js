@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { TwitterIcon } from './styles/TwitterIcon';
 
 const StyledTwitterBox = styled.div`
-  background: linear-gradient(to right, transparent, hsl(203, 89%, 83%));
+  /* background: linear-gradient(to right, transparent, hsl(203, 89%, 83%)); */
   background-color: hsl(203, 89%, 91%);
   padding: var(--gap10);
   margin-top: var(--gap90);

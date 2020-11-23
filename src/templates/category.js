@@ -14,10 +14,9 @@ const Category = ({ data, pageContext }) => {
   const { category } = pageContext;
   const { totalCount, edges: posts } = data.allPostsInCategory;
 
-  const description =
-    categoryDescriptions.find((obj) => obj.category === category)
-      ?.description ||
-    `Mira todos los posts en la categoría ${category}, hasta ahora he publicado ${totalCount}:`;
+  const description = categoryDescriptions.find(
+    (obj) => obj.category.toLowerCase() === category.toLowerCase()
+  )?.description;
 
   return (
     <>
@@ -28,14 +27,14 @@ const Category = ({ data, pageContext }) => {
           {totalCount} artículo{totalCount !== 1 ? 's' : ''} en{' '}
           <span>{category}</span>
         </h1>
-        <p>{description}</p>
+        {description && <p>{description}</p>}
       </ArchiveHeader>
 
       {posts.map(({ node: post }) => (
         <ListedPost key={post.id} post={post} />
       ))}
 
-      <CategoryList />
+      <CategoryList current={category} />
     </>
   );
 };

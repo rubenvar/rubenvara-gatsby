@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 // import StyledNav from './styles/StyledNav';
 
@@ -17,8 +16,10 @@ import styled from 'styled-components';
 // );
 
 const StyledNav = styled.nav`
-  display: grid;
-  grid-template-columns: auto auto;
+  /* display: grid; */
+  /* grid-template-columns: auto auto; */
+  display: flex;
+  justify-content: space-between;
   gap: var(--gap60);
   a {
     text-decoration: none;

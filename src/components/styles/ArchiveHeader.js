@@ -18,6 +18,9 @@ const StyledArchiveHeader = styled.div`
   p {
     color: var(--grey600);
     margin: 0 0 var(--gap50);
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `;
 

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import { TwitterIcon } from './styles/TwitterIcon';
+import { TwitterIcon } from '../utils';
 
 const StyledTwitterBox = styled.div`
   /* background: linear-gradient(to right, transparent, hsl(203, 89%, 83%)); */
   background-color: hsl(203, 89%, 91%);
-  padding: var(--gap10);
+  padding: var(--gap40);
   margin-top: var(--gap90);
   margin-bottom: var(--gap110);
   position: relative;
@@ -27,10 +27,9 @@ const StyledTwitterBox = styled.div`
     }
   }
   p {
-    width: 85%;
+    width: 90%;
     position: relative;
-    /* font-family: Martel, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
-    line-height: 1.8rem;
+    margin: 0;
     a {
       color: hsl(203, 99%, 23%);
       &:hover {
@@ -56,11 +55,12 @@ function TwitterBox({ twitter }) {
       {TwitterIcon}
       {twitter ? (
         <p>
-          Ya estamos hablando sobre este tema en{' '}
+          No hay sección de comentarios, pero ya estamos hablando sobre este
+          tema en{' '}
           <a href={twitter} rel="noopener noreferrer" target="_blank">
             Twitter
           </a>
-          , únete a la discusión y cuéntanos tu opinión!
+          : acércate y cuéntanos tu opinión!
         </p>
       ) : (
         <p>

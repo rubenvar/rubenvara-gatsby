@@ -72,7 +72,5 @@ yarn-error.log
 .vscode/
 src/pages/p.js
 DOCS.md
-CHANGELOG.md
 IDEAS.md
-.eslintrc
 posts/

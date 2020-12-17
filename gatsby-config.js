@@ -4,6 +4,7 @@ module.exports = {
     author: `@rubenvara01`,
     description: `Mi blog sobre desarrollo web y Javascript, mi estilo de vida, y mi primer gran viaje. Un poco de todo.`,
     siteUrl: `https://rubenvara.io`,
+    perPage: 9,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -90,4 +91,8 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  // flags: {
+  //   FAST_DEV: true,
+  //   FAST_REFRESH: true,
+  // },
 };

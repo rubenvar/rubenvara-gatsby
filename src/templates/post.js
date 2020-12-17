@@ -5,11 +5,6 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import SEO from '../components/SEO';
 import PostNav from '../components/PostNav';
-// import {
-//   StyledPost,
-//   StyledContent,
-//   StyledPostMeta,
-// } from '../components/styles/StyledPost';
 import PostHeader from '../components/styles/PostHeader';
 import PostMeta from '../components/PostMeta';
 import TwitterBox from '../components/TwitterBox';

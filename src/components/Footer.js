@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 import Nav from './Nav';
 import { Wrapper } from './styles/LayoutStyles';
@@ -24,7 +23,8 @@ const StyledFooter = styled.footer`
     text-align: center;
     color: var(--grey500);
     a {
-      color: var(--grey500);
+      color: var(--grey600);
+      text-decoration: none;
       &:hover {
         color: var(--grey500);
       }
@@ -40,10 +40,11 @@ function Footer({ location }) {
   return (
     <StyledFooter magicNumber={magicNumber} width={width}>
       <Wrapper>
-        <Nav isFooter location={location} />
-        <p>
+        <Nav location={location} />
+
+        <p style={{ marginBottom: 12 }}>
           ©{new Date().getFullYear()} rubenvara.io ·{' '}
-          <Link to="/contacto">Contacto</Link>
+          <a href="mailto:hey@rubenvara.io">Contacto</a>
         </p>
         <p>
           Web creada con{' '}

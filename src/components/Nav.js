@@ -33,14 +33,15 @@ const StyledNav = styled.nav`
   }
 `;
 
-function Nav({ isHeader = false, isFooter = false, location = {} }) {
+function Nav({ location = {} }) {
+  // TODO will need to make this 'active' class adding logic more automated, if there are more pages in the nav 🤷‍♂️
   const isIndex = location.pathname === '/';
   const isBlog = location.pathname?.includes('/blog');
   const isNow = location.pathname === '/now';
 
   return (
     <StyledNav>
-      {isFooter && !isIndex && <Link to="/">Inicio</Link>}
+      {!isIndex && <Link to="/">Inicio</Link>}
       <Link className={isBlog ? 'active' : ''} to="/blog">
         Blog
       </Link>
@@ -52,8 +53,6 @@ function Nav({ isHeader = false, isFooter = false, location = {} }) {
 }
 
 Nav.propTypes = {
-  isHeader: PropTypes.bool,
-  isFooter: PropTypes.bool,
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }),

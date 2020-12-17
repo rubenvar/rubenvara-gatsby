@@ -11,12 +11,13 @@ const StyledPostNav = styled.nav`
   /* gap: var(--gap40); */
   box-shadow: var(--boxShadow100);
   border-radius: var(--smallBr);
+  font-size: var(--fontSize30);
   .prev {
   }
   a {
     border-right: 1px solid var(--grey200);
     width: 100%;
-    padding: 12px;
+    padding: var(--gap30);
     text-decoration: none;
     div {
       display: grid;
@@ -27,9 +28,12 @@ const StyledPostNav = styled.nav`
       }
       &.next {
         grid-template-columns: 1fr auto;
+        .title {
+          text-align: right;
+        }
       }
       .title {
-        color: var(-grey600);
+        color: var(--primary700);
       }
     }
   }

@@ -41,6 +41,7 @@ const StyledHeader = styled.header`
 const title = `rubenvara.io`;
 
 function Header({ location }) {
+  console.log(location);
   const isBlog = location.pathname?.includes('/blog');
   return (
     <StyledHeader>

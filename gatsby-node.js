@@ -1,10 +1,8 @@
 const path = require(`path`);
-const kebabCase = require('lodash.kebabcase');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
-  const categoryTemplate = path.resolve(`src/templates/category.js`);
   const blogTemplate = path.resolve(`src/templates/blog.js`);
 
   // Graphql query to get all posts + manage pagination + and create the posts and category pages
@@ -34,9 +32,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      categoriesGroup: allMdx(limit: 2000) {
-        group(field: frontmatter___categories) {
-          fieldValue
+      site {
+        siteMetadata {
+          perPage
         }
       }
     }
@@ -51,8 +49,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = data.allPosts.edges;
 
   // create the blog pages
-  // TODO not hardcoded here!
-  const perPage = 4;
+  const perPage = data.site.siteMetadata.perPage || 4;
   const numPages = Math.ceil(posts.length / perPage);
   // array of blog pages
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -81,18 +78,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         slug: post.node.frontmatter.slug,
         next,
         prev,
-      },
-    });
-  });
-
-  // create the categories
-  const categories = data.categoriesGroup.group;
-  categories.forEach((category) => {
-    createPage({
-      path: `/categoria/${kebabCase(category.fieldValue)}`,
-      component: categoryTemplate,
-      context: {
-        category: category.fieldValue,
       },
     });
   });

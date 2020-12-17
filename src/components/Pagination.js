@@ -41,7 +41,7 @@ const StyledPagination = styled.nav`
     justify-items: center;
     align-items: center;
     margin: 0;
-    color: var(--grey600);
+    color: var(--grey400);
   }
 `;
 

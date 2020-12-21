@@ -7,7 +7,7 @@ import ListedPost from '../components/ListedPost';
 import Pagination from '../components/Pagination';
 import ArchiveHeader from '../components/styles/ArchiveHeader';
 
-const Blog = ({ data, pageContext }) => {
+export default function Blog({ data, pageContext }) {
   if (!data) return <p>No hay posts... 🤷‍♂️</p>;
 
   const { totalCount, edges } = data.allPosts;
@@ -22,6 +22,7 @@ const Blog = ({ data, pageContext }) => {
     <>
       <SEO
         title={`Página ${pageContext.currentPage} de ${pageContext.numPages} ~ Todos los posts del blog`}
+        slug="blog"
       />
       <ArchiveHeader className="header">
         <p>
@@ -38,7 +39,7 @@ const Blog = ({ data, pageContext }) => {
       <Pagination totalCount={totalCount} pageContext={pageContext} />
     </>
   );
-};
+}
 
 export const blogQuery = graphql`
   query blogQuery($skip: Int!, $limit: Int!) {
@@ -68,5 +69,3 @@ Blog.propTypes = {
   data: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 };
-
-export default Blog;

@@ -9,7 +9,7 @@ import PostHeader from '../components/styles/PostHeader';
 import PostMeta from '../components/PostMeta';
 import TwitterBox from '../components/TwitterBox';
 
-function PostTemplate({ data, pageContext }) {
+export default function PostTemplate({ data, pageContext }) {
   const { frontmatter, body } = data.post;
   const { prev, next } = pageContext;
 
@@ -18,6 +18,7 @@ function PostTemplate({ data, pageContext }) {
       <SEO
         title={frontmatter.seoTitle || frontmatter.title}
         description={frontmatter.description}
+        slug={frontmatter.slug}
       />
 
       <PostHeader>
@@ -59,5 +60,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default PostTemplate;

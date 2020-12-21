@@ -1,10 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Rubén Vara`,
+    title: `Rubén Vara ~ Mi Blog sobre Javascript, Desarrollo Web, y Otras Historias`,
+    description: `Web Personal: Qué hago ahora, mi blog sobre desarrollo web y Javascript, mi estilo de vida, y mi primer gran viaje. Un poco de todo`,
+    color: `#db2424`,
     author: `@rubenvara01`,
-    description: `Mi blog sobre desarrollo web y Javascript, mi estilo de vida, y mi primer gran viaje. Un poco de todo.`,
     siteUrl: `https://rubenvara.io`,
     perPage: 9,
+  },
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    // FAST_DEV: true,
+    // FAST_REFRESH: true,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -87,12 +93,9 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-  // flags: {
-  //   FAST_DEV: true,
-  //   FAST_REFRESH: true,
-  // },
 };

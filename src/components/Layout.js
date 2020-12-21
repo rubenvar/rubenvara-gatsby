@@ -8,10 +8,12 @@ import Header from './Header';
 import Footer from './Footer';
 import { Main } from './styles/LayoutStyles';
 import GlobalStyle from './styles/GlobalStyle';
+import SEO from './SEO';
 
-function Layout({ children, location }) {
+export default function Layout({ children, location }) {
   return (
     <>
+      <SEO />
       <GlobalStyle />
       <SkipLink />
       <TopBar />
@@ -26,5 +28,3 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   location: PropTypes.object,
 };
-
-export default Layout;

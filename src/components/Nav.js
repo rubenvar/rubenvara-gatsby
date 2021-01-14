@@ -19,8 +19,11 @@ const StyledNav = styled.nav`
   /* display: grid; */
   /* grid-template-columns: auto auto; */
   display: flex;
-  justify-content: space-between;
-  gap: var(--gap60);
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap70);
+  padding: var(--gap80) 0 var(--gap110);
+  font-size: var(--fontSize60);
   a {
     text-decoration: none;
     color: var(--primary700);
@@ -33,6 +36,14 @@ const StyledNav = styled.nav`
   }
 `;
 
+const StyledSep = styled.span`
+  font-size: var(--fontSize30);
+  color: var(--secondary500);
+  opacity: 0.8;
+`;
+
+const Sep = () => <StyledSep>◇</StyledSep>;
+
 function Nav({ location = {} }) {
   // TODO will need to make this 'active' class adding logic more automated, if there are more pages in the nav 🤷‍♂️
   const isIndex = location.pathname === '/';
@@ -41,10 +52,16 @@ function Nav({ location = {} }) {
 
   return (
     <StyledNav>
-      {!isIndex && <Link to="/">Inicio</Link>}
+      {!isIndex && (
+        <>
+          <Link to="/">Inicio</Link>
+          <Sep />
+        </>
+      )}
       <Link className={isBlog ? 'active' : ''} to="/blog">
         Blog
       </Link>
+      <Sep />
       <Link className={isNow ? 'active' : ''} to="/now">
         Ahora
       </Link>

@@ -9,8 +9,7 @@ module.exports = {
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
-    // FAST_DEV: true,
-    // FAST_REFRESH: true,
+    FAST_DEV: true,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -93,6 +92,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

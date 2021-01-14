@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const StyledToggle = styled.label`
   /* props to Sara Soueidan (https://sarasoueidan.com) for the component design */
   position: relative;
-  transition: all 0.3s;
-
+  justify-self: end;
+  transition: all 0.25s;
+  color: var(--grey500);
   &:hover {
     color: var(--primary500);
+    .switch {
+      border-color: var(--primary600);
+    }
   }
 
   .text {
     font-size: var(--fontSize30);
     cursor: pointer;
     vertical-align: middle;
+    transition: all 0.25s;
+    &.selected {
+      color: var(--primary500);
+    }
   }
 
   .checkbox {
@@ -53,7 +63,8 @@ const StyledToggle = styled.label`
     cursor: pointer;
     vertical-align: middle;
     overflow: hidden;
-
+    margin: 0 5px;
+    transition: all 0.25s;
     &::after {
       content: '';
       width: 21px;
@@ -72,8 +83,11 @@ const StyledToggle = styled.label`
 `;
 
 const IntroTextToggle = ({ isLongIntro, setIsLongIntro }) => (
-  <StyledToggle htmlFor="toggler" className="theme-toggler">
-    <span className="text">Versión corta</span>
+  <StyledToggle
+    htmlFor="toggler"
+    className="theme-toggler"
+    onClick={() => scrollTo('#intro-title')}
+  >
     <input
       type="checkbox"
       id="toggler"
@@ -82,8 +96,15 @@ const IntroTextToggle = ({ isLongIntro, setIsLongIntro }) => (
       onChange={() => setIsLongIntro(!isLongIntro)}
     />
     <span aria-hidden="true" className="switch" />
-    <span className="text">Versión larga</span>
+    <span className={isLongIntro ? 'text selected' : 'text'}>
+      Versión extendida
+    </span>
   </StyledToggle>
 );
+
+IntroTextToggle.propTypes = {
+  isLongIntro: PropTypes.bool,
+  setIsLongIntro: PropTypes.func,
+};
 
 export default IntroTextToggle;

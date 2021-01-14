@@ -25,7 +25,7 @@ export default function SEO(props) {
   const siteImage = `${siteUrl}/rub.jpg`;
   const url = slug ? `${siteUrl}/${slug}/` : `${siteUrl}/`;
 
-  console.log(title);
+  // console.log(title);
 
   return (
     <Helmet>

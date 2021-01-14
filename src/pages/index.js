@@ -1,7 +1,6 @@
 import React from 'react';
+import Home from '../components/home/Home';
 
-import Home from '../components/Home';
+const Index = () => <Home />;
 
-export default function Index() {
-  return <Home />;
-}
+export default Index;

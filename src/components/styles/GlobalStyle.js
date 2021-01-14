@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import jsYellow from 'javascript-yellow';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -27,6 +28,8 @@ const GlobalStyle = createGlobalStyle`
     --primary700: hsl(0, 85%, 28%);
     --primary800: hsl(350, 90%, 18%);
     --primary900: hsl(340, 100%, 8%);
+
+    --secondary500: hsl(180, 64%, 45%);
 
     --logoGradient: linear-gradient(
       to right,
@@ -90,9 +93,11 @@ const GlobalStyle = createGlobalStyle`
     --fontSize90: 2.2rem;
     --fontSize100: 2.55rem;
     --fontSize110: 2.7rem;
-    --fontSize200: 5.5rem;
+    --fontSize150: 3.8rem;
 
     --focus: orange;
+
+    --javascriptYellow: ${jsYellow};
 
     --boxShadow100: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     --boxShadow200: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);

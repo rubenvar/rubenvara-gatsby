@@ -6,7 +6,7 @@ import Nav from './Nav';
 import { Wrapper } from './styles/LayoutStyles';
 import { useWindowSize } from '../utils';
 
-// idea for footer from https://codepen.io/enbee81/full/yLyrmyg
+// idea for angled footer from https://codepen.io/enbee81/full/yLyrmyg
 const StyledFooter = styled.footer`
   --padding: ${(props) => props.width * props.magicNumber}px;
   position: relative;
@@ -15,6 +15,7 @@ const StyledFooter = styled.footer`
     var(--gap50);
   clip-path: polygon(0% calc(var(--padding) * 2), 100% 0%, 100% 100%, 0% 100%);
   background: linear-gradient(transparent, var(--grey500));
+  transition: all 0.3s;
 
   background: #ccc;
   p {

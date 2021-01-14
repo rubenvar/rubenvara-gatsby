@@ -4,7 +4,7 @@ All the notable changes made to this project. It adheres to [Semantic Versioning
 
 ## [0.1.0] - 2020-07-21
 
-🎊 Website launched!
+🎊 Website beta launched!
 
 Deployed in [Netlify](https://quizzical-varahamihira-9fdae1.netlify.app/), with test blog posts and not fully responsive yet. Some SEO and PWA features missing as per Chrome Lighthouse.
 

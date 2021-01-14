@@ -40,8 +40,8 @@ const StyledHeader = styled.header`
 // hardcoded instead of getting the site-title in gatsby-config
 const title = `rubenvara.io`;
 
-function Header({ location }) {
-  console.log(location);
+export default function Header({ location }) {
+  // console.log(location);
   const isBlog = location.pathname?.includes('/blog');
   return (
     <StyledHeader>
@@ -58,5 +58,3 @@ function Header({ location }) {
 Header.propTypes = {
   location: PropTypes.object,
 };
-
-export default Header;

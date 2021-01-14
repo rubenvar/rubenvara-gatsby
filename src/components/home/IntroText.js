@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-
+import styled from 'styled-components';
 import IntroTextToggle from './IntroTextToggle';
 
-const AnimatedP = ({ children }) => (
+export const IntroH2 = styled(motion.h2)`
+  font-style: italic;
+  font-family: var(--specialFont);
+  /* font-weight: 700; */
+  font-size: var(--fontSize60);
+  &.now {
+    margin-top: var(--gap90);
+  }
+`;
+
+export const AnimatedP = ({ children }) => (
   // animating p => no more added divs
   <motion.p
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    transition={{ duration: 0.5 }}
+    transition={{ duration: 0.35 }}
   >
     {children}
   </motion.p>
@@ -18,9 +28,8 @@ const AnimatedP = ({ children }) => (
 // two different components so framer motion will animate on each mount-unmount
 const LongIntro = () => (
   <>
-    <AnimatedP>Durante la última década...</AnimatedP>
     <AnimatedP>
-      Estudié un grado en alternancia en el IMH, Elgoibar. Trabajparios años
+      Estudié un grado en alternancia en el IMH, Elgoibar. Trabajé varios años
       como ingeniero industrial. Aprendí un monton muy grande sobre procesos
       comerciales y otras cosas.
     </AnimatedP>
@@ -52,7 +61,6 @@ const LongIntro = () => (
 
 const ShortIntro = () => (
   <>
-    <AnimatedP>Durante la última década...</AnimatedP>
     <AnimatedP>
       Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
       cambiar mi vida y abandonarlo todo.
@@ -68,16 +76,17 @@ const ShortIntro = () => (
   </>
 );
 
-function IntroText() {
+export default function IntroText() {
   const [isLongIntro, setIsLongIntro] = useState(false);
 
   return (
     <>
+      <IntroH2 id="intro-title">Durante la última década...</IntroH2>
+      {isLongIntro ? <LongIntro /> : <ShortIntro />}
       <IntroTextToggle
         isLongIntro={isLongIntro}
         setIsLongIntro={setIsLongIntro}
       />
-      {isLongIntro ? <LongIntro /> : <ShortIntro />}
     </>
   );
 }
@@ -85,5 +94,3 @@ function IntroText() {
 AnimatedP.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
 };
-
-export default IntroText;

@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import ListedPost from '../components/ListedPost';
 import Pagination from '../components/Pagination';
 import ArchiveHeader from '../components/styles/ArchiveHeader';
+import Emphasis from '../components/md/Emphasis';
 
 export default function Blog({ data, pageContext }) {
   if (!data) return <p>No hay posts... 🤷‍♂️</p>;
@@ -30,8 +31,12 @@ export default function Blog({ data, pageContext }) {
           en eso estamos:
         </p>
         <p>
-          Escribo sobre desarrollo web. Y sobre JavaScript. Sobre todo,
-          JavaScript.
+          Escribo sobre desarrollo web en español pero me falta vocabulario,
+          porque todo lo que sé lo he aprendido en inglés.
+        </p>
+        <p>
+          Si te quedas por aquí seguro que aprendes algo nuevo sobre JavaScript.
+          Sobre todo, <Emphasis use="js">JavaScript</Emphasis>.
         </p>
       </ArchiveHeader>
       {posts &&

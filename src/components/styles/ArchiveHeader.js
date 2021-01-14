@@ -18,8 +18,14 @@ const StyledArchiveHeader = styled.header`
   p {
     color: var(--grey600);
     margin: 0 0 var(--gap50);
+    transition: color 0.5s;
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+  &:hover {
+    p {
+      color: var(--grey700);
     }
   }
 `;

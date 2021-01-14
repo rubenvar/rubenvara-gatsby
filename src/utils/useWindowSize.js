@@ -1,12 +1,12 @@
 // idea from https://usehooks.com/useWindowSize/
 import { useState, useEffect } from 'react';
 import debounce from 'lodash.debounce';
-import { window } from 'browser-monads';
+import { window, exists } from 'browser-monads';
 
 export function useWindowSize() {
   const getSize = () => ({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: window?.innerWidth,
+    height: window?.innerHeight,
   });
 
   const [sizes, setSizes] = useState(getSize);
@@ -25,6 +25,7 @@ export function useWindowSize() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // return sizes as object
+  // return sizes as object if in browser
+  // if (!exists(window)) return null;
   return sizes;
 }

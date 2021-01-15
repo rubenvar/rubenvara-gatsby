@@ -36,7 +36,7 @@ const StyledFooter = styled.footer`
 function Footer({ location }) {
   const angle = -3;
   const magicNumber = Math.abs(Math.tan((angle * Math.PI) / 180) / 2);
-  const { width } = useWindowSize();
+  const { width = 1200 } = useWindowSize();
 
   return (
     <StyledFooter magicNumber={magicNumber} width={width}>

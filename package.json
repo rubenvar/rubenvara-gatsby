@@ -1,14 +1,12 @@
 {
   "name": "rubenvara.io",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
